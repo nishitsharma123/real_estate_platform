@@ -1,7 +1,13 @@
 {
-  "name": "ai_model",
+  "name": "python-ml-app",
   "version": "1.0.0",
+  "description": "A Python application deployed using Render.",
+  "main": "app.py",
   "scripts": {
-    "build": "pip install -r requirements.txt"
-  }
+    "build": "python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip && pip install -r ai_model/requirements.txt",
+    "start": "source venv/bin/activate && python app.py",
+    "test": "echo 'No tests specified'"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
