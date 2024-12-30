@@ -2,6 +2,6 @@
   "name": "ai_model",
   "version": "1.0.0",
   "scripts": {
-    "build": "pip install numpy --prefer-binary && pip install -r requirements.txt"
+    "build": "pip install -r requirements.txt"
   }
 }
