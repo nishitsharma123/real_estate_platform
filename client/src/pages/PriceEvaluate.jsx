@@ -2528,7 +2528,7 @@ const PredictPrice = () => {
     // --------------
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/evaluate-price",
+        "https://ibuy-403u.onrender.com/api/evaluate-price",
         formData
       );
       setPredictedPrice(response.data.predictedPrice);
