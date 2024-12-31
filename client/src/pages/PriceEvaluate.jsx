@@ -2425,12 +2425,12 @@ const PredictPrice = () => {
       city: selectedCity,
       location: "", // Reset location
     });
-  //    const value = e.target.value;
-  // setFormData((prev) => ({ ...prev, city: value }));
-  // setErrors((prev) => ({
-  //   ...prev,
-  //   city: value ? "" : "City is required.",
-  // }));
+    //    const value = e.target.value;
+    // setFormData((prev) => ({ ...prev, city: value }));
+    // setErrors((prev) => ({
+    //   ...prev,
+    //   city: value ? "" : "City is required.",
+    // }));
   };
 
   const handleownerChange = (e) => {
@@ -2479,29 +2479,27 @@ const PredictPrice = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
- const requiredSelectFields = [
-    "city",
-    "location",
-    "transaction",
-    "status",
-    "facing",
-    "ownership",
-  ];
+    const requiredSelectFields = [
+      "city",
+      "location",
+      "transaction",
+      "status",
+      "facing",
+      "ownership",
+    ];
 
-  const missingFields = requiredSelectFields.filter(
-    (field) => !formData[field]?.trim()
-  );
-
-  if (missingFields.length > 0) {
-    setError(
-      `Please select values for: ${missingFields
-        .map((field) => field.charAt(0).toUpperCase() + field.slice(1))
-        .join(", ")}`
+    const missingFields = requiredSelectFields.filter(
+      (field) => !formData[field]?.trim()
     );
-    return;
-  }
 
-
+    if (missingFields.length > 0) {
+      setError(
+        `Please select values for: ${missingFields
+          .map((field) => field.charAt(0).toUpperCase() + field.slice(1))
+          .join(", ")}`
+      );
+      return;
+    }
 
     // ---------------
     const isValid = Object.keys(formData).every((key) => {
