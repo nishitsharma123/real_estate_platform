@@ -8,8 +8,10 @@ import cookieParser from "cookie-parser";
 import listingRouter from "./routes/listing.route.js";
 import cors from "cors";
 import path from "path";
-dotenv.config();
 
+// Load env variables
+dotenv.config();
+// Connect to MongoDB
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
@@ -18,28 +20,29 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
+// Create express app
 const __dirname = path.resolve();
-
+// Create express app
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-
+// Listen on port 3000
 app.listen(3000, () => {
-  console.log("server is running on port 3000\n");
+  console.log("server is running live\n");
 });
-
+// Use the route
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 // Use the route
 app.use("/api", priceEvaluatorRouter);
-
+// Serve the static files
 app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+// Error handler
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal server error";

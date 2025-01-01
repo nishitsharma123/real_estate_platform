@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaArrowRight, FaArrowLeft} from 'react-icons/fa';
 import "./custom.slider.css";
 
+
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [slideDone, setSlideDone] = useState(true);
