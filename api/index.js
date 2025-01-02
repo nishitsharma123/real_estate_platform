@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 import listingRouter from "./routes/listing.route.js";
 import cors from "cors";
 import path from "path";
-
+import contactRouter from "./routes/contact.js";
 // Load env variables
 dotenv.config();
 // Connect to MongoDB
@@ -37,6 +37,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 // Use the route
 app.use("/api", priceEvaluatorRouter);
+app.use("/api", contactRouter);
 // Serve the static files
 app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) => {
