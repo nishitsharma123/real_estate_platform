@@ -37,7 +37,7 @@ const ContactUs = () => {
     setLoading(true);
     try {
       // Make POST request to the back-end API
-      const response = await axios.post("http://localhost:3000/api/contact", formData);
+      const response = await axios.post("https://ibuy-403u.onrender.com/api/contact", formData);
       alert("Your message has been sent!");
     } catch (error) {
       alert("There was an error sending your message. Please try again.");
