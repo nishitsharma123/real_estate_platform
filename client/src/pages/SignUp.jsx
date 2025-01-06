@@ -73,7 +73,7 @@ const [animate, setAnimate] = useState(false);
   
 
 
-  <div className="absolute h-screen w-screen bg-blue-100">
+  <div className="absolute min-h-screen w-screen bg-blue-100">
         {/* <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src={bgVideo}
@@ -81,8 +81,8 @@ const [animate, setAnimate] = useState(false);
           loop
           muted
         /> */}
-  <div className={`bg-blue-200 relative flex  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-  <div className={`z-10 p-10 max-w-lg mx-auto bg-black flex-1 rounded-3xl m-2 ml-2 text-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`} >
+  <div className={`bg-blue-100 md:bg-blue-200 relative flex flex-wrap  mt-24 w-full md:w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+  <div className={`z-10 p-10 max-w-lg mx-auto bg-black flex-1 rounded-3xl m-2 md:ml-2 mr-2 ml-2 text-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`} >
           <h1 className='text-3xl text-semibold'>Your Dream Home🏠 Awaits</h1>
           <br/>
           <p>Explore a vast collection of properties tailored to your lifestyle. From cozy apartments to luxurious villas, we make finding your perfect home effortless.</p>
@@ -97,7 +97,7 @@ const [animate, setAnimate] = useState(false);
           <h4 className='text-xl'>Begin your journey to better living today!</h4>
         </div>
 
-    <div className=' z-10 p-20 pt-5 max-w-lg mx-auto  flex-1 '>
+    <div className=' z-10 p-20 pt-5 max-w-lg mx-auto  flex-1 w-full md:w-auto '>
   
       <div className='flex flex-row items-center'>
         <FaUser className="text-center text-3xl m-3"/>
@@ -110,7 +110,7 @@ const [animate, setAnimate] = useState(false);
   
         <input type="password" placeholder='password' className='border-solid border-black bg-blue-100 border-2 p-3 rounded-lg' id='password' onChange={handleChange}/>
   
-        <button className='bg-black text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...': 'Sign up'}</button>
+        <button className='bg-black text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...': 'Sign up'}</button>
         <OAuth/>
       </form>
       <div className='flex gap-2 mt-5'>

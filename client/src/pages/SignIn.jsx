@@ -87,7 +87,7 @@ export default function SignIn() {
 
   return (
 
-<div className="absolute h-screen w-screen bg-blue-100">
+<div className="absolute min-h-screen w-screen bg-blue-100">
       {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={bgVideo}
@@ -95,7 +95,7 @@ export default function SignIn() {
         loop
         muted
       /> */}
-<div className={`bg-blue-200 relative flex flex-wrap-reverse  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+<div className={` bg-blue-100 md:bg-blue-200 relative flex flex-wrap-reverse  mt-24 w-full md:w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
   <div className=' z-10 p-20 max-w-lg mx-auto flex-1 w-full md:w-auto'>
 
     <div className='flex flex-row items-center'>
