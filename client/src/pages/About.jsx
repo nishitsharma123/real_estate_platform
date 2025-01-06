@@ -18,7 +18,7 @@ useEffect(() => {
     };
   }, [dispatch]);
   return (
-    <div className="bg-blue-100 flex flex-col items-center justify-center px-4 w-full">
+    <div className="bg-blue-100 flex flex-col items-center justify-center px-4 w-screen min-h-screen">
       <div className="bg-blue-100 text-gray-800 rounded-3xl shadow-2xl mt-16 md:mt-20 w-full">
         <h2 className={`text-3xl font-bold mb-4 text-blue-600 text-left ml-3 md:m-auto md:text-center transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"

@@ -116,7 +116,7 @@ const [animate, setAnimate] = useState(false);
       <div className='flex gap-2 mt-5'>
         <p>Already have an account?</p>
         <Link to={"/sign-in"}>
-        <span className='text-blue-600 text-semibold rounded-lg text-center hover:bg-black p-1 hover:text-white '>Sign in</span>
+        <span className='text-blue-600 text-semibold rounded-lg text-center hover:bg-black p-1 hover:text-white '>Sign-in</span>
         </Link>
         
     </div>
