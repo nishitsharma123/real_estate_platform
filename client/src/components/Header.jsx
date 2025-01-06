@@ -95,7 +95,7 @@ export default function Header() {
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center max-w-6xl mx-auto p-1">
+      <div className="flex justify-between items-center max-w-6xl ml-4 md:mx-auto p-1">
         <Link to="/">
           <h1
             className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
@@ -125,34 +125,34 @@ export default function Header() {
         </form> */}
         <ul
           className={`flex gap-4 items-center transition-all duration-[2000ms] ${
-            animate ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+            animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           } ${
     isMenuOpen
       ? "flex flex-col fixed top-14 right-0 bg-blue-400 bg-opacity-40 backdrop-blur-md p-4 w-2/3 h-screen"
       : "hidden"
   } sm:flex sm:flex-row  `}>
           <Link to="/dashboard">
-            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-30 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               Dashboard
             </li>
           </Link>
           <Link to="/price-prediction">
-            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className="w-56 text-center rounded-xl bg-opacity-30 md:rounded-3xl text-white bg-blue-500 p-2 md:bg-transparent sm:inline  md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               PropValue
             </li>
           </Link>
-          <Link to="/FAQs">
-            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+          <Link to="/faq">
+            <li onClick={closeMenu} className="w-56 text-center rounded-xl bg-opacity-30 md:rounded-3xl text-white bg-blue-500 md:bg-transparent p-2 sm:inline md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               FAQs
             </li>
           </Link>
            <Link to="/contact-us">
-            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className="w-56 text-center rounded-xl bg-opacity-30 md:rounded-3xl text-white bg-blue-500 md:bg-transparent p-2 sm:inline md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               Contact us
             </li>
           </Link>
           <Link to="/about">
-            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 bg-opacity-30 bg-blue-500 sm:inline text-white md:text-white md:bg-transparent hover:bg-white hover:text-black transition duration-300 ease-in-out ">
               About
             </li>{" "}
           </Link>
@@ -172,7 +172,7 @@ export default function Header() {
                 }
               />
             ) : (
-              <li onClick={closeMenu} className="text-black md:text-white rounded-3xl p-2  hover:bg-white hover:text-black hover:backdrop-blur-sm transition duration-300 ease-in-out hidden">
+              <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 bg-opacity-30 bg-blue-500 sm:inline text-white md:text-white md:bg-transparent hover:bg-white hover:text-black transition duration-300 ease-in-out">
                 Sign in
               </li>
             )}

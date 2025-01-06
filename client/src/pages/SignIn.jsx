@@ -87,15 +87,15 @@ export default function SignIn() {
 
   return (
 
-<div className="absolute h-screen w-screen">
-      <video
+<div className="absolute h-screen w-screen bg-blue-100">
+      {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={bgVideo}
         autoPlay
         loop
         muted
-      />
-<div className={`bg-white relative flex  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+      /> */}
+<div className={`bg-blue-200 relative flex  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
   <div className=' z-10 p-20 max-w-lg mx-auto  flex-1 '>
 
     <div className='flex flex-row items-center'>
@@ -105,9 +105,9 @@ export default function SignIn() {
   
     <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
 
-      <input type="text" placeholder='email' className='p-3 rounded-lg border-solid border-black border-2' id='email' onChange={handleChange}/>
+      <input type="text" placeholder='email' className='p-3 bg-blue-100 rounded-lg border-solid border-black border-2' id='email' onChange={handleChange}/>
 
-      <input type="password" placeholder='password' className='border-solid border-black border-2 p-3 rounded-lg' id='password' onChange={handleChange}/>
+      <input type="password" placeholder='password' className='border-solid bg-blue-100 border-black border-2 p-3 rounded-lg' id='password' onChange={handleChange}/>
 
       <button className='bg-black text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...': 'Sign in'}</button>
       <OAuth/>

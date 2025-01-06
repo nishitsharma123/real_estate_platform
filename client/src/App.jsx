@@ -10,6 +10,7 @@ import CreateListing from "./pages/CreateListing";
 import PredictPrice from "./pages/PriceEvaluate";
 import Dashboard from "./pages/Dashboard";
 import Contactus from "./pages/Contactus";
+import Faq from "./pages/Faq";
 
 export default function App() {
 
@@ -33,6 +34,7 @@ export default function App() {
       <Route path="/contact-us" element={<Contactus />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/faq" element={<Faq/>} />
       
       
     </Routes>
