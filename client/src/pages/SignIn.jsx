@@ -95,8 +95,8 @@ export default function SignIn() {
         loop
         muted
       /> */}
-<div className={`bg-blue-200 relative flex  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-  <div className=' z-10 p-20 max-w-lg mx-auto  flex-1 '>
+<div className={`bg-blue-200 relative flex flex-wrap-reverse  mt-24 w-fit m-auto rounded-3xl h-300px transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+  <div className=' z-10 p-20 max-w-lg mx-auto flex-1 w-full md:w-auto'>
 
     <div className='flex flex-row items-center'>
       <FaUser className="text-center text-3xl m-3"/>
@@ -113,7 +113,7 @@ export default function SignIn() {
       <OAuth/>
     </form>
     <div className='flex gap-2 mt-5'>
-      <p>Dont have an account?</p>
+      <p>Don't have an account?</p>
       <Link to={"/sign-up"}>
       <span className='text-blue-600 text-semibold rounded-lg text-center hover:bg-black p-1 hover:text-white '>Sign up</span>
       {/* <button onClick={() => setIsSignUp(true)} className="text-blue-600 text-semibold rounded-lg text-center hover:bg-black p-1 hover:text-white ">Sign up</button> */}
@@ -123,7 +123,7 @@ export default function SignIn() {
   {error && <p className='text-red-500 mt-5'>{error}</p>}
   </div>
   
-      <div className={`z-10 p-10 max-w-lg mx-auto bg-black flex-1 rounded-3xl m-2 mr-2 text-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-full opacity-0'}`} >
+      <div className={`z-10 p-10 max-w-lg mx-auto bg-black flex-1 rounded-3xl m-2 mr-2 ml-2 md:mr-2 text-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-full opacity-0'}`} >
         <h1 className='text-3xl text-semibold'>Welcome Back!</h1>
         <br/>
         <p>Your new property is just a step away.</p>
