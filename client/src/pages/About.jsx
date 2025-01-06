@@ -17,22 +17,22 @@ useEffect(() => {
     };
   }, [dispatch]);
   return (
-    <div className="bg-black flex flex-col items-center justify-center px-4">
-      <div className="bg-blue-100 text-gray-800 p-16 rounded-3xl shadow-md mt-20">
+    <div className="bg-blue-100 flex flex-col items-center justify-center px-4 w-screen">
+      <div className="bg-blue-100 text-gray-800 rounded-3xl shadow-md mt-16 md:mt-20  w-screen">
         <h2 className={`text-3xl font-bold mb-4 text-blue-600 text-center transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           }`}>
           Our Company Policies & Guidelines
         </h2>
-        <p className="text-lg mb-6">
+        <p className="text-lg mb-6 pl-2">
           At <span className="font-semibold">iBuy</span>, we are committed to
           delivering transparent, reliable, and customer-centric real estate
           solutions. Our policies ensure trust, quality, and compliance at every
           step.
         </p>
 
-        <div className="flex flex-row gap-9 ">
-          <div className="flex-1 bg-slate-300 rounded-2xl p-3">
+        <div className="flex flex-row gap-9 flex-wrap w-screen md:w-fit ">
+          <div className=" bg-slate-300 rounded-2xl p-3 w-screen md:flex-1">
             <h3 className={`text-2xl font-semibold mb-3 transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           }`}>Our Core Policies:</h3>
@@ -62,7 +62,7 @@ useEffect(() => {
             </ul>
           </div>
 
-          <div className="flex-1 bg-slate-300 rounded-2xl p-3">
+          <div className="md:flex-1 bg-slate-300 rounded-2xl p-3 w-screen">
             <h3 className={`text-2xl font-semibold mt-6 mb-3 transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "-translate-x-60 opacity-0"
           }`}>

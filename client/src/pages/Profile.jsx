@@ -65,25 +65,25 @@ const handleSignOut = async ()=>{
 // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Use a proxy to bypass CORS
 //   const avatarUrl = `${proxyUrl}${currentUser.avatar}`;
   return (
-    <div className='absolute bg-black w-full min-h-screen'>
-      <div className=' flex  gap-10 m-auto w-11/12 md:w-3/4 rounded-lg  h-auto mt-20 p-5  md:pl-44 flex-col md:flex-row'>
-        <div className='flex flex-col items-center  '>
+    <div className='absolute bg-blue-100 w-full min-h-screen'>
+      <div className='flex  gap-10 m-auto w-11/12 md:w-3/4 rounded-lg  h-auto mt-20 md:mt-36 flex-col md:flex-row '>
+        <div className='flex flex-col items-center md:m-auto md:mr-5 '>
         <input type="file" ref={fileRef} hidden accept='image/*'/>
-        <img onClick={()=>fileRef.current.click()} className={`rounded-full h-40 w-40 object-cover cursor-pointer  mt-2 transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : '-translate-x-full opacity-0'}`} src={currentUser?.avatar||"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} style={{ imageRendering: 'auto' }} alt="Profile" onError={(e) => (e.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")}/>
+        <img onClick={()=>fileRef.current.click()} className={`rounded-full h-40 w-40 object-cover cursor-pointer transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : '-translate-x-full opacity-0'}`} src={currentUser?.avatar||"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} style={{ imageRendering: 'auto' }} alt="Profile" onError={(e) => (e.target.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")}/>
         </div>
-        <div className='flex flex-col gap-2 text-white '>
-          <h1 className={`text-3xl mt-3 transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-60 opacity-0'}`}>{currentUser.username}</h1>
-          <span className='flex flex-wrap gap-2'>
-          <span className='flex gap-2'><FaLocationArrow className='mt-1 text-blue-500'/> Ghaziabad, Uttar Pradesh</span>
-          <span className='flex gap-2'><FaShare className='mt-1 text-blue-500'/> Nishit_sharma.in</span></span>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis tenetur non suscipit! Lorem ipsum dolor sit amet.</p>
-          <div className='flex gap-2 p-2 pl-0 text-white'>
+        <div className='flex flex-col gap-2 text-slate-800  text-center md:text-left md:m-auto md:ml-0'>
+          <h1 className={`text-3xl transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-60 opacity-0'}`}>{currentUser.username}</h1>
+          <span className='flex flex-wrap gap-2 text-center md:text-left m-auto md:m-0'>
+          <span className='flex gap-2'><FaLocationArrow className='mt-1 text-blue-500'/>India</span>
+          <span className='flex gap-2'><FaShare className='mt-1 text-blue-500'/>{currentUser.username}.in</span></span>
+          <p>"Turning Dreams into Reality, One Property at a Time."</p>
+          <div className='flex gap-2 p-2 pl-0 text-white m-auto md:m-0'>
             <p className='p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl backdrop-blur-lg bg-opacity-50'>Home</p>
             <p className='p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl backdrop-blur-lg bg-opacity-50'>Real Estate</p>
             <p className='p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl backdrop-blur-lg bg-opacity-50'>Properties</p>
           </div>
-          <div className='flex w-full md:w-72 gap-2 items-center'>
-          <input type="text" placeholder='email' autoComplete='additional-name' className='border p-2 w-60 rounded-lg text-green-700' id='email' defaultValue={currentUser.email}/>
+          <div className='flex w-full md:w-72 items-center'>
+          <input type="text" placeholder='email' autoComplete='additional-name' className='border p-2 w-60 rounded-lg text-green-700 m-auto' id='email' defaultValue={currentUser.email}/>
           <Checkmark size='medium'/>
           </div>
         </div>
@@ -92,9 +92,9 @@ const handleSignOut = async ()=>{
 
 
 
-     <div className=' flex h-auto md:h-72 m-auto items-center justify-center gap-5 rounded-3xl text-white flex-col md:flex-row'>
+     <div className='p-2 flex h-auto md:h-72 m-auto items-center justify-center gap-5 rounded-3xl text-white flex-col md:flex-row mt-5'>
 
-      <div className={` h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : '-translate-x-full opacity-0'}`}>
+      {/* <div className={` h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : '-translate-x-full opacity-0'}`}>
         <h1 className='mt-3 text-2xl font-bold items-center'>Want to sell your property🏠?</h1>
         <div className='items-center text-center'>
           <p className=''>Make the first step with us.</p>
@@ -105,18 +105,18 @@ const handleSignOut = async ()=>{
         <Link className=' m-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-3 text-center uppercase font-semibold text-white hover:opacity-95 disabled:opacity-85 items-center' to={"/create-listing"}>
         create listing
         </Link>
-      </div>
+      </div> */}
 
 
-        <div className='flex flex-col justify-between h-auto md:h-64 w-full md:w-96 gap-5 rounded-3xl'>
-        <div className={`bg-black border-solid border-4 border-white rounded-3xl h-28 w-full md:w-96 flex flex-col items-center text-white transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-full' : 'translate-y-60 opacity-0'}`}>
+        <div className=' mb-5 flex flex-col md:flex-row items-center h-auto md:h-64 w-auto gap-5 rounded-3xl'>
+        <div className={`bg-blue-300 m-auto rounded-3xl h-32 w-full md:w-96 flex flex-col items-center text-slate-900 transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-full' : 'translate-y-60 opacity-0'}`}>
           <p className='items-center p-2'>Do you want to delete your Account? </p>
         <button onClick={handleDeleteUser} className='text-red-700 cursor-pointer bg-white p-3  rounded-3xl m-auto'>
           Delete account
         </button>
         </div>
-        <div className={`bg-black border-solid border-4 border-white rounded-3xl h-28 w-full md:w-96 flex flex-col text-white items-center transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-full' : '-translate-y-60 opacity-0'}`}>
-          <p className='items-center p-2'> signOut from  your account. click here</p>
+        <div className={`bg-blue-300 m-auto rounded-3xl h-32 w-full md:w-96 flex flex-col text-slate-900 items-center transition-all duration-[2000ms] ${animate ? 'translate-y-0 opacity-full' : '-translate-y-60 opacity-0'}`}>
+          <p className='items-center p-2'> Sign-out from  your account.</p>
         <button onClick={handleSignOut} className='text-red-700 cursor-pointer bg-white p-3 rounded-3xl m-auto '>
           Sign Out
         </button>
@@ -124,7 +124,7 @@ const handleSignOut = async ()=>{
       </div>
 
 
-      <div className={`h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-full opacity-0'}`}>
+      {/* <div className={`h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-full opacity-0'}`}>
         <h1 className='mt-3 text-2xl font-bold'>Use our advance AI model?</h1>
         <div className='items-center text-center'>
           <p className=''>Find the best price for your property🏠.</p>
@@ -135,7 +135,7 @@ const handleSignOut = async ()=>{
         <Link className='m-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-3 text-center uppercase font-semibold text-white hover:opacity-95 disabled:opacity-85 items-center' to={"/price-prediction"}>
         Price evaluator
         </Link>
-      </div>
+      </div> */}
 
       </div>
 

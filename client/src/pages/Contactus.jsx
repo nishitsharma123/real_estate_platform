@@ -70,18 +70,17 @@ const ContactUs = () => {
           Contact Us
         </h1>
         <p className="text-[#555] mb-4">
-          Email, call, or complete the form to learn how Snappy can solve your
-          messaging problem.
+          We're here to make your real estate journey seamless and stress-free. Whether you’re looking to buy, sell, or simply explore your options, iBuyR is ready to assist you every step of the way.
         </p>
-        <p className="text-[#555] mb-2">info@snappy.io</p>
-        <p className="text-[#555] mb-4">321-221-231</p>
+        
         <a
           href="#"
-          className="text-white bg-black p-3 rounded-2xl cursor-pointer"
+          className="text-white bg-black p-1 rounded-lg cursor-pointer"
         >
-          Customer Support
+          Company helpline details
         </a>
-
+        <p className="text-blue-500 mt-2">info@snappy.io</p>
+        <p className="text-blue-500 mb-4">321-221-231</p>
         {/* Additional Details */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <div
@@ -133,11 +132,11 @@ const ContactUs = () => {
         }`}
       >
         <h2 className="text-2xl font-bold mb-4 text-[#333]">Get in Touch</h2>
-        <p className="text-sm text-[#555] mb-6">You can reach us anytime</p>
+        <p className="text-sm text-[#555] mb-6">You are one step away to find your dream home with iBuyr</p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col">
-          <div className="flex gap-4 mb-4">
+          <div className="flex gap-4 mb-4 flex-wrap">
             <input
               type="text"
               id="firstName"
@@ -179,11 +178,11 @@ const ContactUs = () => {
               <option value="+91">+91</option>
             </select>
             <input
-              type="tel"
+              type="number"
               id="phone"
               name="phone"
               placeholder="Phone number"
-              className="flex-1 p-3 border border-gray-300 rounded-md"
+              className="flex-1 p-3 border border-gray-300 rounded-md w-20"
               value={formData.phone}
               onChange={handleChange}
             />

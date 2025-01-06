@@ -1,6 +1,6 @@
 // import React from 'react';
-import React, { useState, useEffect } from "react";
-import { FaSearch } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
+import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { FaHome } from 'react-icons/fa';
@@ -12,6 +12,11 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [animate, setAnimate] = useState(false);
   const dispatch = useDispatch();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+
+
   const controlHeader = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
@@ -47,16 +52,50 @@ export default function Header() {
     }
   }, [lastScrollY]);
 
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+
+   useEffect(() => {
+    // Prevent scrolling when menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Clean up
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    // Close menu on clicking outside
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Use a proxy to bypass CORS
   // const avatarUrl = `${proxyUrl}${currentUser.avatar}`;
 
   return (
     <header
-      className={`bg-black  bg-opacity-40 backdrop-blur-sm fixed z-20 w-screen transition-transform duration-300 ${
+      className={`bg-blue-400 bg-opacity-40 backdrop-blur-sm fixed z-20 w-screen transition-transform duration-300 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
+      <div className="flex justify-between items-center max-w-6xl mx-auto p-1">
         <Link to="/">
           <h1
             className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
@@ -66,10 +105,16 @@ export default function Header() {
             }`}
           >
             <span className="text-red-600">i</span>
-            <span className="text-white ">Buy</span>
+            <span className="text-white ">Buyr</span>
           </h1>
         </Link>
-        <form className="bg-white p-3 rounded-lg flex items-center ">
+        <div className="sm:hidden">
+  <button onClick={toggleMenu} className="text-white text-2xl">
+    {isMenuOpen ? <FaTimes className="mr-3" /> : <FaBars className="mr-3" />}
+  </button>
+</div>
+
+        {/* <form className="bg-white p-3 rounded-lg flex items-center ">
           <input
             type="text"
             id="search"
@@ -77,30 +122,44 @@ export default function Header() {
             className="bg-transparent focus:outline-none w-24 sm:w-64 text-black"
           />
           <FaSearch className="text-black" />
-        </form>
+        </form> */}
         <ul
           className={`flex gap-4 items-center transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          }`}>
+          } ${
+    isMenuOpen
+      ? "flex flex-col fixed top-14 right-0 bg-blue-400 bg-opacity-40 backdrop-blur-md p-4 w-2/3 h-screen"
+      : "hidden"
+  } sm:flex sm:flex-row  `}>
           <Link to="/dashboard">
-            <li className="hidden rounded-3xl p-2 sm:inline text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               Dashboard
             </li>
           </Link>
+          <Link to="/price-prediction">
+            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+              PropValue
+            </li>
+          </Link>
+          <Link to="/FAQs">
+            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+              FAQs
+            </li>
+          </Link>
            <Link to="/contact-us">
-            <li className="hidden rounded-3xl p-2 sm:inline text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               Contact us
             </li>
           </Link>
           <Link to="/about">
-            <li className="hidden rounded-3xl p-2 sm:inline text-white hover:bg-white hover:text-black transition duration-300 ease-in-out ">
+            <li onClick={closeMenu} className=" rounded-3xl p-2 sm:inline text-black md:text-white hover:bg-white hover:text-black transition duration-300 ease-in-out ">
               About
             </li>{" "}
           </Link>
 
           <Link to="/profile">
             {currentUser ? (
-              <img
+              <img onClick={closeMenu}
                 className="rounded-full h-7 w-7 object-cover"
                 src={
                   currentUser?.avatar ||
@@ -113,7 +172,7 @@ export default function Header() {
                 }
               />
             ) : (
-              <li className="text-white rounded-3xl p-2  hover:bg-white hover:text-black hover:backdrop-blur-sm transition duration-300 ease-in-out">
+              <li onClick={closeMenu} className="text-black md:text-white rounded-3xl p-2  hover:bg-white hover:text-black hover:backdrop-blur-sm transition duration-300 ease-in-out hidden">
                 Sign in
               </li>
             )}
