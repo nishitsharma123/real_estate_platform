@@ -152,7 +152,7 @@ export default function SignIn() {
             </button>
             <OAuth />
           </form>
-          <div className="flex gap-2 mt-5">
+          <div className="flex gap-2 mt-5 justify-between">
             <p>Don't have an account?</p>
             <Link to={"/sign-up"}>
               <span className="text-blue-600 text-semibold rounded-lg text-center hover:bg-black p-1 hover:text-white ">

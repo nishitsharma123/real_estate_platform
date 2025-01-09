@@ -350,7 +350,7 @@ const PredictPrice = () => {
         </form> */}
        
       </div>
-      <div className=" flex-col  text-white min-w-96 bg-gradient-to-r from-blue-500 to-purple-600 bg-opacity-15 backdrop-blur-3xl shadow-2xl rounded-2xl p-8 mt-10 w-full md:w-2/4">
+      <div className=" flex-col  text-white bg-gradient-to-r from-blue-500 to-purple-600 bg-opacity-15 backdrop-blur-3xl shadow-2xl rounded-2xl p-8 mt-10 w-full md:w-2/4">
         <div className={`bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-lg shadow-lg m-auto transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           }`}>
