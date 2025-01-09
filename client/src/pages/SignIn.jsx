@@ -11,12 +11,8 @@ import OAuth from "../components/OAuth.jsx";
 // import bgVideo from '../data/bgvideo.mp4';
 import { FaUser } from "react-icons/fa";
 
-// ----------------
-// const adminCredentials = {
 const adminEmail = import.meta.env.ADMIN_EMAIL;
 const adminPassword = import.meta.env.ADMIN_PASSWORD;
-// };
-// -----------------
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -37,16 +33,6 @@ export default function SignIn() {
       setAnimate(false);
     };
   }, [dispatch]);
-
-  // useEffect(() => {
-  //   // Refresh the page after 5 seconds if an error occurs
-  //   if (error) {
-  //     const timer = setTimeout(() => {
-  //       window.location.reload();
-  //     }, 2000);
-  //     return () => clearTimeout(timer); // Cleanup the timer on component unmount
-  //   }
-  // }, [error]);
 
   const handleChange = (e) => {
     setFormData({

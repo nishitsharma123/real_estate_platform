@@ -79,8 +79,6 @@ const App = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     useEffect(() => {
-        // Clear the error state when the component mounts
-        // dispatch(signUpFailure(null));
         const timer = setTimeout(() => {
           setAnimate(true);
         }, 100);

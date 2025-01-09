@@ -16,13 +16,6 @@ const ContactUs = () => {
     countryCode: "+91",
   });
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
    const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -48,8 +41,6 @@ const ContactUs = () => {
 
   // ------------------------------------
   useEffect(() => {
-    // Clear the error state when the component mounts
-    // dispatch(signUpFailure(null));
     const timer = setTimeout(() => {
       setAnimate(true);
     }, 100);
@@ -58,6 +49,7 @@ const ContactUs = () => {
       setAnimate(false);
     };
   }, [dispatch]);
+  
   return (
     <div className="flex flex-wrap justify-between items-start p-8 bg-blue-100 font-sans">
       {/* Left Section */}

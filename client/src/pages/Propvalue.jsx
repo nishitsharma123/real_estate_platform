@@ -2387,9 +2387,8 @@ const owner = {
   "Co-operative Society": [],
 };
 const types = {
-    Flat: [],
-
-}
+  Flat: [],
+};
 
 const PredictPrice = () => {
   const [errors, setErrors] = useState({});
@@ -2475,12 +2474,12 @@ const PredictPrice = () => {
     });
   };
   const handletypeChange = (e) => {
-     setFormData({
+    setFormData({
       ...formData,
       type: e.target.value,
       // location: '', // Reset location when city changes
     });
-  }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -2543,240 +2542,232 @@ const PredictPrice = () => {
   };
 
   return (
-  
     <div className="min-h-screen gap-5  justify-center px-6 py-8 bg-blue-100">
       <div className="bg-blue-100 rounded-2xl p-8 flex flex-col  w-full transform transition-transform duration-500 mt-10 ">
-        
         <form
           onSubmit={handleSubmit}
           className="space-y-6  items-center justify-center p-6 rounded-3xl bg-white w-full "
         >
-            <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
-          <div className="flex flex-col mt-6 p-5 bg-blue-300 w-fit rounded-3xl h-36 justify-between bg-opacity-50">
-            <label htmlFor="city" className="text-gray-700 mb-2 text-center font-bold">
-              City
-            </label>
-            <select
-              id="city"
-              name="city"
-              value={formData.city}
-              onChange={handleCityChange}
-              className="border border-gray-900 bg-white w-56 rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select a city</option>
-              {Object.keys(cities).map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-          
-          </div>
-
-          <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
-            <label
-              htmlFor="location"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-              Location
-            </label>
-            <select
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleLocationChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-              disabled={!formData.city}
-            >
-              <option value="">Select a location</option>
-              {formData.city &&
-                [...new Set(cities[formData.city])].map((location) => (
-                  <option key={location} value={location}>
-                    {location}
+          <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 w-fit rounded-3xl h-36 justify-between bg-opacity-50">
+              <label
+                htmlFor="city"
+                className="text-gray-700 mb-2 text-center font-bold"
+              >
+                City
+              </label>
+              <select
+                id="city"
+                name="city"
+                value={formData.city}
+                onChange={handleCityChange}
+                className="border border-gray-900 bg-white w-56 rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select a city</option>
+                {Object.keys(cities).map((city) => (
+                  <option key={city} value={city}>
+                    {city}
                   </option>
                 ))}
-            </select>
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
+              <label
+                htmlFor="location"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Location
+              </label>
+              <select
+                id="location"
+                name="location"
+                value={formData.location}
+                onChange={handleLocationChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+                disabled={!formData.city}
+              >
+                <option value="">Select a location</option>
+                {formData.city &&
+                  [...new Set(cities[formData.city])].map((location) => (
+                    <option key={location} value={location}>
+                      {location}
+                    </option>
+                  ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
+              <label
+                htmlFor="transaction"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Transaction
+                <span className="text-sm font-mono text-red-900">
+                  (Resale/New)
+                </span>
+              </label>
+              <select
+                id="transaction"
+                name="transaction"
+                value={formData.transaction}
+                onChange={handletransactionChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select a transaction</option>
+                {Object.keys(transactions).map((transaction) => (
+                  <option key={transaction} value={transaction}>
+                    {transaction}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 rounded-3xl bg-blue-300 h-36 justify-between w-fit bg-opacity-50">
+              <label
+                htmlFor="status"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Status
+              </label>
+              <select
+                id="status"
+                name="status"
+                value={formData.status}
+                onChange={handlestatusChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select status</option>
+                {Object.keys(statuses).map((status) => (
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50">
+              <label
+                htmlFor="facing"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Facing
+              </label>
+              <select
+                id="facing"
+                name="facing"
+                value={formData.facing}
+                onChange={handlefacingChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select a facing</option>
+                {Object.keys(facings).map((facing) => (
+                  <option key={facing} value={facing}>
+                    {facing}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
+              <label
+                htmlFor="ownership"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Ownership
+              </label>
+              <select
+                id="ownership"
+                name="ownership"
+                value={formData.ownership}
+                onChange={handleownerChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select owner</option>
+                {Object.keys(owner).map((ownership) => (
+                  <option key={ownership} value={ownership}>
+                    {ownership}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
+              <label
+                htmlFor="type"
+                className="text-gray-700 font-bold mb-2 text-center"
+              >
+                Type
+              </label>
+              <select
+                id="type"
+                name="type"
+                value={formData.type}
+                onChange={handletypeChange}
+                className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
+              >
+                <option value="">Select type</option>
+                {Object.keys(types).map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
- <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
-            <label
-              htmlFor="transaction"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-              Transaction<span className="text-sm font-mono text-red-900">(Resale/New)</span>
-            </label>
-            <select
-              id="transaction"
-              name="transaction"
-              value={formData.transaction}
-              onChange={handletransactionChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select a transaction</option>
-              {Object.keys(transactions).map((transaction) => (
-                <option key={transaction} value={transaction}>
-                  {transaction}
-                </option>
-              ))}
-            </select>
-          </div>
+          <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-3/4 justify-self-center" />
 
-<div className="flex flex-col mt-6 p-5 rounded-3xl bg-blue-300 h-36 justify-between w-fit bg-opacity-50">
-            <label
-              htmlFor="status"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-              Status
-            </label>
-            <select
-              id="status"
-              name="status"
-              value={formData.status}
-              onChange={handlestatusChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select status</option>
-              {Object.keys(statuses).map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-
-<div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50">
-            <label
-              htmlFor="facing"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-              Facing
-            </label>
-            <select
-              id="facing"
-              name="facing"
-              value={formData.facing}
-              onChange={handlefacingChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select a facing</option>
-              {Object.keys(facings).map((facing) => (
-                <option key={facing} value={facing}>
-                  {facing}
-                </option>
-              ))}
-            </select>
-          </div>
-
-
- <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
-            <label
-              htmlFor="ownership"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-              Ownership
-            </label>
-            <select
-              id="ownership"
-              name="ownership"
-              value={formData.ownership}
-              onChange={handleownerChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select owner</option>
-              {Object.keys(owner).map((ownership) => (
-                <option key={ownership} value={ownership}>
-                  {ownership}
-                </option>
-              ))}
-            </select>
-          </div>
-
-
-<div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
-            <label
-              htmlFor="type"
-              className="text-gray-700 font-bold mb-2 text-center"
-            >
-            Type
-            </label>
-            <select
-              id="type"
-              name="type"
-              value={formData.type}
-              onChange={handletypeChange}
-              className="border border-gray-900 w-56 bg-white rounded-lg px-4 py-3 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300"
-            >
-              <option value="">Select type</option>
-              {Object.keys(types).map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
-          </div>
-
-        
-
-          </div>
-
-         <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-3/4 justify-self-center"/>
-
-          
-
-          
-
-         
           <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
+            {Object.keys(formData).map(
+              (key) =>
+                key !== "city" &&
+                key !== "location" &&
+                key !== "transaction" &&
+                key !== "status" &&
+                key !== "facing" &&
+                key !== "type" &&
+                key !== "ownership" && (
+                  <div key={key} className="flex flex-col mt-6 p-5">
+                    <label
+                      htmlFor={key}
+                      className="text-gray-700 font-semibold mb-2 capitalize text-center"
+                    >
+                      {key.replace(/_/g, " ")}
+                    </label>
+                    <input
+                      type={
+                        key === "Rate_per_sqft" ||
+                        key === "total_area" ||
+                        key === "bedroom" ||
+                        key === "balcony" ||
+                        key === "bathroom" ||
+                        key === "BHK"
+                          ? "number"
+                          : "text"
+                      }
+                      id={key}
+                      name={key}
+                      value={formData[key]}
+                      onChange={handleChange}
+                      className="border-b-2 border-gray-900 rounded-3xl w-56 px-4 py-3  transition-all duration-300"
+                      placeholder={`Enter ${key.replace(/_/g, " ")}`}
+                    />
+                  </div>
+                )
+            )}
+          </div>
 
-          {Object.keys(formData).map(
-            (key) =>
-              key !== "city" &&
-              key !== "location" &&
-              key !== "transaction" &&
-              key !== "status" &&
-              key !== "facing" &&
-              key !== "type" &&
-              key !== "ownership" && (
-                <div key={key} className="flex flex-col mt-6 p-5">
-                  <label
-                    htmlFor={key}
-                    className="text-gray-700 font-semibold mb-2 capitalize text-center"
-                  >
-                    {key.replace(/_/g, " ")}
-                  </label>
-                  <input
-                    type={
-                      key === "Rate_per_sqft" ||
-                      key === "total_area" ||
-                      key === "bedroom" ||
-                      key === "balcony" ||
-                      key === "bathroom" ||
-                      key === "BHK"
-                        ? "number"
-                        : "text"
-                    }
-                    id={key}
-                    name={key}
-                    value={formData[key]}
-                    onChange={handleChange}
-                    className="border-b-2 border-gray-900 rounded-3xl w-56 px-4 py-3  transition-all duration-300"
-                    placeholder={`Enter ${key.replace(/_/g, " ")}`}
-                  />
-                </div>
-              )
-          )}
-</div>
-         
           <div className="m-auto justify-center w-fit">
-          <button
-            type="submit"
-            className="p-14  bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:translate-y-1"
-          >
-            Predict Price
-          </button>
+            <button
+              type="submit"
+              className="p-14  bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:translate-y-1"
+            >
+              Predict Price
+            </button>
           </div>
         </form>
-         {predictedPrice !== null && (
+        {predictedPrice !== null && (
           <div
             className="mt-5 p-6 bg-gradient-to-r from-green-100 to-green-50 text-green-800 rounded-xl shadow-inner text-center"
             style={{
@@ -2792,7 +2783,6 @@ const PredictPrice = () => {
             {error}
           </p>
         )}
-       
       </div>
     </div>
   );

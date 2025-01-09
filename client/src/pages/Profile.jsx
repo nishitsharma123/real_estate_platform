@@ -18,55 +18,12 @@ import { Checkmark } from "react-checkmark";
 // import { animate } from 'framer-motion';
 import { useEffect, useState } from "react";
 
-// import {
-//   getDownloadURL,
-//   getStorage,
-//   ref,
-//   uploadBytesResumable,
-// } from "firebase/storage";
-
-
-
 export default function Profile() {
   const { currentUser } = useSelector((state) => state.user);
   const [file, setFile] = useState(null);
   const fileRef = useRef(null);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
-  // const [filePerc, setFilePerc] = useState(0);
-  // const [fileUploadError, setFileUploadError] = useState(false);
-  // const [formData, setFormData] = useState({});
-  // console.log(formData);
-//   useEffect(() => {
-//     if (file) {
-//       handleFileUpload(file);
-//     }
-//   }, [file]);
-
-//   const handleFileUpload = (file) => {
-//     const storage = getStorage(app);
-//     const fileName = new Date().getTime() + file.name;
-//     const storageRef = ref(storage, fileName);
-//     const uploadTask = uploadBytesResumable(storageRef, file);
-
-//     uploadTask.on(
-//       "state_changed",
-//       (snapshot) => {
-//         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-//       // console.log('Upload is ' + progress + '% done');
-//         setFilePerc(Math.round(progress));
-//       },
-//       (error) => {
-//         setFileUploadError(true);
-//       },
-//       () => {
-//       getDownloadURL(uploadTask.snapshot.ref).then
-//       ((downloadURL) => 
-//         setFormData({ ...formData, avatar: downloadURL })
-//       );
-//     }
-//   );
-// };
 
   useEffect(() => {
     // Clear the error state when the component mounts
@@ -81,14 +38,12 @@ export default function Profile() {
   }, [dispatch]);
 
   useEffect(() => {
-  if (currentUser.avatar) {
-    localStorage.setItem('avatar', currentUser.avatar);
-  }
-}, [currentUser.avatar]);
+    if (currentUser.avatar) {
+      localStorage.setItem("avatar", currentUser.avatar);
+    }
+  }, [currentUser.avatar]);
 
-const avatarUrl = localStorage.getItem('avatar');
-
-
+  const avatarUrl = localStorage.getItem("avatar");
 
   const handleDeleteUser = async () => {
     try {
@@ -122,30 +77,6 @@ const avatarUrl = localStorage.getItem('avatar');
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     dispatch(updateUserStart());
-  //     const res = await fetch(`api/user/update/${currentUser._id}`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body:JSON.stringify(formData),
-  //     });
-  //     const data = await res.json();
-  //     if(data.success===false){
-  //       dispatch(updateUserFailure(data.message));
-  //       return;
-  //     }
-
-  //     dispatch(updateUserSuccess(data));
-  //   } catch (error) {
-  //     dispatch(updateUserFailure(error.message));
-  //   }
-
-  // }
-
   return (
     <div className="absolute bg-blue-100 w-full min-h-screen">
       <div className="flex  gap-10 m-auto w-11/12 md:w-3/4 rounded-lg  h-auto mt-20 md:mt-36 flex-col md:flex-row ">
@@ -157,7 +88,8 @@ const avatarUrl = localStorage.getItem('avatar');
             hidden
             accept="image/*"
           />
-          <img className={`rounded-full h-40 w-40 object-cover cursor-pointer transition-all duration-[2000ms] ${
+          <img
+            className={`rounded-full h-40 w-40 object-cover cursor-pointer transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-full"
                 : "-translate-x-full opacity-0"
@@ -222,19 +154,6 @@ const avatarUrl = localStorage.getItem('avatar');
       </div>
 
       <div className="p-2 flex h-auto md:h-72 m-auto items-center justify-center gap-5 rounded-3xl text-white flex-col md:flex-row mt-5">
-        {/* <div className={` h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : '-translate-x-full opacity-0'}`}>
-        <h1 className='mt-3 text-2xl font-bold items-center'>Want to sell your property🏠?</h1>
-        <div className='items-center text-center'>
-          <p className=''>Make the first step with us.</p>
-          <p> At iBuy, we are revolutionizing the real estate experience with fast, accurate, and reliable services designed to meet your needs.
-          </p>
-        </div>
-        
-        <Link className=' m-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-3 text-center uppercase font-semibold text-white hover:opacity-95 disabled:opacity-85 items-center' to={"/create-listing"}>
-        create listing
-        </Link>
-      </div> */}
-
         <div className=" mb-5 flex flex-col md:flex-row items-center h-auto md:h-64 w-auto gap-5 rounded-3xl">
           <div
             className={`bg-blue-300 m-auto rounded-3xl h-32 w-full md:w-96 flex flex-col items-center text-slate-900 transition-all duration-[2000ms] ${
@@ -269,19 +188,6 @@ const avatarUrl = localStorage.getItem('avatar');
             </button>
           </div>
         </div>
-
-        {/* <div className={`h-64 w-full md:w-96 rounded-3xl flex flex-col items-center border-solid border-4 border-white transition-all duration-[2000ms] ${animate ? 'translate-x-0 opacity-full' : 'translate-x-full opacity-0'}`}>
-        <h1 className='mt-3 text-2xl font-bold'>Use our advance AI model?</h1>
-        <div className='items-center text-center'>
-          <p className=''>Find the best price for your property🏠.</p>
-          <p> At iBuy, we are revolutionizing the real estate experience with fast, accurate, and reliable services designed to meet your needs.
-          </p>
-        </div>
-       
-        <Link className='m-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-3 text-center uppercase font-semibold text-white hover:opacity-95 disabled:opacity-85 items-center' to={"/price-prediction"}>
-        Price evaluator
-        </Link>
-      </div> */}
       </div>
     </div>
   );
