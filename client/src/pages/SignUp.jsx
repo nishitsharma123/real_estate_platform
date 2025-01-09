@@ -7,6 +7,14 @@ import bgVideo from '../data/bgvideo.mp4';
 import { FaUser } from 'react-icons/fa';
 import { signUpFailure, signUpSuccess, signUpStart } from '../redux/user/userSlice';
 
+// -----------
+// const adminCredentials = {
+  const adminEmail = import.meta.env.ADMIN_EMAIL;
+  const adminPassword = import.meta.env.ADMIN_PASSWORD;
+// };
+// ----------
+
+
 export default function SignUp() {
   const [formData, setFormData] = useState({})
   const {loading, error} = useSelector((state) => state.user);
@@ -43,6 +51,26 @@ const [animate, setAnimate] = useState(false);
     try {
 
       dispatch(signUpStart());
+
+// ===========
+      if (
+        formData.email === adminEmail &&
+        formData.password === adminPassword
+      ) {
+        const adminData = { ...formData, role: 'admin' };
+        dispatch(signUpSuccess(adminData));
+        navigate('/sign-in');
+        return;
+      }
+
+// ===========
+
+
+
+
+
+
+
       const res = await fetch('/api/auth/signup',
       {
         method: 'POST',

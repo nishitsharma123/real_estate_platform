@@ -11,7 +11,7 @@ import PredictPrice from "./pages/PriceEvaluate";
 import Dashboard from "./pages/Dashboard";
 import Contactus from "./pages/Contactus";
 import Faq from "./pages/Faq";
-
+import Propvalue from "./pages/Propvalue";
 export default function App() {
 
 
@@ -27,15 +27,16 @@ export default function App() {
       <Route  element={<PrivateRoute />} >
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-listing" element={<CreateListing />} />
-      <Route path="/price-prediction" element={<PredictPrice />} />
+      
       <Route path="/dashboard" element={<Dashboard />} />
 
       </Route>
+      <Route path="/price-prediction" element={<PredictPrice />} />
       <Route path="/contact-us" element={<Contactus />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/faq" element={<Faq/>} />
-      
+      <Route path="/propvalue" element={<Propvalue/>}/>
       
     </Routes>
    

@@ -1,6 +1,7 @@
 //import { errorHandler } from "./error";
 //import jwt from "jsonwebtoken";
 import jwt from "jsonwebtoken";
+import { errorHandler } from "../utils/error.js";
 // Used to handle errors in the application
 export const verifyToken = (req, res, next) => {
   // Get token from cookies

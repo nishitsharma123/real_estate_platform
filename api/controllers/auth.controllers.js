@@ -8,11 +8,36 @@ export const signup = async (req, res, next) => {
   // get user data from request body
   const { username, email, password } = req.body;
   const hashedPassword = bcryptjs.hashSync(password, 10);
-  const newUser = new User({ username, email, password: hashedPassword });
+  // Check for admin credentials
+  const adminEmail = process.env.ADMIN_EMAIL;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  let role = "user";
+  // console.log("Admin Email: ", adminEmail);
+  // console.log("Admin Password: ", adminPassword);
+  // console.log(typeof process.env.ADMIN_EMAIL); // Should be 'string'
+  // console.log(typeof process.env.ADMIN_PASSWORD);
+  // console.log("Provided Email: ", email);
+  // console.log("Provided Password: ", password);
+  // console.log(typeof email); // Should be 'string'
+  // console.log(typeof password);
+  if (email === adminEmail && password === adminPassword) {
+    role = "admin";
+    // console.log("Admin Role Assigned");
+  }
+
+  // const newUser = new User({ username, email, password: hashedPassword, role });
+  const newUser = new User({
+    username,
+    email,
+    password: hashedPassword,
+    role, // Include the role field when creating the new user
+  });
   try {
     // save user to database
     await newUser.save();
     res.status(201).json("user created successfully");
+    // const { password: pass, ...userWithoutPassword } = newUser._doc;
+    // res.status(201).json(userWithoutPassword);
   } catch (error) {
     next(error);
   }
@@ -38,7 +63,8 @@ export const signin = async (req, res, next) => {
     res
       .cookie("access_token", token, { httpOnly: true })
       .status(200)
-      .json(rest);
+      .json({ ...rest, role: validUser.role });
+    // role: validUser.role;
   } catch (error) {
     next(error);
   }

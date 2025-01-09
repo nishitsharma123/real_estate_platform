@@ -14,7 +14,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
-
+  // const { role } = useSelector((state) => state.user);
 
 
   const controlHeader = () => {
@@ -136,6 +136,13 @@ export default function Header() {
               Dashboard
             </li>
           </Link>
+          {currentUser && currentUser.role === 'admin' &&  (
+            <Link to="/create-listing">
+              <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-30 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+                Create Listing
+              </li>
+              </Link>
+            )}
           <Link to="/price-prediction">
             <li onClick={closeMenu} className="w-56 text-center rounded-xl bg-opacity-30 md:rounded-3xl text-white bg-blue-500 p-2 md:bg-transparent sm:inline  md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
               PropValue
