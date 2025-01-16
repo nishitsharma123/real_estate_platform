@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import {
@@ -8,13 +8,14 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-
+import { useParams } from "react-router-dom";
 export default function CreateListing() {
   const [files, setFiles] = useState([]);
   const { currentUser } = useSelector((state) => state.user);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const params = useParams();
   const [formData, setFormData] = useState({
     imageUrls: [],
     name: "",
@@ -57,6 +58,23 @@ export default function CreateListing() {
       setUploading(false);
     }
   };
+
+useEffect(()=>{
+    const fetchListing = async () => {
+        const listingId = params.listingId;
+        const res = await fetch(`/api/listing/get/${listingId}`);
+        const data = await res.json();
+        if(data.success===false){
+            // setError(data.message);
+            console.log(data.message);
+            return;
+        }
+        setFormData(data);
+        console.log(formData);
+    }
+    fetchListing();
+}, []);
+
 
   const storeImage = async (file) => {
     return new Promise((resolve, reject) => {
@@ -137,7 +155,7 @@ export default function CreateListing() {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch("/api/listing/create", {
+      const res = await fetch(`/api/listing/update/${params.listingId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,11 +181,11 @@ export default function CreateListing() {
   return (
     <div className="absolute bg-blue-100 w-screen min-h-screen">
       <main className="p-3 max-w-6xl mx-auto bg-blue-100 mt-20 ">
-        <h1 className="text-green-600 text-3xl text-center font-mono font-bold ">
+        {/* <h1 className="text-green-600 text-3xl text-center font-mono font-bold ">
           Admin access granted
-        </h1>
+        </h1> */}
         <h1 className="text-3xl font-semibold text-center my-7 ">
-          Create a Listing
+          update Listing
         </h1>
 
         <form
@@ -384,7 +402,7 @@ export default function CreateListing() {
               disabled={loading || uploading}
               className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
             >
-              {loading ? "creating..." : "Create listing"}
+              {loading ? "updating..." : "Update listing"}
             </button>
             {error && <p className="text-red-700 text-sm">{error}</p>}
           </div>

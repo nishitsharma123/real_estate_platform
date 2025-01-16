@@ -29,6 +29,8 @@ export default function Header() {
       setLastScrollY(window.scrollY);
     }
   };
+
+ 
   useEffect(() => {
     // Clear the error state when the component mounts
     // dispatch(signUpFailure(null));
@@ -140,6 +142,13 @@ export default function Header() {
             <Link to="/create-listing">
               <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-30 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
                 Create Listing
+              </li>
+              </Link>
+            )}
+             {currentUser && currentUser.role === 'admin' &&  (
+            <Link to="/show-listing">
+              <li onClick={closeMenu} className="w-56 text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-30 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out ">
+                Show Listing
               </li>
               </Link>
             )}

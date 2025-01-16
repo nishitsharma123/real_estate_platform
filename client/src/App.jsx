@@ -12,6 +12,9 @@ import Dashboard from "./pages/Dashboard";
 import Contactus from "./pages/Contactus";
 import Faq from "./pages/Faq";
 import Propvalue from "./pages/Propvalue";
+import ShowListing from "./pages/ShowListing";
+import UpdateListing from "./pages/UpdateListing";
+import Listing from "./pages/Listing";
 export default function App() {
 
 
@@ -23,14 +26,16 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/listing/:listingId" element={<Listing />} />
 
       <Route  element={<PrivateRoute />} >
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-listing" element={<CreateListing />} />
-      
+      <Route path="/show-listing" element={<ShowListing />} />
       <Route path="/dashboard" element={<Dashboard />} />
-
+      <Route path="/update-listing/:listingId" element={<UpdateListing />} />
       </Route>
+      
       <Route path="/price-prediction" element={<PredictPrice />} />
       <Route path="/contact-us" element={<Contactus />} />
       <Route path="/sign-in" element={<SignIn />} />
