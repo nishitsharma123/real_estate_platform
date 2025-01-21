@@ -78,7 +78,7 @@ export default function SignIn() {
       if (data.role === "admin") {
         navigate("/create-listing"); // Admin dashboard route
       } else {
-        navigate("/property-dashboard"); // Regular user dashboard route
+        navigate("/"); // Regular user dashboard route
       }
     } catch (error) {
       dispatch(signInFailure(error.message));

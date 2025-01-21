@@ -292,7 +292,7 @@ export default function Home() {
             <div>
               <img
                 alt="house image"
-                src="src/data/pngtree-housing-price-rising-up-png-image_6377590-removebg-preview (1).png"
+                src="https://media-hosting.imagekit.io//8388f62f9dfc4f03/pngtree-housing-price-rising-up-png-image_6377590-removebg-preview%20(1).png?Expires=1832097264&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=UByE-M11vkyTgn60hGe0e1WJc8OrjxuLPBmhrdF8aBgSfHht2t5vux3emi-X9QwhwrUcLWtdnEEpqoGXEEaQ00GFkcdjDbfXwsnW8DjCCEpnJeDHS70Tjo5W-y0-Wkmb5MsDmeb59MFU1EPmh2hWKRRTRMUZTHaHucP1r0uQyZUzxRqK~BFNidWgGXbWpjyH0HCLHrEO9c-REfpnoZqS4e7Ir1wDr8C5pNffMpvDkKMSCxEjkB-AAENdslYH7qu0jvqbIDLV01qci4JbJBuCAsQRoG310SJidRcTEwBHZkFMBVybKcnV0CGq1ItnJ5~SsfKMd2wPE9B9l7OnhzdVzg__"
               />
             </div>
           </div>
