@@ -8,7 +8,7 @@ import Header from './components/Header';
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
 import PredictPrice from "./pages/PriceEvaluate";
-import Dashboard from "./pages/Dashboard";
+import PropertyDashboard from "./pages/PropertyDashboard";
 import Contactus from "./pages/Contactus";
 import Faq from "./pages/Faq";
 import Propvalue from "./pages/Propvalue";
@@ -32,7 +32,7 @@ export default function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-listing" element={<CreateListing />} />
       <Route path="/show-listing" element={<ShowListing />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/property-dashboard" element={<PropertyDashboard />} />
       <Route path="/update-listing/:listingId" element={<UpdateListing />} />
       </Route>
       

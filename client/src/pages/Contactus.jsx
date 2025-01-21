@@ -61,8 +61,8 @@ const ContactUs = () => {
         >
           Contact Us
         </h1>
-        <p className="text-[#555] mb-4">
-          We're here to make your real estate journey seamless and stress-free. Whether you’re looking to buy, sell, or simply explore your options, iBuyR is ready to assist you every step of the way.
+        <p className="text-[#555] mb-4 text-lg">
+          We're here to make your real estate journey seamless and stress-free. Whether you're looking to buy, sell, or simply explore your options, ibuyr is ready to assist you every step of the way.
         </p>
         
         <a
@@ -82,8 +82,8 @@ const ContactUs = () => {
                 : "-translate-x-full opacity-0"
             }`}
           >
-            <h2 className="font-semibold text-[#333] mb-2">Customer Support</h2>
-            <p className="text-sm text-[#555]">
+            <h2 className="font-semibold text-[#333] mb-2 text-lg">Customer Support</h2>
+            <p className="text-base text-[#555]">
               Our support team is available around the clock to address any
               concerns or queries you may have.
             </p>
@@ -93,10 +93,10 @@ const ContactUs = () => {
               animate ? "translate-y-0 opacity-100" : "translate-y-60 opacity-0"
             }`}
           >
-            <h2 className="font-semibold text-[#333] mb-2">
+            <h2 className="font-semibold text-[#333] mb-2 text-lg">
               Feedback and Suggestions
             </h2>
-            <p className="text-sm text-[#555]">
+            <p className="text-base text-[#555]">
               We value your feedback and are continuously working to improve
               Snappy.
             </p>
@@ -108,8 +108,8 @@ const ContactUs = () => {
                 : "translate-x-full opacity-0"
             }`}
           >
-            <h2 className="font-semibold text-[#333] mb-2">Media Inquiries</h2>
-            <p className="text-sm text-[#555]">
+            <h2 className="font-semibold text-[#333] mb-2 text-lg">Media Inquiries</h2>
+            <p className="text-base text-[#555]">
               For media-related questions, please contact us at
               media@snappyapp.com.
             </p>
@@ -124,7 +124,7 @@ const ContactUs = () => {
         }`}
       >
         <h2 className="text-2xl font-bold mb-4 text-[#333]">Get in Touch</h2>
-        <p className="text-sm text-[#555] mb-6">You are one step away to find your dream home with iBuyr</p>
+        <p className="text-sm text-[#555] mb-6">You are one step away to find your dream home with ibuyr</p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col">

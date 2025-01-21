@@ -11,64 +11,80 @@ import { useDispatch } from 'react-redux';
 // ];
 const faqs = [
   {
-    question: 'What is iBuyr?',
-    answer: 'iBuyr is an innovative real estate platform that connects buyers, sellers, and investors to make property transactions simple, transparent, and efficient. We aim to revolutionize the way people buy and sell properties through cutting-edge technology and expert support.',
+    question: 'Where Does Ibuyr Operate?',
+    answer: 'Ibuyr is currently operational in Noida, focusing on providing streamlined property transactions in this vibrant market. Our efforts are directed toward catering to the needs of sellers and buyers within this area.',
   },
   {
-    question: 'Is iBuyr available nationwide?',
-    answer: 'Yes, iBuyr operates across multiple cities and regions, offering a diverse range of properties to cater to your needs. Check our website to explore the locations we currently serve.',
+    question: 'What Types of Homes Does Ibuyr Purchase?',
+    answer: 'Ibuyr specializes in acquiring 2, 3, and 4 BHK homes located in carefully selected societies throughout Noida. Our focus on these types of properties allows us to ensure that we cater to the needs of both sellers and buyers, providing quality options in desirable communities.',
   },
   {
-    question: 'How does iBuyr ensure transparency in transactions?',
-    answer: 'iBuyr provides verified property listings, complete document checks, and detailed property information to ensure every transaction is secure and transparent.',
+    question: 'How Does Ibuyr Streamline the Selling Process?',
+    answer: 'Ibuyr addresses the time-sensitive nature of property sales by providing immediate liquidity for your home. Acting as a guaranteed buyer, Ibuyr enables you to sell today, eliminating the delays, uncertainties, and challenges typically associated with locating buyers.',
   },
   {
-    question: 'Does iBuyr assist with legal and financial processes?',
-    answer: 'Yes, we have a team of experts to guide you through legal documentation, property registration, and financial services such as home loans and property valuation.',
+    question: 'Who Are We?',
+    answer: 'Ibuyr was founded with a mission to revolutionize the real estate market by providing fast, reliable solutions for home sellers and buyers. Led by industry professionals with deep knowledge of the local market, Ibuyr operates out of Noida, backed by visionary investors committed to transforming real estate through technology. Our team comprises experts from diverse sectors, working together to drive meaningful change by leveraging technology to simplify property transactions and ensure a smooth, transparent experience for all our clients.',
   },
   {
-    question: 'Are there any service fees for buyers or sellers?',
-    answer: 'iBuyr offers free property browsing for buyers. Sellers are charged a nominal fee based on the services they choose, such as premium listings or marketing packages.',
+    question: 'How Does Ibuyr Transact?',
+    answer: 'In essence, Ibuyr operates with two distinct approaches. First, as an investor, we directly purchase and resell apartments, ensuring swift and straightforward transactions. Second, as a service provider, we take on a partnership model: rather than buying and selling outright, we collaborate with the seller to manage the sale process and share in the profits. This dual model allows flexibility, enabling us to tailor our approach to meet the unique needs of each property owner.',
   },
   {
-    question: 'Can I list my property on iBuyr for free?',
-    answer: 'Yes, you can list your property for free. We also offer premium listing options to enhance visibility and attract more potential buyers.',
+    question: 'How do you value your homes?',
+    answer: 'This draws, honestly, from the values of the company itself. When we started Ibuyr, we decided to build something that would stand the test of time, built on the principles of trust and transparency - something we found to be sorely lacking in the real estate space. We then figured that the only way to do this is going by facts and not hearsay. We are not sure you are aware, but the Karnataka government has made the last 14-15 years of transaction data into public information. We have painstakingly built the hardware and software it takes to get all this information, actual documents, under one roof. It is modelling further, on top of these documents, that we are able to figure out where market is for an as-is where-is home in a community, and where we should sell to actually generate a premium. ',
   },
   {
-    question: 'How does iBuyr help buyers find the right property?',
-    answer: 'iBuyr uses AI-powered recommendations, advanced search filters, and personalized support to help buyers find properties that meet their specific needs and preferences.',
+    question: 'Is not This Just Buying Low and Selling High? How Does Ibuyr Add Value?',
+    answer: 'At Ibuyr, we purchase properties at fair market value, then enhance them through renovations, rigorous legal due diligence, and clear title resolution. These added steps allow us to bring properties to market at a premium, reflecting their improved condition and verified quality. Unlike traditional buyers, we offer sellers a substantial advance payment upfront, providing immediate liquidity—a benefit uncommon in the market. What truly sets us apart, however, is our speed; we complete transactions approximately three times faster than the market average, saving valuable time and offering a seamless, efficient experience for both buyers and sellers.',
   },
   {
-    question: 'Does iBuyr offer virtual property tours?',
-    answer: 'Yes, we provide virtual property tours to give buyers an immersive experience and help them explore properties from the comfort of their homes.',
+    question: 'How Should I Decide on the Right Option?',
+    answer: 'The choice depends on your financial goals and timeline. If you have a clear need for immediate funds and prefer a guaranteed transaction, partnering with us as an investor may be best. In this model, Ibuyr purchases your home with a substantial advance payment and assumes the risk of the resale. On the other hand, if maximizing the final sale value is your priority and immediate liquidity is not essential, our service provider model may be more advantageous. While this approach does not offer a large advance, it allows us to work toward securing a premium sale price as quickly as possible.',
   },
   {
-    question: 'What payment methods do you accept for iBuyr services?',
-    answer: 'We accept all major payment methods, including credit/debit cards, UPI, net banking, and mobile wallets.',
+    question: 'Why Did We Choose This Business?',
+    answer: "Our founder's background in real estate provided a strong foundation, but his passion lies in using technology to streamline traditional practices. The pandemic offered a moment for reflection, revealing the challenges faced by homeowners trying to sell in an unorganized secondary market, where selling a home could take nearly a year. Spot buying emerged as a way to inject liquidity into this typically slow-moving sector. Inspired by successful global models, we set out to bring this approach to India, focusing on quick, value-added transactions to simplify real estate for everyone.",
   },
   {
-    question: 'How can I contact iBuyr for support?',
-    answer: 'You can reach out to our support team via email, live chat on our website, or by calling our customer care helpline available 24/7.',
+    question: 'How Does Selling to Ibuyr Differ from Traditional Methods?',
+    answer: 'Selling to Ibuyr offers a significantly faster and more streamlined process compared to traditional sales, which typically take anywhere from 6 months to 1.5 years to complete. At Ibuyr, we can finalize your transaction in just 2-3 weeks. Our efficiency stems from our proprietary valuation tool, which enables us to assess your property quickly and provide you with a competitive offer without the lengthy negotiations and uncertainties that often accompany traditional sales. This means you can achieve liquidity faster, without the usual hassles associated with selling a home.',
   },
   {
-    question: 'How does iBuyr verify the properties listed on the platform?',
-    answer: 'All properties listed on iBuyr go through a rigorous verification process, including document checks, property inspections, and ownership validation.',
+    question: 'How Does the Purchasing Process Work at Ibuyr?',
+    answer: "The purchasing process at Ibuyr is straightforward. Initially, we establish a registration agreement to sell, granting us the rights to renovate and access your home. At this stage, the property should be vacant, and you'll provide us with the necessary documents and a set of keys. Although the legal title has not yet transferred, we begin acting as owners immediately, taking responsibility for associated bills. Following this, we proceed with renovations and actively seek a buyer for your property. Once we have a buyer lined up, we move forward to register the Sale Deed. This deed is a tripartite agreement involving you as the Seller—still holding the title, the new buyer as the Purchaser, and us as the Confirming Party, based on our initial Agreement to Sell. The balance payment is then settled with you at this point, completing the transaction.Following this, we proceed with renovations and actively seek a buyer for your property. Once we have a buyer lined up, we move forward to register the Sale Deed. This deed is a tripartite agreement involving you as the Seller—still holding the title, the new buyer as the Purchaser, and us as the Confirming Party, based on our initial Agreement to Sell. The balance payment is then settled with you at this point, completing the transaction.",
   },
   {
-    question: 'Can I schedule site visits through iBuyr?',
-    answer: 'Yes, buyers can schedule site visits for any listed property. Our team will coordinate with the seller to ensure a smooth and convenient experience.',
+    question: 'How Do We Determine the Price for Your Home?',
+    answer: 'At Ibuyr, we leverage proprietary algorithms that analyze extensive existing property transaction data to assess the value of your home. Our database includes information from over 2.5 million property transactions, combined with over 50 property-specific features, allowing us to create a comprehensive valuation. This data-driven approach ensures that we provide a fair, accurate estimate, making the process of selling your home simple, transparent, and convenient.',
   },
   {
-    question: 'What makes iBuyr different from other real estate platforms?',
-    answer: 'iBuyr combines technology, expert guidance, and a customer-centric approach to offer a seamless property buying and selling experience. Our verified listings, AI recommendations, and end-to-end support set us apart.',
+    question: 'How Does Ibuyr Operate When Assisting with Sales?',
+    answer: 'When we assist with selling your property, we establish a significantly high minimum guaranteed value in writing. This value is based on our commitment to undertake complete renovations and invest in the home to enhance its market appeal. We then exclusively market the property, leveraging our expertise to turn it around quickly and efficiently. Our approach ensures that you benefit from a premium sale while we handle the necessary improvements and marketing strategies to achieve the best possible outcome.',
   },
   {
-    question: 'Does iBuyr offer services for commercial properties?',
-    answer: 'Yes, iBuyr provides listings for both residential and commercial properties, including office spaces, retail shops, and warehouses.',
+    question: 'What If I Want to Maximize the Value of My Home?',
+    answer: "Maximizing your property's value with Ibuyr is straightforward. We start by entering into a Memorandum of Understanding (MoU) with you, during which we provide a refundable deposit of INR 1 lakh. Following this, we invest a predetermined amount on your behalf for the refurbishment of your home, enhancing its appeal to unlock a premium sale price.We secure exclusive rights to market and sell the property for a period of six months, allowing us to confidently invest in the necessary improvements to expedite the transaction. As part of this model, we guarantee a minimum sale amount that we will charge to the end purchaser. The financial arrangement is simple: we charge a fee for facilitating the sale and share any profits generated above the agreed threshold value, ensuring that you benefit from the increased sale price while we manage the process efficiently.",
   },
   {
-    question: 'Is there a mobile app for iBuyr?',
-    answer: 'Yes, iBuyr has a mobile app that allows you to browse properties, manage listings, schedule visits, and connect with our support team on the go.',
+    question: 'What Has the Journey Been Like So Far?',
+    answer: 'Ibuyr began its journey in the Sector 150 area, focusing on a small market to validate our business hypothesis regarding sufficient demand and supply. Encouraged by initial positive feedback, we gradually expanded our operations to encompass all of Noida. To date, we have successfully transacted over 250 properties across the city and continue to grow. Our aim is to establish ourselves as the preferred platform for ready-to-move-in homes in the coming years, catering to the needs of both buyers and sellers alike.',
+  },
+  {
+    question: "Isn't Working with You Similar to Dealing with an Agent or Channel Partner? Why Choose Ibuyr?",
+    answer: "That perspective is quite simplistic. In reality, our model is fundamentally different. We require the home to be vacant when we begin our process, allowing us to invest in enhancing the property's value—this is our key differentiator from any traditional channel partner. Additionally, partnering with us effectively provides you access to a network akin to working with over 500 channel partners. We offer a comprehensive, end-to-end managed solution, which means you won't have to engage directly with the end purchaser. From site visits and negotiations to paperwork, registration, and closing, we handle every aspect of the transaction for you, ensuring a seamless and hassle-free experience.",
+  },
+  {
+    question: 'What Is an Offer, and How Can I Receive One?',
+    answer: 'An offer represents the price and terms under which we guarantee the purchase of your apartment. To provide you with an accurate offer, we first conduct a thorough physical inspection of your property. Following this assessment, we present our offer, outlining the proposed purchase price and any relevant conditions. This process ensures transparency and clarity, allowing you to make an informed decision about moving forward with the sale.',
+  },
+  {
+    question: 'What Justifies the Premium We Offer?',
+    answer: 'The success of our sales process hinges on two key elements: packaging and distribution. We have meticulously refined both aspects to enhance efficiency and effectiveness. We understand that many resale properties tend to sell slowly due to their condition—often being sold "as-is"—and the lack of clear legal status.At Ibuyr, we purchase apartments in their current state to simplify the process for sellers. We then identify the minimal necessary investments to address essential repairs, focusing on plumbing, electrical, carpentry, and masonry work. Once we have transformed the home into a picture-perfect condition and ensured its legal clarity through thorough title checks, we can present prospective buyers with a legally sound property that is not only well-maintained but also situated in a vibrant community. This comprehensive approach enables us to command a premium price for the properties we sell.',
+  },
+  {
+    question: 'How Do We Achieve Faster Sales?',
+    answer: 'Our approach to selling properties quickly is straightforward. After enhancing the homes through quality packaging, we turn our attention to distribution. We leverage a robust network of over 500 Channel Partners throughout Bangalore, all of whom are familiar with the high standards we uphold when preparing a home for sale.Moreover, we offer competitive pricing that exceeds the market rate, along with immediate payment. This not only makes the financial aspect attractive for our Channel Partners but also incentivizes them to promote our properties more enthusiastically. As a result, we can coordinate multiple site visits for each home, enabling us to close sales significantly faster than the market average.',
   },
 ];
 
@@ -135,7 +151,7 @@ const App = () => {
               </div>
               {activeIndex === index && (
                 <div className="p-4 bg-white border-t">
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-gray-600 text-lg">{faq.answer}</p>
                 </div>
               )}
             </div>

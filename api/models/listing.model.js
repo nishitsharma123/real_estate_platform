@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 // Define the schema for the listing model
 const listingSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
@@ -35,6 +35,50 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
     parking: {
+      type: Boolean,
+      required: true,
+    },
+    parkingType: {
+      type: String,
+      required: true,
+    },
+    parkingArea: {
+      type: Number,
+      required: true,
+    },
+    houseFace: {
+      type: String,
+      required: true,
+    },
+    houseArea: {
+      type: Number,
+      required: true,
+    },
+    builtYear: {
+      type: Number,
+      required: true,
+    },
+    flooringType: {
+      type: String,
+      required: true,
+    },
+    gym: {
+      type: Boolean,
+      required: true,
+    },
+    park: {
+      type: Boolean,
+      required: true,
+    },
+    shops: {
+      type: Boolean,
+      required: true,
+    },
+    school: {
+      type: Boolean,
+      required: true,
+    },
+    publicTransport: {
       type: Boolean,
       required: true,
     },

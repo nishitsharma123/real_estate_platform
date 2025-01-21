@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import "../styles.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMapMarked, FaPhone, FaTwitter } from "react-icons/fa";
 const companyNames = [
   "Google",
   "Microsoft",
@@ -22,7 +22,23 @@ const companyNames = [
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [animate, setAnimate] = useState(false);
+  const [agents, setAgents] = useState([]);
+  const [error, setError] = useState(""); // To handle error message
   const dispatch = useDispatch();
+
+  const [city, setCity] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!city.trim()) {
+      // If the input is empty, show an error message
+      setError(true);
+    } else {
+      setError(false); // Clear error
+      // Redirect to your ML model webpage with the city as a query parameter
+      window.location.href = `https://www.ibuyr.in/propValue`;
+    }
+  };
 
   useEffect(() => {
     // Clear the error state when the component mounts
@@ -45,13 +61,39 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const mockData = [
+      {
+        id: 1,
+        name: "Dolly Simpson",
+        title: "Realtor",
+        description: "Mauris vitae ultricies leo integer malesuada nunc.",
+        image:
+          "https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg",
+      },
+      {
+        id: 2,
+        name: "Kyla Stewart",
+        title: "Real Estate Agent",
+        description: "Varius vel pharetra vel turpis nunc eget lorem dolor.",
+        image:
+          "https://cdn.pixabay.com/photo/2019/09/15/14/22/fishermans-hut-4478427_1280.jpg",
+      },
+      {
+        id: 3,
+        name: "Brooke Cagle",
+        title: "Super Star",
+        description: "Nisi lacus sed viverra tellus in hac habitasse.",
+        image:
+          "https://images.unsplash.com/photo-1472224371017-08207f84aaae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+    ];
+    setAgents(mockData);
+  }, []);
+
   return (
     <div className="Home">
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <CustomSlider>
+      {/* <CustomSlider>
             {images.map((image, index) => (
               <div key={index} style={{ position: "relative" }}>
                 <img
@@ -68,11 +110,64 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </CustomSlider>
+          </CustomSlider> */}
+      {/* Main Content Section */}
+      <div className="sm:h-screen bg-blue-100 p-8 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 shadow-lg">
+        {/* Text Section */}
+        <div className="sm:flex-auto tExt-left sm:text-center md:text-left mt-24 sm:mt-32">
+          <h1
+            className={`text-5xl sm:text-6xl font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
+              animate
+                ? "translate-y-0 opacity-100"
+                : "translate-y-full opacity-0"
+            }`}
+          >
+            Find your perfect <span className="text-teal-500">dream home</span>
+          </h1>
+          <p className="mt-4 text-gray-600">
+            Your Trusted Partner in Real Estate: Connecting Dreams to
+            Destinations with Expertise, Innovation, and Integrity.
+          </p>
 
-          <div className="flex flex-col w-4/5+96 min-h-screen bg-blue-100">
-            {/* Section 1 */}
-            <div className=" flex flex-row mt-10 p-9">
+          <div
+            className={`mt-16 mr-5 grid grid-cols-2 md:grid-cols-3 gap-4  bg-white rounded-3xl md:absolute shadow-lg md:z-10 transition-all duration-[2000ms] ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-full opacity-0"
+            }`}
+          >
+            <div className="text-center bg-transparent p-6 rounded-3xl ">
+              <h2 className="text-3xl font-bold text-gray-800">2,000+</h2>
+              <p className="mt-2 text-gray-600">Satisfied and happy clients</p>
+            </div>
+            <div className="text-center p-6 rounded-3xl ">
+              <h2 className="text-3xl font-bold text-gray-800">57</h2>
+              <p className="mt-2 text-gray-600">Professional agents</p>
+            </div>
+            <div className="text-center p-6 rounded-3xl ">
+              <h2 className="text-3xl font-bold text-gray-800">8,500+</h2>
+              <p className="mt-2 text-gray-600">Properties ready for living</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Image Section */}
+        <div className="hidden sm:flex-auto sm:flex justify-center w-full">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg" // Replace with your image URL
+            alt="Modern Home"
+            className={`rounded-lg shadow-md w-3/4 m-auto sm:w-auto sm:h-auto  mt-0 object-fit sm:object-contain sm:mt-32 transition-all duration-[2000ms] ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "translate-x-full opacity-0"
+            }`}
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col w-full min-h-screen bg-blue-100">
+        {/* Section 1 */}
+        {/* <div className=" flex flex-row mt-10 p-9">
               <div className="flex-1">
                 <img
                   src="https://images.unsplash.com/photo-1472224371017-08207f84aaae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -100,7 +195,7 @@ export default function Home() {
             </div>
 
             {/* Section 2 (Reversed Layout) */}
-            <div className=" flex flex-row mt-10 p-9 ">
+        {/*<div className=" flex flex-row mt-10 p-9 ">
               <div className="flex-1">
                 <h1 className="text-6xl font-bold text-center font-sans">
                   Create listing here
@@ -125,10 +220,10 @@ export default function Home() {
                   className="rounded-3xl shadow-2xl shadow-black h-96"
                 />
               </div>
-            </div>
+            </div>*/}
 
-            {/* Section 3 */}
-            <div className=" flex flex-row mt-10 p-9">
+        {/* Section 3 */}
+        {/*<div className=" flex flex-row mt-10 p-9 mb-10">
               <div className=" flex-1">
                 <img
                   src="https://cdn.pixabay.com/photo/2019/09/15/14/22/fishermans-hut-4478427_1280.jpg"
@@ -153,84 +248,218 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+            </div> */}
+
+        <div className="w-full bg-blue-400">
+          <div className="bg-blue-400 flex items-center justify-center flex-col-reverse sm:flex-row">
+            <div className="w-3/4 text-center bg-white rounded-3xl m-10  p-8 ">
+              <h1 className="text-3xl font-bold text-blue-900">
+                Use our advanced House price prediction model
+              </h1>
+              <p className="text-gray-700 mt-2">
+                Find accurate price predictions for properties in your desired
+                city.
+              </p>
+
+              {/* Error message */}
+              {error && (
+                <p className="text-red-500 mt-4">
+                  Please enter a city name before searching.
+                </p>
+              )}
+              <form
+                onSubmit={handleSearch}
+                className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4"
+              >
+                <input
+                  type="text"
+                  placeholder="Enter your city"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="w-full sm:w-2/3 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+                  required
+                />
+                {/* <Link to='/propValue'> */}
+                <button
+                  type="submit"
+                  className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700"
+                >
+                  Search
+                </button>
+                {/* </Link> */}
+              </form>
+            </div>
+            <div>
+              <img
+                alt="house image"
+                src="src/data/pngtree-housing-price-rising-up-png-image_6377590-removebg-preview (1).png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* second section */}
+      <div className="agents-container w-full bg-blue-100">
+        <h1 className="title">
+          Meet our top <span className="highlight">agents</span>
+        </h1>
+        <p className="subtitle">
+          Nisi lacus sed viverra tellus in hac habitasse platea dictumst. Donec
+          adipiscing tristique risus nec feugiat. Vitae congue eu consequat ac.
+        </p>
+        <div className="agents-grid">
+          {agents.map((agent) => (
+            <div key={agent.id} className="agent-card">
+              <img
+                src={agent.image}
+                alt={agent.name}
+                className="agent-image "
+              />
+              <h2 className="agent-name">{agent.name}</h2>
+              <p className="agent-title">{agent.title}</p>
+              <p className="agent-description">“{agent.description}”</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <footer className="bg-black text-white p-8 flex flex-col items-center w-full justify-between">
+        {/* Top Section */}
+        <div className="flex flex-col sm:flex-row flex-wrap justify-between w-full max-w-6xl mb-8">
+          {/* Logo and Description */}
+          <div className="flex-1 mb-6 md:mb-0">
+            <Link to="/">
+              <h1
+                className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
+                  animate
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-full opacity-0"
+                }`}
+              >
+                <span className="text-blue-400">i</span>
+                <span className="text-white ">buyr</span>
+              </h1>
+            </Link>
+            {/* <p className="mt-2 text-sm">
+              At iBuyr, we are dedicated to redefining the real estate
+              experience through innovation, transparency, and trust. With a
+              commitment to excellence, we connect buyers, sellers, and
+              investors to properties that perfectly suit their needs. Whether
+              you're searching for your dream home, seeking investment
+              opportunities, or planning to sell your property, our expert team
+              combines industry expertise with advanced AI/ML tools to deliver
+              accurate insights and exceptional service.
+            </p> */}
+            <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4 items-center ">
+                <FaPhone className="text-blue-400 text-xl" />
+                <span className="text-base">+91 986-623-9652</span>
+            </div>
+            <div className="flex flex-row gap-4 items-center">
+                <FaEnvelope className="text-blue-400 text-xl" />
+                <span className="text-base text-">nishitsharma@gmail.com</span>
+            </div>
+            <div className="flex flex-row gap-4">
+                <FaLocationArrow className="mt-2 text-blue-400 text-xl"/>
+                <div className="flex flex-col">
+                <span className="text-base">Sector-21</span>
+                <span className="text-base">Noida, Uttar pradesh, India</span>
+                <span className="text-base">201102</span>
+                </div>
+            </div>
+            
+            </div>
+            <div className="flex gap-4 mt-4">
+              <i className="fab fa-facebook text-2xl cursor-pointer"></i>
+              <i className="fab fa-linkedin text-2xl cursor-pointer"></i>
+              <i className="fab fa-twitter text-2xl cursor-pointer"></i>
+            </div>
+            <div className="mt-4 flex flex-row gap-4 text-3xl">
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaFacebook  className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaTwitter className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="hover:scale-125"/>
+              </a>
+              
+              
+              
             </div>
           </div>
 
-          <footer className="bg-black text-white p-8 flex flex-col items-center w-full h-96 justify-between">
-            {/* Top Section */}
-            <div className="flex flex-wrap justify-between w-full max-w-6xl mb-8">
-              {/* Logo and Description */}
-              <div className="flex-1 mb-6 md:mb-0">
-                <Link to="/">
-                  <h1
-                    className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
-                      animate
-                        ? "translate-x-0 opacity-100"
-                        : "-translate-x-full opacity-0"
-                    }`}
-                  >
-                    <span className="text-red-600">i</span>
-                    <span className="text-white ">Buy</span>
-                  </h1>
-                </Link>
-                <p className="mt-2 text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Excepturi, ducimus laborum. Veniam numquam minus rerum at quis
-                  facilis fugiat tempora unde repellat quasi reprehenderit esse
-                  labore alias ipsa commodi eos temporibus, tenetur error
-                  ratione fuga voluptate, adipisci hic! Tempore et explicabo
-                  quasi, illum nesciunt tenetur reprehenderit porro fuga totam.
-                  Numquam.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <i className="fab fa-facebook text-2xl cursor-pointer"></i>
-                  <i className="fab fa-linkedin text-2xl cursor-pointer"></i>
-                  <i className="fab fa-twitter text-2xl cursor-pointer"></i>
-                </div>
-                <div className="mt-4 flex flex-row gap-4 text-3xl">
-                  <FaFacebook />
-                  <FaTwitter />
-                  <FaInstagram />
-                </div>
-              </div>
-
-              {/* Navigation Links */}
-              <div className="flex-1 flex justify-around text-sm">
-                <ul className="space-y-2">
-                  <li className="cursor-pointer hover:underline">
-                    Property listing
-                  </li>
-                  <li className="cursor-pointer hover:underline">Agents</li>
-                </ul>
-                <ul className="space-y-2">
-                  <Link to="/about">
-                    <li className="cursor-pointer hover:underline p-2">
-                      About us
-                    </li>
-                  </Link>
-                  <Link to="/contact-us">
-                    <li className="cursor-pointer hover:underline p-2">
-                      Contact
-                    </li>
-                  </Link>
-                  <Link to="/About">
-                    <li className="cursor-pointer hover:underline p-2">
-                      Privacy Policy
-                    </li>
-                  </Link>
-                </ul>
-              </div>
+          {/* Navigation Links */}
+          <div className="flex-1 flex sm:justify-around text-sm ">
+            <ul className="space-y-2 p-5">
+              <Link to="/property-dashboard">
+                <li className="cursor-pointer hover:underline mt-1 text-base">
+                  Property listing
+                </li>
+              </Link>
+              <Link to="/price-prediction">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  PropValue
+                </li>
+              </Link>
+              <Link to="/about">
+                <li className="cursor-pointer hover:underline mt-2 text-base">About us</li>
+              </Link>
+              <Link to="/contact-us">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Contact us</li>
+              </Link>
+              <Link to="/privacy-policy">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Privacy Policy
+                </li>
+              </Link>
+            </ul>
+            <ul className="space-y-2 p-5">
+              <li className="text-xl font-bold text-blue-400">Buy your dream home</li>
+              <Link to="/property-dashboard">
+                <li className="cursor-pointer hover:underline mt-2 text-base">properties in Noida</li>
+              </Link>
+              {/* <Link to="/contact-us">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Contact</li>
+              </Link>
+              <Link to="/About">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Privacy Policy
+                </li>
+              </Link> */}
+            </ul>
+          </div>
+          <div className="bg-blue-400 rounded-3xl w-56 h-fit text-black">
+            {/* <h1 className="text-black font-bold text-xl text-center mt-4">Sell your house
+              </h1> */}
+              <ul className="space-y-2 p-5">
+              <li className="text-xl font-bold text-black ">Sell your house</li>
+              <Link to="/price-prediction">
+                <li className="cursor-pointer hover:underline mt-2 text-base ">PropValue</li>
+              </Link>
+              <Link to="">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Get instant offer</li>
+              </Link>
+              <Link to="">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Submit you property details
+                </li>
+              </Link>
+            </ul>
             </div>
+        </div>
 
-            {/* Bottom Section */}
-            <div className="w-full max-w-6xl border-t border-white pt-4 text-xs flex justify-between">
-              <p>Copyright ©2021 All rights reserved</p>
-              <p className="text-[#b0c4de]">Created by Nishit sharma</p>
-            </div>
-          </footer>
-        </>
-      )}
+        {/* Bottom Section */}
+        <div className="w-full max-w-6xl border-t border-white pt-4 text-xs flex justify-between">
+          <p>Copyright ©2025 All rights reserved</p>
+          <p className="text-[#b0c4de]">Created by ibuyr</p>
+        </div>
+      </footer>
     </div>
   );
 }
