@@ -15,6 +15,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   // const { role } = useSelector((state) => state.user);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+
 
   const controlHeader = () => {
     if (typeof window !== "undefined") {
@@ -140,13 +147,16 @@ export default function Header() {
         >
          
           {/* <Link to="/property-dashboard"> */}
-            <li
-              onClick={closeMenu}
-              className=" w-56 sm:w-fit relative group text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-90 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out "
+            <button
+              // onClick={closeMenu}
+              onClick={toggleDropdown}
+              className=" w-56 sm:w-fit relative text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-90 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out "
             >
               Properties
-               <ul className="absolute left-0 mt-2 w-60 hidden group-hover:block bg-blue-400 rounded-lg shadow-lg">
-              <li>
+             {isDropdownOpen && (
+
+               <ul className="absolute left-0 mt-4 w-60  bg-blue-500 rounded-lg shadow-lg">
+              <li  onClick={closeMenu}>
                 <Link
                   to="/sell-your-home"
                   className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
@@ -154,7 +164,7 @@ export default function Header() {
                   Sell your home
                 </Link>
               </li>
-              <li>
+              <li  onClick={closeMenu}>
                 <Link
                   to="/property-dashboard"
                   className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
@@ -163,7 +173,8 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-                </li>
+             )}
+                </button>
           {/* </Link> */}
           {currentUser && currentUser.role === "admin" && (
             <Link to="/create-listing">
@@ -220,7 +231,7 @@ export default function Header() {
 
           <Link to="/profile">
             {currentUser ? (
-              <div className=" w-56 md:w-auto text-center place-content-center flex flex-row md:text-green-600 text-white gap-2 items-center md:bg-white bg-blue-500 hover:text-black p-2 md:rounded-xl rounded-xl">
+              <div onClick={closeMenu} className=" w-56 md:w-auto text-center place-content-center flex flex-row md:text-green-600 text-white gap-2 items-center md:bg-white bg-blue-500 hover:text-black p-2 md:rounded-xl rounded-xl">
               <img
                 onClick={closeMenu}
                 className="rounded-full h-7 w-7 object-cover"

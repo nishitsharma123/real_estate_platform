@@ -341,16 +341,7 @@ export default function Home() {
                 <span className="text-white ">buyr</span>
               </h1>
             </Link>
-            {/* <p className="mt-2 text-sm">
-              At iBuyr, we are dedicated to redefining the real estate
-              experience through innovation, transparency, and trust. With a
-              commitment to excellence, we connect buyers, sellers, and
-              investors to properties that perfectly suit their needs. Whether
-              you're searching for your dream home, seeking investment
-              opportunities, or planning to sell your property, our expert team
-              combines industry expertise with advanced AI/ML tools to deliver
-              accurate insights and exceptional service.
-            </p> */}
+            
             <div className="flex flex-col gap-4">
             <div className="flex flex-row gap-4 items-center ">
                 <FaPhone className="text-blue-400 text-xl" />
@@ -396,7 +387,7 @@ export default function Home() {
 
           {/* Navigation Links */}
           <div className="flex-1 flex sm:justify-around text-sm ">
-            <ul className="space-y-2 p-5">
+            <ul className="space-y-2 p-5 flex-1">
               <Link to="/property-dashboard">
                 <li className="cursor-pointer hover:underline mt-1 text-base">
                   Property listing
@@ -419,7 +410,7 @@ export default function Home() {
                 </li>
               </Link>
             </ul>
-            <ul className="space-y-2 p-5">
+            <ul className="space-y-2 p-5 flex-1">
               <li className="text-xl font-bold text-blue-400">Buy your dream home</li>
               <Link to="/property-dashboard">
                 <li className="cursor-pointer hover:underline mt-2 text-base">properties in Noida</li>

@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import freepik__adjust__89929 from "../data/freepik__adjust__89929.png";
+import { FaEnvelope, FaFacebook, FaHandHolding, FaHandPointRight, FaHandshakeSlash, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitter } from "react-icons/fa";
 export default function About() {
   const [animate, setAnimate] = useState(false);
   const dispatch = useDispatch();
@@ -16,134 +18,61 @@ export default function About() {
     };
   }, [dispatch]);
   return (
-    <div className="bg-blue-100 flex flex-col items-center justify-center px-4 w-screen min-h-screen">
-      <div className="bg-blue-100 text-gray-800 rounded-3xl shadow-2xl mt-16 md:mt-20 w-full">
-        <h2
-          className={`text-3xl font-bold mb-4 text-blue-600 text-left ml-3 md:m-auto md:text-center transition-all duration-[2000ms] ${
-            animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
-          }`}
-        >
-          Policies & Guidelines
-        </h2>
-        <p className="text-lg mb-6 pl-2 text-left ml-1 md:m-auto md:text-center">
-          At <span className="font-semibold">iBuy</span>, we are committed to
-          delivering transparent, reliable, and customer-centric real estate
-          solutions. Our policies ensure trust, quality, and compliance at every
-          step.
-        </p>
-
-        <div className="flex flex-row flex-wrap gap-5 w-full md:w-fit md:h-fit  font-mono mt-6 md:m-10">
-          <div className=" bg-slate-300 md:rounded-2xl p-3 w-fit md:flex-1 md:m-auto">
-            <h3
-              className={`text-2xl font-semibold mb-3 transition-all duration-[2000ms] ${
-                animate
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-60 opacity-0"
-              }`}
-            >
-              Our Core Policies:
-            </h3>
-            <ul
-              className={`list-disc list-inside space-y-2 text-sm transition-all duration-[2000ms] ${
-                animate
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-60 opacity-0"
-              }`}
-            >
-              <li>
-                🏠 <span className="font-bold">Transparency First</span>: All
-                property dealings are conducted with complete honesty and clear
-                documentation.
-              </li>
-              <li>
-                📊 <span className="font-bold">Data Privacy</span>: We
-                prioritize your data security and adhere to industry-standard
-                protection protocols.
-              </li>
-              <li>
-                📜 <span className="font-bold">Legal Compliance</span>: All
-                transactions follow regional and national regulations to ensure
-                hassle-free ownership.
-              </li>
-              <li>
-                🤝 <span className="font-bold">Customer Commitment</span>: We
-                are dedicated to providing personalized service tailored to your
-                needs.
-              </li>
-              <li>
-                🌍 <span className="font-bold">Sustainability</span>: We support
-                eco-friendly practices in real estate development.
-              </li>
-            </ul>
+    <div className="bg-blue-100 flex flex-col items-center justify-center w-full min-h-screen">
+      <section className="w-full flex flex-col mt-24 ">
+        <img className="w-full rounded-3xl object-cover h-96 " src={freepik__adjust__89929}/>
+        <div className=" absolute w-full items-center flex flex-col">
+          <Link to="/contact-us" className="ml-auto">
+          <button className={`bg-white rounded-2xl p-2  text-xs sm:text-base sm:p-2 ml-auto mr-5 mt-5 gap-2 flex flex-row items-center transition-all duration-[2000ms] ${
+              animate
+                ? "translate-y-0 opacity-100"
+                : "translate-y-full opacity-0"
+            }`}>Need help?  <span className="bg-blue-500 hover:bg-blue-400 p-1 sm:p-2 rounded-lg bg-blue text-white"> Contact us</span></button>
+          </Link>
           </div>
-
-          <div className="md:flex-1 bg-slate-300 md:rounded-2xl p-3 md:w-fit md:h-fit md:m-auto">
-            <h3
-              className={`text-2xl font-semibold mb-6 transition-all duration-[2000ms] ${
-                animate
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-60 opacity-0"
-              }`}
-            >
-              Guidelines for Buyers & Sellers:
-            </h3>
-            <ul
-              className={`list-decimal list-inside space-y-2 text-sm transition-all duration-[2000ms] ${
-                animate
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-60 opacity-0"
-              }`}
-            >
-              <li>
-                Ensure all property documents are verified before proceeding
-                with any transaction.
-              </li>
-              <li>
-                Communicate your requirements clearly to our team for the best
-                recommendations.
-              </li>
-              <li>
-                For buyers: Schedule site visits to explore properties and
-                assess their condition.
-              </li>
-              <li>
-                For sellers: Provide accurate property details and maintain
-                transparency in pricing.
-              </li>
-              <li>
-                Respect timelines and commitments during negotiations and
-                closures.
-              </li>
-              <li>
-                Always conduct a thorough inspection of the property for legal
-                clearances and physical conditions.
-              </li>
-              {/* <li> If you plan to use a loan, get pre-approved to streamline the buying process.</li> */}
-            </ul>
-          </div>
-        </div>
-
-        <div className="m-10">
-          <h3 className="text-xl font-bold text-blue-600 text-center md:text-left">
-            Need Assistance?
-          </h3>
-          <p className="text-sm mt-2 text-center md:text-left">
-            Our expert team is here to help you navigate every step of your real
-            estate journey. For queries, contact us at{" "}
-            <Link
-              to="/contact-us"
-              className="text-blue-500 hover:underline text-center md:text-left"
-            >
-              click here
-            </Link>
-            .
-          </p>
-        </div>
+      <div className=" w-full sm:w-3/4 absolute p-10 flex flex-col gap-5 mt-28">
+      <h1 className={`text-3xl sm:text-6xl text-blue-700 font-bold transition-all duration-[2000ms] ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "translate-x-60 opacity-0"
+            }`}>About us</h1>
+      <p className={`text-sm sm:text-base text-gray-800 font-semibold transition-all duration-[2000ms] ${
+              animate
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-full opacity-0"
+            }`}>Welcome to iBuyr, where real estate innovation meets human connection. We're more than just a real estate company—we're your trusted partner in navigating the exciting world of property buying, selling, and investing.</p>
       </div>
+      </section>
 
-      <div className=" mt-5 w-full rounded-lg shadow-2xl p-16">
+ <section className='flex flex-col sm:flex-row mt-20 sm:mt-32 ml-5 sm:ml-auto'>
+        <div className={`text-3xl sm:text-5xl font-semibold flex-auto sm:flex-1 text-left sm:text-center text-blue-700 transition-all duration-[2000ms] ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-full opacity-0"
+            }`}>ibuyr's Mission:</div>
+        <div className='flex-auto sm:flex-1 sm:pr-20 '>
+           
+           <p className='text-lg text-gray-500 ml-7'>At iBuyr, our mission is simple: to make real estate easy, efficient, and empowering.
+We're dedicated to creating a platform where buyers and sellers feel confident and supported at every step. By harnessing the power of advanced technology, robust data analytics, and human expertise, we aim to transform the real estate experience into one that's not only seamless but also rewarding.</p>
+           
+           
+        </div>
+    </section>
+
+    <section className='flex flex-col sm:flex-row mt-20 sm:mt-32 ml-5 sm:ml-auto'>
+        <div className='text-3xl sm:text-5xl font-semibold flex-auto sm:flex-1 text-left sm:text-center text-blue-700'>Founder's Vision:</div>
+        <div className='flex-auto sm:flex-1 sm:pr-20 '>
+           
+           <p className='text-lg text-gray-500 ml-7'>We envision a future where buying and selling real estate is as effortless as browsing your favorite online store. Our goal is to become a global leader in innovative real estate solutions, building a platform where technology and trust converge to make every transaction smooth, transparent, and successful. At iBuyr, we dream of reshaping the real estate landscape into one that's inclusive, accessible, and future-focused.</p>
+           
+           
+        </div>
+    </section>
+
+
+      <div className=" mt-10 w-full rounded-lg sm:p-16">
         <h1 className="text-4xl font-bold text-blue-600 mb-4 text-center">
-          Our Team
+          ibuyr's founder
         </h1>
         <p className="text-slate-900 text-lg mb-6 text-center">
           We are passionate about providing innovative solutions to empower
@@ -151,10 +80,10 @@ export default function About() {
           excellence in everything we do.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1 */}
-          <div className="bg-gray-100 rounded-lg shadow-xl p-6 text-center">
-            <div className="w-24 h-24 mx-auto mb-4  relative overflow-hidden rounded-full ">
+          <div className="bg-gray-100 rounded-3xl shadow-xl p-6 text-center">
+            <div className="w-36 h-36 mx-auto mb-4  relative overflow-hidden rounded-full ">
               <img
                 src="https://media.licdn.com/dms/image/v2/D4E03AQHuHGVqw5eQfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723689369673?e=1740614400&v=beta&t=QDgi4U7OEjmYKiGgEOThPPXRJt_jPPKnvamMQxcw9Lw"
                 alt="Team member"
@@ -165,14 +94,14 @@ export default function About() {
               Saurabh choudhary
             </h3>
             <p className="text-gray-500">Founder & CEO</p>
-            <p className="text-gray-500 mt-2">
-              "Innovation is at the heart of our journey."
+            <p className="text-gray-500 mt-2 sm:m-10">
+              Saurabh Choudhary, the visionary behind iBuyr, is dedicated to revolutionizing real estate through innovation and technology. With a focus on transparency, efficiency, and accessibility, he aims to simplify property transactions and create lasting value for clients and communities.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-gray-100 rounded-lg shadow-xl p-6 text-center">
-            <div className="w-24 h-24 mx-auto mb-4  relative overflow-hidden rounded-full ">
+          <div className="bg-gray-100 rounded-3xl shadow-xl p-6 text-center">
+            <div className="w-36 h-36 mx-auto mb-4  relative overflow-hidden rounded-full ">
               <img
                 src="https://media.licdn.com/dms/image/v2/D5603AQE221Eal7Hg9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728107546810?e=1740614400&v=beta&t=DqPi1Zgz6ELc5i31zQ2FlWYP-HmdO2ITYhqynNqAc_0"
                 alt="Team member"
@@ -183,13 +112,12 @@ export default function About() {
               Nishit Sharma
             </h3>
             <p className="text-gray-500">Co-Founder & CTO</p>
-            <p className="text-gray-500 mt-2">
-              "Building reliable and scalable technology."
-            </p>
+            <p className="text-gray-500 mt-2 sm:m-10">
+             Nishit Sharma, the tech mastermind behind iBuyr, leads innovation as the Co-Founder and CTO. With a passion for cutting-edge technology and a drive for excellence, Nishit oversees the development of iBuyr's advanced platforms, ensuring seamless, secure, and efficient real estate solutions.             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-gray-100 rounded-lg shadow-xl p-6 text-center">
+          {/* <div className="bg-gray-100 rounded-lg shadow-xl p-6 text-center">
             <div className="w-24 h-24 mx-auto mb-4  relative overflow-hidden rounded-full ">
               <img
                 src="https://via.placeholder.com/96"
@@ -202,11 +130,11 @@ export default function About() {
             <p className="text-gray-500 mt-2">
               "Ensuring seamless workflows and growth."
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      <div className="max-w-6xl rounded-lg p-8 m-7 mt-0">
+      <div className="max-w-6xl rounded-lg p-8 sm:m-7 mt-10">
         <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">
           What we are providing to our customer?
         </h1>
@@ -254,6 +182,133 @@ export default function About() {
           </div>
         </div>
       </div>
+       <footer className="bg-black text-white p-8 flex flex-col items-center w-full justify-between">
+              {/* Top Section */}
+              <div className="flex flex-col sm:flex-row flex-wrap justify-between w-full max-w-6xl mb-8">
+                {/* Logo and Description */}
+                <div className="flex-1 mb-6 md:mb-0">
+                  <Link to="/">
+                    <h1
+                      className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
+                        animate
+                          ? "translate-x-0 opacity-100"
+                          : "-translate-x-full opacity-0"
+                      }`}
+                    >
+                      <span className="text-blue-400">i</span>
+                      <span className="text-white ">buyr</span>
+                    </h1>
+                  </Link>
+                  
+                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-row gap-4 items-center ">
+                      <FaPhone className="text-blue-400 text-xl" />
+                      <span className="text-base">+91 986-623-9652</span>
+                  </div>
+                  <div className="flex flex-row gap-4 items-center">
+                      <FaEnvelope className="text-blue-400 text-xl" />
+                      <span className="text-base text-">nishitsharma@gmail.com</span>
+                  </div>
+                  <div className="flex flex-row gap-4">
+                      <FaLocationArrow className="mt-2 text-blue-400 text-xl"/>
+                      <div className="flex flex-col">
+                      <span className="text-base">Sector-21</span>
+                      <span className="text-base">Noida, Uttar pradesh, India</span>
+                      <span className="text-base">201102</span>
+                      </div>
+                  </div>
+                  
+                  </div>
+                  <div className="flex gap-4 mt-4">
+                    <i className="fab fa-facebook text-2xl cursor-pointer"></i>
+                    <i className="fab fa-linkedin text-2xl cursor-pointer"></i>
+                    <i className="fab fa-twitter text-2xl cursor-pointer"></i>
+                  </div>
+                  <div className="mt-4 flex flex-row gap-4 text-3xl">
+                    <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                    <FaFacebook  className="hover:scale-125"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                    <FaTwitter className="hover:scale-125"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="hover:scale-125"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin className="hover:scale-125"/>
+                    </a>
+                    
+                    
+                    
+                  </div>
+                </div>
+      
+                {/* Navigation Links */}
+                <div className="flex-1 flex sm:justify-around text-sm ">
+                  <ul className="space-y-2 p-5 flex-1">
+                    <Link to="/property-dashboard">
+                      <li className="cursor-pointer hover:underline mt-1 text-base">
+                        Property listing
+                      </li>
+                    </Link>
+                    <Link to="/price-prediction">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">
+                        PropValue
+                      </li>
+                    </Link>
+                    <Link to="/about">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">About us</li>
+                    </Link>
+                    <Link to="/contact-us">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">Contact us</li>
+                    </Link>
+                    <Link to="/privacy-policy">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">
+                        Privacy Policy
+                      </li>
+                    </Link>
+                  </ul>
+                  <ul className="space-y-2 p-5 flex-1">
+                    <li className="text-xl font-bold text-blue-400">Buy your dream home</li>
+                    <Link to="/property-dashboard">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">properties in Noida</li>
+                    </Link>
+                    {/* <Link to="/contact-us">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">Contact</li>
+                    </Link>
+                    <Link to="/About">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">
+                        Privacy Policy
+                      </li>
+                    </Link> */}
+                  </ul>
+                </div>
+                <div className="bg-blue-400 rounded-3xl w-56 h-fit text-black">
+                  {/* <h1 className="text-black font-bold text-xl text-center mt-4">Sell your house
+                    </h1> */}
+                    <ul className="space-y-2 p-5">
+                    <li className="text-xl font-bold text-black ">Sell your house</li>
+                    <Link to="/price-prediction">
+                      <li className="cursor-pointer hover:underline mt-2 text-base ">PropValue</li>
+                    </Link>
+                    <Link to="">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">Get instant offer</li>
+                    </Link>
+                    <Link to="">
+                      <li className="cursor-pointer hover:underline mt-2 text-base">
+                        Submit you property details
+                      </li>
+                    </Link>
+                  </ul>
+                  </div>
+              </div>
+      
+              {/* Bottom Section */}
+              <div className="w-full max-w-6xl border-t border-white pt-4 text-xs flex justify-between">
+                <p>Copyright ©2025 All rights reserved</p>
+                <p className="text-[#b0c4de]">Created by ibuyr</p>
+              </div>
+            </footer>
     </div>
   );
 }

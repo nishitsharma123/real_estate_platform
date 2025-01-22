@@ -3,58 +3,50 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitter } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is iBuyr?",
+    question: "What is PropValue?",
     answer:
-      "iBuyr is an innovative real estate platform that connects buyers, sellers, and investors to make property transactions simple, transparent, and efficient. We aim to revolutionize the way people buy and sell properties through cutting-edge technology and expert support.",
+      "PropValue is an AI-powered house price prediction tool that uses advanced machine learning algorithms like XGBoost to provide accurate and reliable property price estimates based on various property features and market factors.",
   },
   {
-    question: "Is iBuyr available nationwide?",
+    question: "What factors does PropValue consider for price prediction?",
     answer:
-      "Yes, iBuyr operates across multiple cities and regions, offering a diverse range of properties to cater to your needs. Check our website to explore the locations we currently serve.",
+      "PropValue analyzes multiple key factors, including: BHK: Number of bedrooms, halls, and kitchens. Type: Property type (e.g., apartment, villa).Ownership: Ownership status (e.g., freehold or leasehold).Bathroom: Number of bathrooms.Balcony: Number of balconies.City and Location: The geographical area and specific locality.Rate per Sqft: The price per square foot in the area.Total Area: The overall area of the property.Status: Whether the property is ready to move or under construction.Transaction: Resale or new property.Facing: The direction the property faces (e.g., east, west).",
   },
   {
-    question: "How does iBuyr ensure transparency in transactions?",
+    question: "How does PropValue work?",
     answer:
-      "iBuyr provides verified property listings, complete document checks, and detailed property information to ensure every transaction is secure and transparent.",
+      "PropValue uses the advance algorithm, that's a powerful machine learning model, to analyze the provided property details alongside market trends and historical data. It then calculates an accurate price prediction tailored to the property's unique features.",
   },
   {
-    question: "Does iBuyr assist with legal and financial processes?",
+    question: "Is PropValue suitable for all types of properties?",
     answer:
-      "Yes, we have a team of experts to guide you through legal documentation, property registration, and financial services such as home loans and property valuation.",
+      "Yes, PropValue is designed to handle various property types, including apartments, villas, and independent houses, across different cities and locations.",
   },
   {
-    question: "Are there any service fees for buyers or sellers?",
+    question: "How accurate is PropValue's prediction?",
     answer:
-      "iBuyr offers free property browsing for buyers. Sellers are charged a nominal fee based on the services they choose, such as premium listings or marketing packages.",
+      "PropValue provides highly accurate predictions by leveraging advanced AI models and real-time data. While the estimates are reliable, actual market prices may vary slightly due to specific factors like buyer sentiment or unique property features.",
   },
   {
-    question: "Can I list my property on iBuyr for free?",
+    question: " Is PropValue free to use?",
     answer:
-      "Yes, you can list your property for free. We also offer premium listing options to enhance visibility and attract more potential buyers.",
+      "PropValue offers free predictions with access of Advanced features."
   },
   {
-    question: "How does iBuyr help buyers find the right property?",
+    question: "Which cities and locations are supported by PropValue?",
     answer:
-      "iBuyr uses AI-powered recommendations, advanced search filters, and personalized support to help buyers find properties that meet their specific needs and preferences.",
+      "PropValue currently supports predictions in a 5 cities and  their multiple locations. The tool is continuously expanding to include more areas to cater to a broader audience.",
   },
   {
-    question: "Does iBuyr offer virtual property tours?",
+    question: "How secure is my data on PropValue?",
     answer:
-      "Yes, we provide virtual property tours to give buyers an immersive experience and help them explore properties from the comfort of their homes.",
+      "Your privacy is our priority. PropValue uses robust encryption protocols and adheres to strict data protection standards to ensure your information remains safe and secure.",
   },
-  {
-    question: "What payment methods do you accept for iBuyr services?",
-    answer:
-      "We accept all major payment methods, including credit/debit cards, UPI, net banking, and mobile wallets.",
-  },
-  {
-    question: "How can I contact iBuyr for support?",
-    answer:
-      "You can reach out to our support team via email, live chat on our website, or by calling our customer care helpline available 24/7.",
-  },
+  
 ];
 
 const PredictPrice = () => {
@@ -122,27 +114,29 @@ const PredictPrice = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row gap-5  justify-center px-6 py-8 bg-blue-100">
+    <div className="min-h-screen flex flex-col md:flex-col gap-5  justify-center bg-blue-100">
+      <div className=" gap-5 justify-center flex flex-col md:flex-row mt-10 m-4">
       <div className="bg-blue-100 rounded-2xl p-8 flex-auto  w-full transform transition-transform duration-500 mt-10">
-        <section className="py-12 px-4 pt-0 min-h-screen">
+        <section className="absolute sm:relative  py-12 px-4 pt-0 min-h-screen hidden sm:flex sm:flex-col">
           <h2
-            className={`text-2xl md:text-4xl text-blue-500 font-bold text-center transition-all duration-[2000ms] ${
+            className={`text-2xl md:text-4xl text-blue-500 mb-8 font-bold text-center transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-60 opacity-0"
             }`}
           >
-            PropValue delivers data-driven estimates{" "}
+            
+PropValue provides data-backed estimates with an impressive accuracy rate of approximately 96%.
           </h2>
-          <h2
-            className={`text-2xl md:text-4xl text-blue-500 font-bold text-center mb-8 transition-all duration-[2000ms] ${
+          {/* <h2
+            className={`text-2xl  md:text-4xl text-blue-500 font-bold text-center mb-8 transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-60 opacity-0"
             }`}
           >
             with ~98% accuracy
-          </h2>
+          </h2> */}
           <div className="flex flex-col gap-8">
             {details.map((exp, index) => (
               <motion.div
@@ -173,9 +167,9 @@ const PredictPrice = () => {
           </div>
         </section>
       </div>
-      <div className=" flex-col  text-white bg-gradient-to-r from-blue-500 to-purple-600 bg-opacity-15 backdrop-blur-3xl shadow-2xl rounded-2xl p-8 mt-10 w-full md:w-2/4">
+      <div className=" flex-col  text-white bg-gradient-to-r from-blue-500 to-purple-600 bg-opacity-15 backdrop-blur-3xl shadow-2xl rounded-2xl p-0 sm:p-8 -mt-14 sm:mt-10 w-full md:w-2/4">
         <div
-          className={`bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-lg shadow-lg m-auto transition-all duration-[2000ms] ${
+          className={`bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-lg sm:shadow-lg m-auto transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           }`}
         >
@@ -192,6 +186,13 @@ const PredictPrice = () => {
             <li>🏠 Perfect for property buyers, sellers, and agents</li>
             <li>📊 Backed by advanced AI algorithms</li>
           </ul>
+           <div className="mt-6">
+            <Link to="/propvalue">
+              <button className="bg-white w-full  text-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-100">
+                Try Now
+              </button>
+            </Link>
+          </div>
           <div className="mt-4">
             <h3 className="text-xl font-semibold mb-2">How to Use:</h3>
             <ol className="list-decimal list-inside text-sm space-y-1">
@@ -204,17 +205,11 @@ const PredictPrice = () => {
               <li>Get instant, AI-powered price predictions!</li>
             </ol>
           </div>
-          <div className="mt-6">
-            <Link to="/propvalue">
-              <button className="bg-white w-full  text-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-100">
-                Try Now
-              </button>
-            </Link>
-          </div>
+         
         </div>
 
         <div
-          className={`flex items-center mt-5 justify-center mb-8 transition-all duration-[2000ms] ${
+          className={`flex items-center mt-5 justify-center mb-8 m-3 transition-all duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "-translate-x-60 opacity-0"
           }`}
         >
@@ -231,7 +226,7 @@ const PredictPrice = () => {
           </div>
         </div>
         <div
-          className={`space-y-4 transition-all duration-[2000ms] ${
+          className={`space-y-4 transition-all m-3 duration-[2000ms] ${
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           }`}
         >
@@ -261,6 +256,134 @@ const PredictPrice = () => {
           ))}
         </div>
       </div>
+      </div>
+       <footer className="bg-black text-white p-8 flex flex-col items-center w-full justify-between">
+        {/* Top Section */}
+        <div className="flex flex-col sm:flex-row flex-wrap justify-between w-full max-w-6xl mb-8">
+          {/* Logo and Description */}
+          <div className="flex-1 mb-6 md:mb-0">
+            <Link to="/">
+              <h1
+                className={`font-bold text-3xl sm:text-4xl flex flex-wrap mb-2 transition-all duration-[2000ms] ${
+                  animate
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-full opacity-0"
+                }`}
+              >
+                <span className="text-blue-400">i</span>
+                <span className="text-white ">buyr</span>
+              </h1>
+            </Link>
+            
+            <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4 items-center ">
+                <FaPhone className="text-blue-400 text-xl" />
+                <span className="text-base">+91 986-623-9652</span>
+            </div>
+            <div className="flex flex-row gap-4 items-center">
+                <FaEnvelope className="text-blue-400 text-xl" />
+                <span className="text-base text-">nishitsharma@gmail.com</span>
+            </div>
+            <div className="flex flex-row gap-4">
+                <FaLocationArrow className="mt-2 text-blue-400 text-xl"/>
+                <div className="flex flex-col">
+                <span className="text-base">Sector-21</span>
+                <span className="text-base">Noida, Uttar pradesh, India</span>
+                <span className="text-base">201102</span>
+                </div>
+            </div>
+            
+            </div>
+            <div className="flex gap-4 mt-4">
+              <i className="fab fa-facebook text-2xl cursor-pointer"></i>
+              <i className="fab fa-linkedin text-2xl cursor-pointer"></i>
+              <i className="fab fa-twitter text-2xl cursor-pointer"></i>
+            </div>
+            <div className="mt-4 flex flex-row gap-4 text-3xl">
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaFacebook  className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaTwitter className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="hover:scale-125"/>
+              </a>
+              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="hover:scale-125"/>
+              </a>
+              
+              
+              
+            </div>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex-1 flex sm:justify-around text-sm ">
+            <ul className="space-y-2 p-5 flex-1">
+              <Link to="/property-dashboard">
+                <li className="cursor-pointer hover:underline mt-1 text-base">
+                  Property listing
+                </li>
+              </Link>
+              <Link to="/price-prediction">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  PropValue
+                </li>
+              </Link>
+              <Link to="/about">
+                <li className="cursor-pointer hover:underline mt-2 text-base">About us</li>
+              </Link>
+              <Link to="/contact-us">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Contact us</li>
+              </Link>
+              <Link to="/privacy-policy">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Privacy Policy
+                </li>
+              </Link>
+            </ul>
+            <ul className="space-y-2 p-5 flex-1">
+              <li className="text-xl font-bold text-blue-400">Buy your dream home</li>
+              <Link to="/property-dashboard">
+                <li className="cursor-pointer hover:underline mt-2 text-base">properties in Noida</li>
+              </Link>
+              {/* <Link to="/contact-us">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Contact</li>
+              </Link>
+              <Link to="/About">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Privacy Policy
+                </li>
+              </Link> */}
+            </ul>
+          </div>
+          <div className="bg-blue-400 rounded-3xl w-56 h-fit text-black">
+            {/* <h1 className="text-black font-bold text-xl text-center mt-4">Sell your house
+              </h1> */}
+              <ul className="space-y-2 p-5">
+              <li className="text-xl font-bold text-black ">Sell your house</li>
+              <Link to="/price-prediction">
+                <li className="cursor-pointer hover:underline mt-2 text-base ">PropValue</li>
+              </Link>
+              <Link to="">
+                <li className="cursor-pointer hover:underline mt-2 text-base">Get instant offer</li>
+              </Link>
+              <Link to="">
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Submit you property details
+                </li>
+              </Link>
+            </ul>
+            </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="w-full max-w-6xl border-t border-white pt-4 text-xs flex justify-between">
+          <p>Copyright ©2025 All rights reserved</p>
+          <p className="text-[#b0c4de]">Created by ibuyr</p>
+        </div>
+      </footer>
     </div>
   );
 };

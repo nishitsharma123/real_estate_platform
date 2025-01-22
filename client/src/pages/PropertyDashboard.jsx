@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 export default function PropertyDashboard() {
   return (
     <div className='bg-blue-100 min-h-screen'>
-      <div className='bg-pink-400 w-full flex flex-col items-center'>
+      <div className='w-full flex flex-col items-center'>
         <img className="w-full object-cover h-96" src="https://img.pikbest.com/wp/202344/light-blue-gradient-wallpaper-smooth-blur-with-simple-plain-background-texture_9930252.jpg!sw800"/>
       <div className='absolute mt-36 gap-5 flex flex-col w-full  items-center'>
         <h1 className='text-3xl sm:text-6xl '>Find the best home</h1>

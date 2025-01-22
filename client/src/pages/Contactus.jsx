@@ -198,11 +198,11 @@ const ContactUs = () => {
         </form>
         <p className="text-xs text-[#555] mt-4">
           By contacting us, you agree to our{" "}
-          <a href="#" className="text-blue-600 underline">
+          <a href="/term&condition" className="text-blue-600 underline">
             Terms of service
           </a>{" "}
           and{" "}
-          <a href="#" className="text-blue-600 underline">
+          <a href="/term&condition" className="text-blue-600 underline">
             Privacy Policy
           </a>
         </p>
