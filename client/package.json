@@ -25,6 +25,7 @@
     "react-router-dom": "^7.0.2",
     "real_estate_platform": "file:..",
     "redux-persist": "^6.0.0",
+    "sitemap": "^8.0.0",
     "swiper": "^11.2.1"
   },
   "devDependencies": {
