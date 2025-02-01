@@ -156,7 +156,7 @@ export default function Header() {
             animate ? "translate-x-0 opacity-100" : "translate-x-60 opacity-0"
           } ${
             isMenuOpen
-              ? "flex flex-col fixed top-20 right-0 bg-blue-400 bg-opacity-40 backdrop-blur-md p-4 w-2/3 h-screen"
+              ? "flex flex-col fixed top-14 right-0 bg-blue-400 bg-opacity-40 backdrop-blur-md p-4 w-2/3 h-screen"
               : "hidden"
           } sm:flex sm:flex-row  `}
         >

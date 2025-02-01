@@ -130,10 +130,10 @@ const onShowMoreClick = async () => {
   return (
     <div className="flex bg-blue-100 min-h-screen">
       <div className=" flex flex-col sm:flex-row gap-10  w-full">
-        <div className=" pt-20 w-[450px] bg-blue-300 border-b-2 md:border-r-2 border-blue-500 fixed min-h-screen">
+        <div className=" pt-20 sm:w-[450px] bg-blue-300 border-b-2 md:border-r-2 border-blue-500 w-full sm:fixed sm:min-h-screen">
           <h1 className="text-white text-3xl font-bold text-center">Filters</h1>
           <form onSubmit={handleSubmit} className="flex flex-col">
-            <div className="flex flex-row gap-4 p-4 items-center">
+            <div className="flex flex-row gap-4 m-3 sm:p-4 items-center">
               <label className="whitespace-nowrap font-bold">
                 Search Term:
               </label>
@@ -146,7 +146,7 @@ const onShowMoreClick = async () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex flex-row flex-wrap gap-4 p-4 items-center">
+            <div className="flex flex-row flex-wrap gap-4 m-3 sm:p-4 items-center">
               <label className="whitespace-nowrap font-bold">Type:</label>
               <div className="flex gap-2">
                 <input
@@ -190,7 +190,7 @@ const onShowMoreClick = async () => {
               </div>
             </div>
 
-            <div className="flex flex-row flex-wrap gap-4 p-4 items-center">
+            <div className="flex flex-row flex-wrap gap-4 m-3 sm:p-4 items-center">
               <label className="whitespace-nowrap font-bold">Property:</label>
               <div className="flex gap-2">
                 <input
@@ -224,7 +224,7 @@ const onShowMoreClick = async () => {
               </div>
             </div>
 
-            <div className="flex flex-row flex-wrap gap-4 p-4 items-center">
+            <div className="flex flex-row flex-wrap gap-4 m-3 sm:p-4 items-center">
               <label className="whitespace-nowrap font-bold">Sort:</label>
               <select
                 onChange={handleChange}
@@ -238,14 +238,14 @@ const onShowMoreClick = async () => {
                 <option value="createdAt_asc">Oldest</option>
               </select>
             </div>
-            <button className="bg-slate-700 m-5 text-white p-3 rounded-lg uppercase hover:opacity-95">
+            <button className="bg-slate-700 m-3 sm:m-5 text-white p-3 rounded-lg uppercase hover:opacity-95">
               Search
             </button>
           </form>
         </div>
-        <div className=" flex flex-col w-full ml-[500px]">
-          <h1 className="pt-20 text-3xl font-bold">Listing results:</h1>
-          <div className="flex flex-row gap-5 flex-wrap pt-10 mb-10">
+        <div className=" flex flex-col w-full sm:ml-[500px]">
+          <h1 className="sm:pt-20 text-3xl font-bold text-center sm:text-left">Listing results:</h1>
+          <div className="flex flex-col m-auto sm:flex-row gap-5 flex-wrap pt-10 mb-10">
           {!loading && listings.length === 0 && (
             <div className="text-3xl font-bold m-auto h-[700px] w-[700px] items-center ">
               <img src={nolisting} className="m-auto h-[300px]"/>

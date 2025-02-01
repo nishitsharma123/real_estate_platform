@@ -122,18 +122,18 @@ export default function Home() {
             ))}
           </CustomSlider> */}
       {/* Main Content Section */}
-      <div className="sm:h-screen w-full bg-blue-100 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 shadow-lg">
+      <div className="w-full flex flex-col">
         {/* Text Section */}
         <video
-            className="rounded-lg shadow-md w-full hidden sm:flex"
+            className="shadow-md w-full h-screen object-cover"
             src={stockvideo1}
             autoPlay
             loop
             muted
           ></video>
-        <div className="sm:flex-auto text-left sm:text-center md:text-left mt-24 sm:mt-32 sm:absolute">
+        <div className="sm:flex-auto text-left sm:text-center md:text-left mt-24 sm:mt-32 absolute">
           <h1
-            className={`text-5xl sm:text-6xl mt-20 sm:mt-80 font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
+            className={`text-3xl ml-3 sm:ml-10 sm:text-6xl mt-56 sm:mt-40 font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
               animate
                 ? "translate-y-0 opacity-100"
                 : "translate-y-full opacity-0"
@@ -141,36 +141,36 @@ export default function Home() {
           >
             Find your perfect <br/><span className="text-teal-500">dream home</span>
           </h1>
-          <p className="mt-4 text-white font-bold">
+          <p className="mt-4 ml-3 sm:ml-10 text-white text-sm sm:text-base sm:font-bold">
             Your Trusted Partner in Real Estate: Connecting Dreams to
             Destinations with Expertise, Innovation, and Integrity.
           </p>
 
           <div
-            className={`mt-16 mr-5 grid grid-cols-2 md:grid-cols-3 gap-4  bg-white rounded-3xl md:absolute shadow-lg md:z-10 transition-all duration-[2000ms] ${
+            className={`mt-10 sm:mt-16 mr-5 grid grid-cols-3 md:grid-cols-3 ml-3 sm:ml-10 gap-4  bg-white rounded-3xl md:absolute shadow-lg md:z-10 transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-full opacity-0"
             }`}
           >
-            <div className="text-center bg-transparent p-6 rounded-3xl ">
-              <h2 className="text-3xl font-bold text-gray-800">2,000+</h2>
-              <p className="mt-2 text-gray-600">Satisfied and happy clients</p>
+            <div className="text-center bg-transparent p-3 sm:p-6 rounded-3xl ">
+              <h2 className="text-lg sm:text-3xl font-bold text-gray-800">2,000+</h2>
+              <p className="mt-2 text-gray-600 text-xs sm:text-base">Satisfied and happy clients</p>
             </div>
-            <div className="text-center p-6 rounded-3xl ">
-              <h2 className="text-3xl font-bold text-gray-800">57</h2>
-              <p className="mt-2 text-gray-600">Professional agents</p>
+            <div className="text-center p-3 sm:p-6 rounded-3xl ">
+              <h2 className="text-lg sm:text-3xl font-bold text-gray-800">57</h2>
+              <p className="mt-2 text-gray-600 text-xs sm:text-base">Professional agents</p>
             </div>
-            <div className="text-center p-6 rounded-3xl ">
-              <h2 className="text-3xl font-bold text-gray-800">8,500+</h2>
-              <p className="mt-2 text-gray-600">Properties ready for living</p>
+            <div className="text-center p-3 sm:p-6 rounded-3xl ">
+              <h2 className="text-lg sm:text-3xl font-bold text-gray-800">8,500+</h2>
+              <p className="mt-2 text-gray-600 text-xs sm:text-base">Properties ready for living</p>
             </div>
           </div>
         </div>
 
-        {/* Image Section */}
+        {/* Image Section
         <div className="hidden sm:flex-auto sm:flex justify-center w-full">
-          {/* <img
+          <img
             src="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg" // Replace with your image URL
             alt="Modern Home"
             className={`rounded-lg shadow-md w-3/4 m-auto sm:w-auto sm:h-auto  mt-0 object-fit sm:object-contain sm:mt-32 transition-all duration-[2000ms] ${
@@ -179,8 +179,8 @@ export default function Home() {
                 : "translate-x-full opacity-0"
             }`}
 
-          /> */}
-          {/* <video
+          />
+          <video
             className={`rounded-lg shadow-md w-3/4 m-auto sm:w-auto sm:h-auto  mt-0 object-fit sm:object-contain sm:mt-32 transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-100"
@@ -190,8 +190,8 @@ export default function Home() {
             autoPlay
             loop
             muted
-          ></video> */}
-        </div>
+          ></video>
+        </div> */}
       </div>
 
       <div className="flex flex-col w-full min-h-screen bg-blue-100">

@@ -13,7 +13,7 @@ import {
 } from "../redux/user/userSlice";
 import { Link } from "react-router";
 // import { supabase } from '../supabaseClient';
-import { FaLocationArrow, FaShare } from "react-icons/fa";
+import { FaLocationArrow, FaMapMarker, FaMapMarkerAlt, FaShare } from "react-icons/fa";
 import { Checkmark } from "react-checkmark";
 // import { animate } from 'framer-motion';
 import { useEffect, useState } from "react";
@@ -119,13 +119,13 @@ export default function Profile() {
           </h1>
           <span className="flex flex-wrap gap-2 text-center md:text-left m-auto md:m-0">
             <span className="flex gap-2">
-              <FaLocationArrow className="mt-1 text-blue-500" />
+              <FaMapMarkerAlt className="mt-1 text-blue-500" />
               India
             </span>
-            <span className="flex gap-2">
+            {/* <span className="flex gap-2">
               <FaShare className="mt-1 text-blue-500" />
               {currentUser.username}.in
-            </span>
+            </span> */}
           </span>
           <p>"Turning Dreams into Reality, One Property at a Time."</p>
           <div className="flex gap-2 p-2 pl-0 text-white m-auto md:m-0">

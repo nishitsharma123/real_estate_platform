@@ -76,7 +76,7 @@ export default function PropertyDashboard() {
        
         <div className="absolute mt-28 gap-5 flex flex-col w-full  items-center ">
           <h1 className="text-3xl sm:text-6xl text-white font-bold">Find the best one for you</h1>
-          <p className="text-center text-white font-semibold w-[400px]">
+          <p className="text-center text-white font-semibold  m-5 sm:w-[400px]">
             Explore the best homes tailored to your needs with expert guidance, seamless browsing, and smart recommendations—your perfect home is just a click away!
           </p>
           <form
@@ -103,8 +103,8 @@ export default function PropertyDashboard() {
 
       <div className="">
         <div className="flex flex-col gap-10 items-center">
-            <h1 className="text-4xl mt-10 font-bold text-center m-auto font-mono">Properties for sale</h1>
-            <div className="grid grid-cols-4 gap-10 ">
+            <h1 className="text-2xl sm:text-4xl mt-10 font-bold text-center m-auto font-mono">Properties for sale</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 ">
               {
               saleListings.map((listing)=>(
                 <ListingItem listing={listing} key={listing._id} />
