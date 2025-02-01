@@ -16,10 +16,25 @@ export default function Header() {
   const menuRef = useRef(null);
   // const { role } = useSelector((state) => state.user);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
+  // Toggle dropdown when clicking the button
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen((prev) => !prev);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
 
 
@@ -154,7 +169,7 @@ export default function Header() {
             >
               Properties
              {isDropdownOpen && (
-
+<div ref={dropdownRef} className="dropdown">
                <ul className="absolute left-0 mt-4 w-60  bg-blue-500 rounded-lg shadow-lg">
               <li  onClick={closeMenu}>
                 <Link
@@ -173,6 +188,7 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
+            </div>
              )}
                 </button>
           {/* </Link> */}

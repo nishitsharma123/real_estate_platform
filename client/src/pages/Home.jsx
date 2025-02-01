@@ -6,7 +6,17 @@ import { useState, useEffect } from "react";
 import "../styles.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMapMarked, FaPhone, FaTwitter } from "react-icons/fa";
+import stockvideo1 from "../data/stockvideo1.mp4";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaLocationArrow,
+  FaMapMarked,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa";
 const companyNames = [
   "Google",
   "Microsoft",
@@ -112,19 +122,26 @@ export default function Home() {
             ))}
           </CustomSlider> */}
       {/* Main Content Section */}
-      <div className="sm:h-screen bg-blue-100 p-8 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 shadow-lg">
+      <div className="sm:h-screen w-full bg-blue-100 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 shadow-lg">
         {/* Text Section */}
-        <div className="sm:flex-auto tExt-left sm:text-center md:text-left mt-24 sm:mt-32">
+        <video
+            className="rounded-lg shadow-md w-full hidden sm:flex"
+            src={stockvideo1}
+            autoPlay
+            loop
+            muted
+          ></video>
+        <div className="sm:flex-auto text-left sm:text-center md:text-left mt-24 sm:mt-32 sm:absolute">
           <h1
-            className={`text-5xl sm:text-6xl font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
+            className={`text-5xl sm:text-6xl mt-20 sm:mt-80 font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
               animate
                 ? "translate-y-0 opacity-100"
                 : "translate-y-full opacity-0"
             }`}
           >
-            Find your perfect <span className="text-teal-500">dream home</span>
+            Find your perfect <br/><span className="text-teal-500">dream home</span>
           </h1>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-white font-bold">
             Your Trusted Partner in Real Estate: Connecting Dreams to
             Destinations with Expertise, Innovation, and Integrity.
           </p>
@@ -153,7 +170,7 @@ export default function Home() {
 
         {/* Image Section */}
         <div className="hidden sm:flex-auto sm:flex justify-center w-full">
-          <img
+          {/* <img
             src="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg" // Replace with your image URL
             alt="Modern Home"
             className={`rounded-lg shadow-md w-3/4 m-auto sm:w-auto sm:h-auto  mt-0 object-fit sm:object-contain sm:mt-32 transition-all duration-[2000ms] ${
@@ -161,7 +178,19 @@ export default function Home() {
                 ? "translate-x-0 opacity-100"
                 : "translate-x-full opacity-0"
             }`}
-          />
+
+          /> */}
+          {/* <video
+            className={`rounded-lg shadow-md w-3/4 m-auto sm:w-auto sm:h-auto  mt-0 object-fit sm:object-contain sm:mt-32 transition-all duration-[2000ms] ${
+              animate
+                ? "translate-x-0 opacity-100"
+                : "translate-x-full opacity-0"
+            }`}
+            src={stockvideo1}
+            autoPlay
+            loop
+            muted
+          ></video> */}
         </div>
       </div>
 
@@ -341,25 +370,24 @@ export default function Home() {
                 <span className="text-white ">buyr</span>
               </h1>
             </Link>
-            
+
             <div className="flex flex-col gap-4">
-            <div className="flex flex-row gap-4 items-center ">
+              <div className="flex flex-row gap-4 items-center ">
                 <FaPhone className="text-blue-400 text-xl" />
                 <span className="text-base">+91 986-623-9652</span>
-            </div>
-            <div className="flex flex-row gap-4 items-center">
+              </div>
+              <div className="flex flex-row gap-4 items-center">
                 <FaEnvelope className="text-blue-400 text-xl" />
                 <span className="text-base text-">nishitsharma@gmail.com</span>
-            </div>
-            <div className="flex flex-row gap-4">
-                <FaLocationArrow className="mt-2 text-blue-400 text-xl"/>
+              </div>
+              <div className="flex flex-row gap-4">
+                <FaLocationArrow className="mt-2 text-blue-400 text-xl" />
                 <div className="flex flex-col">
-                <span className="text-base">Sector-21</span>
-                <span className="text-base">Noida, Uttar pradesh, India</span>
-                <span className="text-base">201102</span>
+                  <span className="text-base">Sector-21</span>
+                  <span className="text-base">Noida, Uttar pradesh, India</span>
+                  <span className="text-base">201102</span>
                 </div>
-            </div>
-            
+              </div>
             </div>
             <div className="flex gap-4 mt-4">
               <i className="fab fa-facebook text-2xl cursor-pointer"></i>
@@ -367,53 +395,74 @@ export default function Home() {
               <i className="fab fa-twitter text-2xl cursor-pointer"></i>
             </div>
             <div className="mt-4 flex flex-row gap-4 text-3xl">
-              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
-              <FaFacebook  className="hover:scale-125"/>
+              <a
+                href="https://www.linkedin.com/in/nishitsharma128"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="hover:scale-125" />
               </a>
-              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="hover:scale-125"/>
+              <a
+                href="https://www.linkedin.com/in/nishitsharma128"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="hover:scale-125" />
               </a>
-              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="hover:scale-125"/>
+              <a
+                href="https://www.linkedin.com/in/nishitsharma128"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="hover:scale-125" />
               </a>
-              <a href="https://www.linkedin.com/in/nishitsharma128"  target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="hover:scale-125"/>
+              <a
+                href="https://www.linkedin.com/in/nishitsharma128"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="hover:scale-125" />
               </a>
-              
-              
-              
             </div>
           </div>
 
           {/* Navigation Links */}
           <div className="flex-1 flex sm:justify-around text-sm ">
             <ul className="space-y-2 p-5 flex-1">
-              <Link to="/property-dashboard">
+              {/* <Link to="/property-dashboard">
                 <li className="cursor-pointer hover:underline mt-1 text-base">
                   Property listing
                 </li>
-              </Link>
+              </Link> */}
               <Link to="/price-prediction">
-                <li className="cursor-pointer hover:underline mt-2 text-base">
+                <li className="cursor-pointer hover:underline mt-1 text-base">
                   PropValue
                 </li>
               </Link>
               <Link to="/about">
-                <li className="cursor-pointer hover:underline mt-2 text-base">About us</li>
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  About us
+                </li>
               </Link>
               <Link to="/contact-us">
-                <li className="cursor-pointer hover:underline mt-2 text-base">Contact us</li>
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Contact us
+                </li>
               </Link>
-              <Link to="/privacy-policy">
+              <Link to="/term&condition">
                 <li className="cursor-pointer hover:underline mt-2 text-base">
                   Privacy Policy
                 </li>
               </Link>
             </ul>
             <ul className="space-y-2 p-5 flex-1">
-              <li className="text-xl font-bold text-blue-400">Buy your dream home</li>
+              <li className="text-xl font-bold text-blue-400">
+                Buy your dream home
+              </li>
               <Link to="/property-dashboard">
-                <li className="cursor-pointer hover:underline mt-2 text-base">properties in Noida</li>
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  properties in Noida
+                </li>
               </Link>
               {/* <Link to="/contact-us">
                 <li className="cursor-pointer hover:underline mt-2 text-base">Contact</li>
@@ -428,13 +477,17 @@ export default function Home() {
           <div className="bg-blue-400 rounded-3xl w-56 h-fit text-black">
             {/* <h1 className="text-black font-bold text-xl text-center mt-4">Sell your house
               </h1> */}
-              <ul className="space-y-2 p-5">
+            <ul className="space-y-2 p-5">
               <li className="text-xl font-bold text-black ">Sell your house</li>
               <Link to="/price-prediction">
-                <li className="cursor-pointer hover:underline mt-2 text-base ">PropValue</li>
+                <li className="cursor-pointer hover:underline mt-2 text-base ">
+                  PropValue
+                </li>
               </Link>
               <Link to="">
-                <li className="cursor-pointer hover:underline mt-2 text-base">Get instant offer</li>
+                <li className="cursor-pointer hover:underline mt-2 text-base">
+                  Get instant offer
+                </li>
               </Link>
               <Link to="">
                 <li className="cursor-pointer hover:underline mt-2 text-base">
@@ -442,7 +495,7 @@ export default function Home() {
                 </li>
               </Link>
             </ul>
-            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}

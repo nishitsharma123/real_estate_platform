@@ -98,7 +98,7 @@ const ContactUs = () => {
             </h2>
             <p className="text-base text-[#555]">
               We value your feedback and are continuously working to improve
-              Snappy.
+              ibuyr.
             </p>
           </div>
           <div

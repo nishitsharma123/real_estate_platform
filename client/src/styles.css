@@ -108,3 +108,19 @@ body {
   color: #555;
   margin-top: 0.5rem;
 }
+.description-container {
+  position: relative;
+  max-height:max-content; /* Adjust the height as needed */
+  overflow: hidden;
+  /* transition: max-height 2s ease-in-out; Smooth transition */
+}
+
+.description-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px; /* Adjust the height as needed */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}

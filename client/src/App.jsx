@@ -16,21 +16,33 @@ import ShowListing from "./pages/ShowListing";
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import TermCondition from "./pages/TermCondition";
+import Search from "./pages/Search";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 export default function App() {
 
 
 
   return (
     <BrowserRouter>
-    
+    <ScrollToTop/>
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/listing/:listingId" element={<Listing />} />
-<Route path="/term&condition" element={<TermCondition />} />
-<Route path="/property-dashboard" element={<PropertyDashboard />} />
-
+      <Route path="/term&condition" element={<TermCondition />} />
+      <Route path="/property-dashboard" element={<PropertyDashboard />} />
+      <Route path="/search" element={<Search />} />
       <Route  element={<PrivateRoute />} >
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-listing" element={<CreateListing />} />

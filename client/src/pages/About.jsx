@@ -246,13 +246,13 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
                 {/* Navigation Links */}
                 <div className="flex-1 flex sm:justify-around text-sm ">
                   <ul className="space-y-2 p-5 flex-1">
-                    <Link to="/property-dashboard">
+                    {/* <Link to="/property-dashboard">
                       <li className="cursor-pointer hover:underline mt-1 text-base">
                         Property listing
                       </li>
-                    </Link>
+                    </Link> */}
                     <Link to="/price-prediction">
-                      <li className="cursor-pointer hover:underline mt-2 text-base">
+                      <li className="cursor-pointer hover:underline mt-1 text-base">
                         PropValue
                       </li>
                     </Link>
@@ -262,7 +262,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
                     <Link to="/contact-us">
                       <li className="cursor-pointer hover:underline mt-2 text-base">Contact us</li>
                     </Link>
-                    <Link to="/privacy-policy">
+                    <Link to="/term&condition">
                       <li className="cursor-pointer hover:underline mt-2 text-base">
                         Privacy Policy
                       </li>
