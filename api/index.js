@@ -32,10 +32,10 @@ app.listen(3000, () => {
   console.log("server is running live\n");
 });
 // Serve robots.txt from public directory
-app.use(
-  "/robots.txt",
-  express.static(path.join(__dirname, "public/robots.txt")),
-);
+// app.use(
+//   "/robots.txt",
+//   express.static(path.join(__dirname, "public/robots.txt")),
+// );
 // Use the route
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
