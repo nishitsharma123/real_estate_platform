@@ -247,8 +247,8 @@ const onShowMoreClick = async () => {
           <h1 className="sm:pt-20 text-3xl font-bold text-center sm:text-left">Listing results:</h1>
           <div className="flex flex-col m-auto sm:flex-row gap-5 flex-wrap pt-10 mb-10">
           {!loading && listings.length === 0 && (
-            <div className="text-3xl font-bold m-auto h-[700px] w-[700px] items-center ">
-              <img src={nolisting} className="m-auto h-[300px]"/>
+            <div className="text-3xl font-bold m-auto sm:h-[700px] sm:w-[700px] items-center ">
+              <img src={nolisting} className="m-auto h-[200px] sm:h-[300px]"/>
               <h1 className="text-center">No listing found!</h1>
               <p className=" text-center text-gray-500 font-thin text-base">Please try with another keywords</p>
               </div>

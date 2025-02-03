@@ -7,6 +7,7 @@ import "../styles.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import stockvideo1 from "../data/stockvideo1.mp4";
+import stockvideo3 from "../data/stockvideo3.mp4";
 import {
   FaEnvelope,
   FaFacebook,
@@ -126,14 +127,15 @@ export default function Home() {
         {/* Text Section */}
         <video
             className="shadow-md w-full h-screen object-cover"
-            src={stockvideo1}
+            src={stockvideo3}
             autoPlay
             loop
             muted
           ></video>
-        <div className="sm:flex-auto text-left sm:text-center md:text-left mt-24 sm:mt-32 absolute">
+        <div className="flex text-left  w-full  h-screen sm:text-center md:text-left absolute ">
+          <div className="mt-auto sm:mt-72 mb-10">
           <h1
-            className={`text-3xl ml-3 sm:ml-10 sm:text-6xl mt-56 sm:mt-40 font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
+            className={`text-3xl ml-3 sm:ml-10 sm:text-6xl font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
               animate
                 ? "translate-y-0 opacity-100"
                 : "translate-y-full opacity-0"
@@ -165,6 +167,7 @@ export default function Home() {
               <h2 className="text-lg sm:text-3xl font-bold text-gray-800">8,500+</h2>
               <p className="mt-2 text-gray-600 text-xs sm:text-base">Properties ready for living</p>
             </div>
+          </div>
           </div>
         </div>
 
