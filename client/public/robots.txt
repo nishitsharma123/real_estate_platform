@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /profile
+Disallow: /create-listing
+Disallow: /show-listing
+Disallow: /update-listing/:listingId
+
+
+Sitemap: https://www.ibuyr.in/sitemap.xml
