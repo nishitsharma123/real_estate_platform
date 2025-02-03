@@ -123,7 +123,7 @@ export default function Home() {
             ))}
           </CustomSlider> */}
       {/* Main Content Section */}
-      <div className="w-full flex flex-col">
+      <div className="w-full min-h-screen flex flex-col">
         {/* Text Section */}
         <video
             className="shadow-md w-full h-screen object-cover"
@@ -132,8 +132,8 @@ export default function Home() {
             loop
             muted
           ></video>
-        <div className="flex text-left  w-full  h-screen sm:text-center md:text-left absolute ">
-          <div className="mt-auto sm:mt-72 mb-10">
+        <div className="flex text-left  w-full  h-full sm:text-center md:text-left absolute ">
+          <div className=" mt-auto sm:mt-72 mb-20">
           <h1
             className={`text-3xl ml-3 sm:ml-10 sm:text-6xl font-bold text-gray-800 leading-tight transition-all duration-[2000ms] ${
               animate
