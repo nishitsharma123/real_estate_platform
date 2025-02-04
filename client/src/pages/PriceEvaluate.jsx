@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitter } from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 const faqs = [
   {
     question: "What is PropValue?",
@@ -115,6 +115,10 @@ const PredictPrice = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-col gap-5  justify-center bg-blue-100">
+       <Helmet>
+  <title>AI-Powered Property Price Prediction | ibuyr</title>
+  <meta name="description" content="Predict property prices using ibuyr's AI-driven model. Make data-backed real estate decisions today!" />
+</Helmet>
       <div className=" gap-5 justify-center flex flex-col md:flex-row mt-10 m-4">
       <div className="bg-blue-100 rounded-2xl p-8 flex-auto  w-full transform transition-transform duration-500 mt-10">
         <section className="absolute sm:relative  py-12 px-4 pt-0 min-h-screen hidden sm:flex sm:flex-col">

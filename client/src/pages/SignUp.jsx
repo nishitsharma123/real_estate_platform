@@ -5,6 +5,7 @@ import OAuth from "../components/OAuth";
 import { useDispatch, useSelector } from "react-redux";
 import bgVideo from "../data/bgvideo.mp4";
 import { FaUser } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 import {
   signUpFailure,
   signUpSuccess,
@@ -87,6 +88,10 @@ export default function SignUp() {
 
   return (
     <div className="absolute min-h-screen w-screen bg-blue-100">
+     <Helmet>
+  <title>Join ibuyr | AI-Powered Real Estate Platform</title>
+  <meta name="description" content="Sign up for ibuyr to access AI-driven property price predictions and real estate deals." />
+</Helmet>
       {/* <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src={bgVideo}

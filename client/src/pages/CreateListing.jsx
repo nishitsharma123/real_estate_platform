@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet-async";
 import {
   getDownloadURL,
   getStorage,
@@ -9,6 +10,7 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 
+// import { Helmet } from "react-helmet-async";
 export default function CreateListing() {
   const [files, setFiles] = useState([]);
   const { currentUser } = useSelector((state) => state.user);
@@ -200,6 +202,10 @@ export default function CreateListing() {
 
   return (
     <div className="absolute bg-blue-100 w-full min-h-screen">
+      <Helmet>
+                  <title>Create-listings</title>
+                  <meta name="description" content="create listings" />
+              </Helmet>
       <main className="p-3 w-full mx-auto bg-blue-100 mt-20 ">
         <h1 className="text-3xl font-semibold text-center mb-7 ">
           Create a Listing

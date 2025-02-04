@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 export default function ShowListing() {
   const { currentUser } = useSelector((state) => state.user);
   const [ShowListingsError, setShowListingsError] = useState(false);
@@ -56,6 +57,10 @@ export default function ShowListing() {
 
   return (
     <div className="absolute min-h-screen w-full bg-blue-100">
+      <Helmet>
+                  <title>Show listings</title>
+                  <meta name="description" content="show-listings" />
+              </Helmet>
       <div className="mt-20 bg-blue-200 p-5 w-3/4 rounded-2xl flex flex-row items-center gap-10 m-auto ">
         <div className="m-auto">
           <h1 className="font-bold text-3xl">Listing operations</h1>

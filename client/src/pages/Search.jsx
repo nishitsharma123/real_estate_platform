@@ -4,7 +4,7 @@ import { use } from "react";
 import {useNavigate} from 'react-router-dom';
 import nolisting from '../data/nolisting.png';
 import ListingItem from "../components/ListingItem";
-
+import { Helmet } from "react-helmet-async";
 export default function () {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -129,6 +129,10 @@ const onShowMoreClick = async () => {
 };
   return (
     <div className="flex bg-blue-100 min-h-screen">
+      <Helmet>
+  <title>Search Properties with AI Insights | ibuyr</title>
+  <meta name="description" content="Find the perfect property with AI-powered real estate search on ibuyr. Get accurate price predictions instantly." />
+</Helmet>
       <div className=" flex flex-col sm:flex-row gap-10  w-full">
         <div className=" pt-20 sm:w-[450px] bg-blue-300 border-b-2 md:border-r-2 border-blue-500 w-full sm:fixed sm:min-h-screen">
           <h1 className="text-white text-3xl font-bold text-center">Filters</h1>
@@ -245,7 +249,7 @@ const onShowMoreClick = async () => {
         </div>
         <div className=" flex flex-col w-full sm:ml-[500px]">
           <h1 className="sm:pt-20 text-3xl font-bold text-center sm:text-left">Listing results:</h1>
-          <div className="flex flex-col m-auto sm:flex-row gap-5 flex-wrap pt-10 mb-10">
+          <div className="flex flex-col w-full sm:m-auto items-center sm:flex-row gap-5 flex-wrap pt-10 mb-10">
           {!loading && listings.length === 0 && (
             <div className="text-3xl font-bold m-auto sm:h-[700px] sm:w-[700px] items-center ">
               <img src={nolisting} className="m-auto h-[200px] sm:h-[300px]"/>

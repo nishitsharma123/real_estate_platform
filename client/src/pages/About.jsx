@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import freepik__adjust__89929 from "../data/freepik__adjust__89929.png";
+import { Helmet } from "react-helmet-async";
 import { FaEnvelope, FaFacebook, FaHandHolding, FaHandPointRight, FaHandshakeSlash, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitter } from "react-icons/fa";
 export default function About() {
   const [animate, setAnimate] = useState(false);
@@ -18,7 +19,15 @@ export default function About() {
     };
   }, [dispatch]);
   return (
+    
     <div className="bg-blue-100 flex flex-col items-center justify-center w-full min-h-screen">
+        <Helmet>
+  <title>About ibuyr | AI-Powered Real Estate Solutions</title>
+  <meta name="description" content="Learn about ibuyr, the AI-powered real estate platform revolutionizing property price predictions, buying, and selling." />
+  <meta property="og:title" content="About ibuyr | AI-Powered Real Estate" />
+  <meta property="og:description" content="Discover the story behind ibuyr and how our AI-driven platform is changing the real estate industry." />
+</Helmet>
+
       <section className="w-full flex flex-col mt-24 ">
         <img className="w-full rounded-3xl object-cover h-96 " src={freepik__adjust__89929}/>
         <div className=" absolute w-full items-center flex flex-col">

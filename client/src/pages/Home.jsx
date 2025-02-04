@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import stockvideo1 from "../data/stockvideo1.mp4";
 import stockvideo3 from "../data/stockvideo3.mp4";
+import { Helmet } from "react-helmet-async";
 import {
   FaEnvelope,
   FaFacebook,
@@ -104,6 +105,32 @@ export default function Home() {
 
   return (
     <div className="Home">
+      <Helmet>
+  <title>ibuyr | AI-Powered Real Estate price analysis & deals</title>
+  <meta name="description" content="ibuyr is an AI-driven real estate platform that predicts property prices with advanced AI models. Buy, sell, and invest smartly with data-driven insights." />
+  <meta name="keywords" content="real estate AI, property price prediction, buy property, sell property, real estate investment, ibuyr, ibuyr real estate, saurabh choudhary ceo, nishit sharma cto & co-founder, ibuyr ai price prediction tool, ibuyr prop value, IBUYR, noida real estate ibuyr" />
+  <meta property="og:title" content="ibuyr | AI-Powered Real Estate Solutions" />
+  <meta property="og:description" content="Find the best property deals with AI-powered price predictions. ibuyr makes real estate smarter and data-driven." />
+  <meta property="og:image" content="https://media-hosting.imagekit.io//6f9560b25c9040c7/WhatsApp%20Image%202025-01-20%20at%204.50.08%20PM-modified.png?Expires=1832097009&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ezVAsZdb2~U1ly5Fp0HJi00ctdodVRcOH~AD-v3ZW4tMcwtJOPgMIgbf6Vt-UFTejj1L9YDtLpXvts~AbEdE0j8byGTM8-1zh6FMIA3mSLw8TdciNuT3XsRWqSO8fZR5QIqVvEnt8tbsYxmHAtj5Lpez7xnxTPUsLUlSG51BorMFObaYij5T8Oo99bNOCuNgr4P6XvlABJcDAkhvgefP9vvN-DptgzPoIwOChMC4P-z3O~rCtfFcH2glERYO0ZqcSg5C-hoADjzAsT54BZoPUbXTH6YZMbh7ekNGfeuNcAxHZdntZHuHLj4dpPKDxj746ofwIcdKScw7ryTxoPjZzw__" />
+  <meta property="og:url" content="https://www.ibuyr.in" />
+  <meta name="twitter:title" content="ibuyr - Smart Real Estate with AI" />
+  <meta name="twitter:description" content="ibuyr helps you buy and sell properties with AI-driven price analysis." />
+  <meta name="twitter:image" content="https://media-hosting.imagekit.io//6f9560b25c9040c7/WhatsApp%20Image%202025-01-20%20at%204.50.08%20PM-modified.png?Expires=1832097009&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ezVAsZdb2~U1ly5Fp0HJi00ctdodVRcOH~AD-v3ZW4tMcwtJOPgMIgbf6Vt-UFTejj1L9YDtLpXvts~AbEdE0j8byGTM8-1zh6FMIA3mSLw8TdciNuT3XsRWqSO8fZR5QIqVvEnt8tbsYxmHAtj5Lpez7xnxTPUsLUlSG51BorMFObaYij5T8Oo99bNOCuNgr4P6XvlABJcDAkhvgefP9vvN-DptgzPoIwOChMC4P-z3O~rCtfFcH2glERYO0ZqcSg5C-hoADjzAsT54BZoPUbXTH6YZMbh7ekNGfeuNcAxHZdntZHuHLj4dpPKDxj746ofwIcdKScw7ryTxoPjZzw__" />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ibuyr",
+      "url": "https://www.ibuyr.in",
+      "logo": "https://media-hosting.imagekit.io//6f9560b25c9040c7/WhatsApp%20Image%202025-01-20%20at%204.50.08%20PM-modified.png?Expires=1832097009&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ezVAsZdb2~U1ly5Fp0HJi00ctdodVRcOH~AD-v3ZW4tMcwtJOPgMIgbf6Vt-UFTejj1L9YDtLpXvts~AbEdE0j8byGTM8-1zh6FMIA3mSLw8TdciNuT3XsRWqSO8fZR5QIqVvEnt8tbsYxmHAtj5Lpez7xnxTPUsLUlSG51BorMFObaYij5T8Oo99bNOCuNgr4P6XvlABJcDAkhvgefP9vvN-DptgzPoIwOChMC4P-z3O~rCtfFcH2glERYO0ZqcSg5C-hoADjzAsT54BZoPUbXTH6YZMbh7ekNGfeuNcAxHZdntZHuHLj4dpPKDxj746ofwIcdKScw7ryTxoPjZzw__",
+      "sameAs": [
+        "https://www.linkedin.com/company/ibuyr/"
+      ]
+    })}
+  </script>
+</Helmet>
+
       {/* <CustomSlider>
             {images.map((image, index) => (
               <div key={index} style={{ position: "relative" }}>

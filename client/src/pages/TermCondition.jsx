@@ -1,8 +1,13 @@
 import React from 'react'
-
+import { Helmet } from "react-helmet-async";
 export default function TermCondition() {
   return (
     <div className='absolute min-h-screen w-full bg-blue-100'>
+       <Helmet>
+  <title>Terms & Conditions | ibuyr</title>
+  <meta name="description" content="Read ibuyr's terms and conditions for buying and selling properties with AI-driven insights." />
+  <meta property="og:title" content="ibuyr Terms & Conditions" />
+</Helmet>
     <section className='flex flex-col sm:flex-row mt-20 sm:mt-32 ml-5 sm:ml-auto'>
         <div className='text-3xl sm:text-5xl font-semibold flex-auto sm:flex-1 text-left sm:text-center text-blue-700'>Terms & Conditions:</div>
         <div className='flex-auto sm:flex-1 pr-20 '>

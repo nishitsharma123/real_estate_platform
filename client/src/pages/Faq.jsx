@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { Helmet } from "react-helmet-async";
 // const faqs = [
 //   { question: 'Are there any subscription fees?', answer: 'No, our platform is free to use for buyers and sellers.' },
 //   { question: 'Do you share user data with third parties?', answer: 'We prioritize user privacy and never share data without consent.' },
@@ -110,6 +110,42 @@ const App = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-blue-100">
+      <Helmet>
+  <title>Frequently Asked Questions | ibuyr</title>
+  <meta name="description" content="Find answers to common questions about ibuyr's AI-powered real estate solutions." />
+   <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Types of Homes Does Ibuyr Purchase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ibuyr specializes in acquiring 2, 3, and 4 BHK homes located in carefully selected societies throughout Noida. Our focus on these types of properties allows us to ensure that we cater to the needs of both sellers and buyers, providing quality options in desirable communities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Do We Determine the Price for Your Home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At Ibuyr, we leverage proprietary algorithms that analyze extensive existing property transaction data to assess the value of your home. Our database includes information from over 2.5 million property transactions, combined with over 50 property-specific features, allowing us to create a comprehensive valuation. This data-driven approach ensures that we provide a fair, accurate estimate, making the process of selling your home simple, transparent, and convenient."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is not This Just Buying Low and Selling High? How Does Ibuyr Add Value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At Ibuyr, we purchase properties at fair market value, then enhance them through renovations, rigorous legal due diligence, and clear title resolution. These added steps allow us to bring properties to market at a premium, reflecting their improved condition and verified quality. Unlike traditional buyers, we offer sellers a substantial advance payment upfront, providing immediate liquidity—a benefit uncommon in the market. What truly sets us apart, however, is our speed; we complete transactions approximately three times faster than the market average, saving valuable time and offering a seamless, efficient experience for both buyers and sellers."
+          }
+        }
+      ]
+    })}
+  </script>
+</Helmet>
       <div className="max-w-7xl w-full bg-blue-100 rounded-lg p-6 md:p-10 flex flex-col mt-14  gap-5 md:flex-row">
         <div className='flex-1'>
             <img src="https://img.freepik.com/free-vector/faqs-concept-illustration_114360-5185.jpg" className={`rounded-3xl  transition-all h-56 object-cover w-96 md:w-auto md:h-auto duration-[2000ms] ${

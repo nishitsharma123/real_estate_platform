@@ -8,6 +8,7 @@ import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css/bundle";
 import '../styles.css';
+import { Helmet } from "react-helmet-async";
 import {
   FaBuilding,
   FaGoogleDrive,
@@ -71,6 +72,12 @@ export default function Listing() {
 
   return (
     <div className="bg-white flex flex-col min-h-screen w-full">
+       <Helmet>
+  <title>{listing.title} - Buy & Sell on ibuyr</title>
+  <meta name="description" content={`Explore ${listing.title} with AI-driven insights. Get the best deals on properties with ibuyr.`} />
+  <meta property="og:title" content={listing.title} />
+  <meta property="og:description" content={`Find the perfect property: ${listing.title} with AI-powered price analysis.`} />
+</Helmet>
       <div className="mt-16 sm:mt-9">
         {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
         {error && (
@@ -99,14 +106,14 @@ export default function Listing() {
             
             <div className="bg-white sm:border-0 sm:border-solid sm:border-gray-400 sm:mt-10 sm:rounded-3xl w-full sm:w-[500px] flex flex-col justify-between sm:shadow-2xl shadow-gray-400 ">
               <div className="m-3 sm:m-10 ">
-                <p className="text-xl flex flex-row gap-1 items-center font-bold sm:mb-5">
+                <div className="text-xl flex flex-row gap-1 items-center font-bold sm:mb-5">
                   <span className="flex flex-row gap-3">
                     <FaRupeeSign className="text-4xl text-green-500" />{" "}
                     <div className="flex flex-row gap-1 font-bold text-3xl">
                     <span className="">{listing.regularPrice}</span> <h1 className="">{listing.regularPrice_tag}</h1>
                   </div>
                   </span>
-                </p>
+                </div>
                 <div className="flex flex-row gap-3 ">
                   <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-bold text-center   p-2 rounded-2xl mt-1  bg-opacity-70">
                     Property for {listing.type}

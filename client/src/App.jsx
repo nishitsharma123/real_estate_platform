@@ -19,6 +19,7 @@ import TermCondition from "./pages/TermCondition";
 import Search from "./pages/Search";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import {HelmetProvider} from "react-helmet-async";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -33,7 +34,8 @@ export default function App() {
 
 
   return (
-    <BrowserRouter>
+<HelmetProvider>
+      <BrowserRouter>
     <ScrollToTop/>
     <Header />
     <Routes>
@@ -61,6 +63,7 @@ export default function App() {
     </Routes>
    
     </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

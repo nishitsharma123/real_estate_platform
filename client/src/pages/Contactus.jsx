@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
   const [animate, setAnimate] = useState(false);
   const dispatch = useDispatch();
@@ -52,6 +53,10 @@ const ContactUs = () => {
   
   return (
     <div className="flex flex-wrap justify-between items-start p-8 bg-blue-100 font-sans">
+      <Helmet>
+  <title>Contact ibuyr | Get in Touch</title>
+  <meta name="description" content="Have questions? Contact ibuyr for real estate inquiries, support, or business partnerships." />
+</Helmet>
       {/* Left Section */}
       <div className="flex-1 pr-8 min-w-[300px] mt-20">
         <h1

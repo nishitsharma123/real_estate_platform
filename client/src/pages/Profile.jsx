@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { updateUserFailure, updateUserStart, updateUserSuccess } from "../redux/user/userSlice";
 import { useRef } from "react";
 import { app } from "../firebase";
+import { Helmet } from "react-helmet-async";
 import {
   deleteUserFailure,
   deleteUserStart,
@@ -79,6 +80,10 @@ export default function Profile() {
 
   return (
     <div className="absolute bg-blue-100 w-full min-h-screen">
+      <Helmet>
+                        <title>profile</title>
+                        <meta name="description" content="profile page" />
+                    </Helmet>
       <div className="flex  gap-10 m-auto w-11/12 md:w-3/4 rounded-lg  h-auto mt-20 md:mt-36 flex-col md:flex-row ">
         <div className="flex flex-col items-center md:m-auto md:mr-5 ">
           <input

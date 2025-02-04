@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 const cities = {
   Delhi: [
@@ -2543,6 +2543,10 @@ const PredictPrice = () => {
 
   return (
     <div className="min-h-screen gap-5  justify-center px-6 py-8 bg-blue-100">
+      <Helmet>
+  <title>Check Your Property's Value with AI | ibuyr</title>
+  <meta name="description" content="Find out your property's worth instantly with ibuyr's AI-powered price evaluation tool." />
+</Helmet>
       <div className="bg-blue-100 rounded-2xl p-8 flex flex-col  w-full transform transition-transform duration-500 mt-10 ">
         <form
           onSubmit={handleSubmit}

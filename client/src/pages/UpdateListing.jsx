@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   getDownloadURL,
   getStorage,
@@ -224,6 +225,10 @@ export default function CreateListing() {
 
   return (
     <div className="absolute bg-blue-100 w-full min-h-screen">
+      <Helmet>
+                  <title>Update-listings</title>
+                  <meta name="description" content="update-listings" />
+              </Helmet>
       <main className="p-3 w-full mx-auto bg-blue-100 mt-20 ">
         <h1 className="text-3xl font-semibold text-center mb-7 ">
           Update Listing

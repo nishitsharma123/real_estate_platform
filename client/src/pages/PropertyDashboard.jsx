@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import stockvideo from '../data/stockvideo.mp4';
 import ListingItem from "../components/ListingItem";
 import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet-async";
 // import Listing from "./Listing";
 export default function PropertyDashboard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,6 +62,10 @@ export default function PropertyDashboard() {
 
   return (
     <div className="bg-blue-100 min-h-screen">
+       <Helmet>
+  <title>Property Dashboard | ibuyr</title>
+  <meta name="description" content="Track the properties, monitor AI-driven price predictions, and manage your real estate transactions on ibuyr." />
+</Helmet>
       <div className="w-full flex flex-col items-center">
         {/* <img
           className="w-full object-cover h-96"

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet-async";
 import {
   signInStart,
   signInSuccess,
@@ -90,6 +91,10 @@ export default function SignIn() {
 
   return (
     <div className="absolute min-h-screen w-screen bg-blue-100">
+      <Helmet>
+  <title>Sign In to ibuyr | Secure Real Estate Dashboard</title>
+  <meta name="description" content="Log in to your ibuyr account to access your AI-driven property insights and manage real estate deals." />
+</Helmet>
       {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={bgVideo}
