@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
+import PricePredictionModal from "../components/PricePredictionModal";
+import "../styles.css";
 const cities = {
   Delhi: [
     "Vasant Vihar",
@@ -2391,6 +2393,7 @@ const types = {
 };
 
 const PredictPrice = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     BHK: "",
@@ -2531,6 +2534,7 @@ const PredictPrice = () => {
     try {
       const response = await axios.post(
         "https://ibuy-403u.onrender.com/api/evaluate-price",
+        // "https://http://localhost:3000/api/evaluate-price",
         formData
       );
       setPredictedPrice(response.data.predictedPrice);
@@ -2539,14 +2543,18 @@ const PredictPrice = () => {
       setError("Error fetching predicted price. Please try again.");
       setPredictedPrice(null);
     }
+    setModalOpen(true); // Open modal after fetching price
   };
 
   return (
     <div className="min-h-screen gap-5  justify-center px-6 py-8 bg-blue-100">
       <Helmet>
-  <title>Check Your Property's Value with AI | ibuyr</title>
-  <meta name="description" content="Find out your property's worth instantly with ibuyr's AI-powered price evaluation tool." />
-</Helmet>
+        <title>Check Your Property's Value with AI | ibuyr</title>
+        <meta
+          name="description"
+          content="Find out your property's worth instantly with ibuyr's AI-powered price evaluation tool."
+        />
+      </Helmet>
       <div className="bg-blue-100 rounded-2xl p-8 flex flex-col  w-full transform transition-transform duration-500 mt-10 ">
         <form
           onSubmit={handleSubmit}
@@ -2720,7 +2728,7 @@ const PredictPrice = () => {
             </div>
           </div>
 
-          <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-3/4 justify-self-center" />
+          <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-3/4 justify-self-center m-auto" />
 
           <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
             {Object.keys(formData).map(
@@ -2771,7 +2779,13 @@ const PredictPrice = () => {
             </button>
           </div>
         </form>
-        {predictedPrice !== null && (
+        <PricePredictionModal
+          isOpen={isModalOpen}
+          onClose={() => setModalOpen(false)}
+          predictedPrice={predictedPrice}
+          error={error}
+        />
+        {/* {predictedPrice !== null && (
           <div
             className="mt-5 p-6 bg-gradient-to-r from-green-100 to-green-50 text-green-800 rounded-xl shadow-inner text-center"
             style={{
@@ -2780,13 +2794,19 @@ const PredictPrice = () => {
           >
             <h2 className="text-lg font-bold">Predicted Price:</h2>
             <p className="text-3xl font-extrabold">{predictedPrice}</p>
+            <PricePredictionModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+        predictedPrice={predictedPrice} 
+        error={error} 
+      />
           </div>
         )}
         {error && (
           <p className="mt-4 text-red-600 text-center font-medium animate-pulse bg-white rounded-2xl p-2">
             {error}
           </p>
-        )}
+        )} */}
       </div>
     </div>
   );
