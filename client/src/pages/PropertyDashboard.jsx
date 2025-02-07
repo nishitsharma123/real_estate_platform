@@ -95,6 +95,7 @@ export default function PropertyDashboard() {
               className="bg-transparent focus:outline-none  text-black w-full"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              required
             />
             <button>
               <FaSearch className="text-black" />

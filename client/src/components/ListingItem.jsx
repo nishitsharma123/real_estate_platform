@@ -5,7 +5,7 @@ export default function ListingItem({listing}) {
   return (
     <div className=''>
         <Link to={`/listing/${listing._id}`}>
-            <div className=" mt-5 card bg-white w-80 h-[500px] rounded-2xl pt-3 transition-all duration-300 hover:scale-110 shadow-md">
+            <div className=" mt-5 card bg-white w-80 h-[500px] rounded-2xl pt-3 transition-all duration-300 hover:scale-110 shadow-md mb-10 ">
                 <div className="card-image w-72 h-60 m-auto overflow-hidden rounded-2xl">
                     <div className="text-xs bg-gradient-to-r from-blue-500 to-purple-600 text-white ml-3 mt-3 absolute p-1 rounded-lg w-fit">{listing.propertyAuth}</div>
                     <img src={listing.imageUrls[0]} alt="property-image" className='rounded-2xl m-auto w-72 h-60 object-cover transition-all duration-300 hover:scale-125' />

@@ -2547,7 +2547,7 @@ const PredictPrice = () => {
   };
 
   return (
-    <div className="min-h-screen gap-5  justify-center px-6 py-8 bg-blue-100">
+    <div className="min-h-screen gap-5 flex  justify-center sm:px-6 sm:py-8 bg-blue-100">
       <Helmet>
         <title>Check Your Property's Value with AI | ibuyr</title>
         <meta
@@ -2555,13 +2555,13 @@ const PredictPrice = () => {
           content="Find out your property's worth instantly with ibuyr's AI-powered price evaluation tool."
         />
       </Helmet>
-      <div className="bg-blue-100 rounded-2xl p-8 flex flex-col  w-full transform transition-transform duration-500 mt-10 ">
+      <div className="bg-blue-100 rounded-2xl  p-2 sm:p-8 flex flex-col  w-full transform transition-transform duration-500 mt-14 sm:mt-10 ">
         <form
           onSubmit={handleSubmit}
           className="space-y-6  items-center justify-center p-6 rounded-3xl bg-white w-full "
         >
           <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
-            <div className="flex flex-col mt-6 p-5 bg-blue-300 w-fit rounded-3xl h-36 justify-between bg-opacity-50">
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 w-full items-center sm:w-fit rounded-3xl h-36 justify-between bg-opacity-50">
               <label
                 htmlFor="city"
                 className="text-gray-700 mb-2 text-center font-bold"
@@ -2584,7 +2584,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-full items-center sm:w-fit h-36 justify-between bg-opacity-50">
               <label
                 htmlFor="location"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2609,7 +2609,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-fit h-36 justify-between bg-opacity-50">
+            <div className="flex flex-col mt-6 p-5 bg-blue-300 rounded-3xl w-full items-center sm:w-fit h-36 justify-between bg-opacity-50">
               <label
                 htmlFor="transaction"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2635,7 +2635,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 rounded-3xl bg-blue-300 h-36 justify-between w-fit bg-opacity-50">
+            <div className="flex flex-col mt-6 p-5 rounded-3xl bg-blue-300 h-36 justify-between w-full items-center sm:w-fit bg-opacity-50">
               <label
                 htmlFor="status"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2658,7 +2658,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50">
+            <div className="flex flex-col mt-6 p-5 w-full items-center sm:w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50">
               <label
                 htmlFor="facing"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2681,7 +2681,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
+            <div className="flex flex-col mt-6 p-5 w-full items-center sm:w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
               <label
                 htmlFor="ownership"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2704,7 +2704,7 @@ const PredictPrice = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mt-6 p-5 w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
+            <div className="flex flex-col mt-6 p-5 w-full items-center sm:w-fit bg-blue-300 h-36 justify-between rounded-3xl bg-opacity-50 ">
               <label
                 htmlFor="type"
                 className="text-gray-700 font-bold mb-2 text-center"
@@ -2728,7 +2728,7 @@ const PredictPrice = () => {
             </div>
           </div>
 
-          <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-3/4 justify-self-center m-auto" />
+          <hr className=" border-blue-500 border-solid border-2 rounded-3xl w-full sm:w-3/4 justify-self-center m-auto" />
 
           <div className="flex flex-row gap-5 items-center justify-center flex-wrap">
             {Object.keys(formData).map(
@@ -2762,7 +2762,7 @@ const PredictPrice = () => {
                       name={key}
                       value={formData[key]}
                       onChange={handleChange}
-                      className="border-b-2 border-gray-900 rounded-3xl w-56 px-4 py-3  transition-all duration-300"
+                      className="border-b-2 border-gray-900 rounded-3xl w-64 sm:w-56 px-4 py-3  transition-all duration-300"
                       placeholder={`Enter ${key.replace(/_/g, " ")}`}
                     />
                   </div>
@@ -2794,12 +2794,7 @@ const PredictPrice = () => {
           >
             <h2 className="text-lg font-bold">Predicted Price:</h2>
             <p className="text-3xl font-extrabold">{predictedPrice}</p>
-            <PricePredictionModal 
-        isOpen={isModalOpen} 
-        onClose={() => setModalOpen(false)} 
-        predictedPrice={predictedPrice} 
-        error={error} 
-      />
+            
           </div>
         )}
         {error && (
@@ -2807,6 +2802,11 @@ const PredictPrice = () => {
             {error}
           </p>
         )} */}
+        {error && (
+          <p className="mt-4 text-red-600 text-center font-medium animate-pulse bg-white rounded-2xl p-2">
+            {error}
+          </p>
+        )}
       </div>
     </div>
   );

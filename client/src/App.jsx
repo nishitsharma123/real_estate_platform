@@ -17,6 +17,7 @@ import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import TermCondition from "./pages/TermCondition";
 import Search from "./pages/Search";
+import Homesell from './pages/Homesell';
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {HelmetProvider} from "react-helmet-async";
@@ -40,6 +41,7 @@ export default function App() {
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/sell-home" element={<Homesell />} />
       <Route path="/about" element={<About />} />
       <Route path="/listing/:listingId" element={<Listing />} />
       <Route path="/term&condition" element={<TermCondition />} />

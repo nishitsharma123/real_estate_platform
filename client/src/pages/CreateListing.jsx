@@ -220,11 +220,11 @@ export default function CreateListing() {
             <p className="font-semibold text-center p-4">
               Images:
               <span className="font-normal text-gray-600 ml-2">
-                The first image will be cover image (max 6 images allowed)
+                The first image will be cover image (max 15 images allowed)
               </span>
             </p>
 
-            <div className="flex gap-4 w-96 text-center items-center m-auto">
+            <div className="flex gap-4 m-2 sm:w-96 text-center items-center sm:m-auto ">
               <input
                 onChange={(e) => setFiles(e.target.files)}
                 className="p-3 border border-blue-300 rounded-lg w-full"
@@ -246,18 +246,18 @@ export default function CreateListing() {
             <p className="text-red-700 text-sm text-center">
               {imageUploadError && imageUploadError}
             </p>
-            <div className="flex flex-row flex-wrap gap-12 mt-5 bg-blue-100 m-10 rounded-3xl">
+            <div className="flex flex-row flex-wrap sm:gap-12 mt-5 bg-blue-100 m-2 sm:m-10 rounded-3xl">
               {formData.imageUrls &&
                 formData.imageUrls.length > 0 &&
                 formData.imageUrls.map((url, index) => (
                   <div
                     key={url}
-                    className="flex flex-col p-3 rounded-3xl gap-3 pl-5 mt-4"
+                    className="flex flex-col p-3 rounded-3xl gap-3 pl-5 mt-4 m-auto sm:m-0"
                   >
                     <img
                       src={url}
                       alt="listing image"
-                      className="w-52 h-52 object-cover rounded-3xl"
+                      className="w-72 h-72 sm:w-52 sm:h-52 object-cover rounded-3xl"
                     />
                     <button
                       type="button"
@@ -281,7 +281,7 @@ export default function CreateListing() {
 
         <div className="flex flex-col gap-1 ">
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-              <h1 className="text-2xl flex-1 pl-40 ">Title: </h1>
+              <h1 className="text-2xl flex-1 sm:pl-40 ">Title: </h1>
               <input
                 type="text"
                 placeholder="title"
@@ -294,7 +294,7 @@ export default function CreateListing() {
             </div>
 
             <div className="flex flex-row justify-between p-5 gap-5 ">
-              <h1 className="text-2xl flex-1 pl-40">Description: </h1>
+              <h1 className="text-2xl flex-1 sm:pl-40">Description: </h1>
 
               <textarea
                 className="border-black border-2 p-3 rounded-lg m-auto flex-1 h-32"
@@ -308,7 +308,7 @@ export default function CreateListing() {
             </div>
 
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-              <h1 className="text-2xl flex-1 pl-40">Address: </h1>
+              <h1 className="text-2xl flex-1 sm:pl-40">Address: </h1>
               <input
                 type="text"
                 placeholder="address"
@@ -320,7 +320,7 @@ export default function CreateListing() {
               />
             </div>
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-            <h1 className="text-2xl flex-1 pl-40">Property authentication: </h1>
+            <h1 className="text-2xl flex-1 sm:pl-40">Property authentication: </h1>
             <select
               className="border-black border-2 p-3 rounded-lg m-auto flex-1"
               id="propertyAuth"
@@ -361,7 +361,7 @@ export default function CreateListing() {
             </div> */}
 
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-              <h1 className="text-2xl flex-1 pl-40">
+              <h1 className="text-2xl flex-1 sm:pl-40">
                 Property area:
                 <br />
                 <span className="text-green-500 text-sm">
@@ -427,7 +427,7 @@ export default function CreateListing() {
 
             <div className=" flex flex-col gap-2 flex-wrap">
               <div className="flex flex-row p-5 gap-5 items-center">
-                <h1 className="text-2xl pl-40">Property type: </h1>
+                <h1 className="text-2xl sm:pl-40">Property type: </h1>
                 <div className="flex flex-row flex-1 m-auto gap-5">
                   <div className=" flex gap-2 ml-auto">
                     <input
@@ -456,7 +456,7 @@ export default function CreateListing() {
              
 
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-              <h1 className="text-2xl flex-1 pl-40 ">BHK: </h1>
+              <h1 className="text-2xl flex-1 sm:pl-40 ">BHK: </h1>
               <input
                 type="text"
                 placeholder="bhk"
@@ -471,7 +471,7 @@ export default function CreateListing() {
  {/* --------- */}
             <div className=" flex flex-col gap-2 flex-wrap">
               <div className="flex flex-row p-5 gap-5 items-center">
-                <h1 className="text-2xl pl-40">Property auth option: </h1>
+                <h1 className="text-2xl sm:pl-40">Property auth option: </h1>
                 <div className="flex flex-row flex-1 m-auto gap-5">
                   <div className=" flex gap-2 ml-auto">
                     <input
@@ -502,7 +502,7 @@ export default function CreateListing() {
 
 
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
-              <h1 className="text-2xl flex-1 pl-40 ">parking: </h1>
+              <h1 className="text-2xl flex-1 sm:pl-40 ">parking: </h1>
               <input
                 type="text"
                 placeholder="Available/Not Available"
@@ -517,7 +517,7 @@ export default function CreateListing() {
 {/* ------- */}
 <div className="flex flex-row justify-between p-5 gap-5 items-center">
               <div className="flex-1">
-              <h1 className="text-2xl flex-1 pl-40">
+              <h1 className="text-2xl flex-1 sm:pl-40">
                 property price in digits:
                 <br />
                 <span className="text-green-500 text-sm">
@@ -544,7 +544,7 @@ export default function CreateListing() {
 
             <div className="flex flex-row justify-between p-5 gap-5 items-center">
               <div className="flex-1">
-              <h1 className="text-2xl flex-1 pl-40">
+              <h1 className="text-2xl flex-1 sm:pl-40">
                 property price:
                 <br />
                 <span className="text-green-500 text-sm">
@@ -576,7 +576,7 @@ export default function CreateListing() {
             </div>
               {/* ========= */}
               <div className="flex flex-row justify-between p-5 gap-5">
-              <div className="flex-1"><h1 className="text-2xl flex-1 pl-40 ">Amenities: </h1></div>
+              <div className="flex-1"><h1 className="text-2xl flex-1 sm:pl-40 ">Amenities: </h1></div>
               <div className="flex flex-row gap-5 flex-wrap flex-1">
               <input
                 type="text"
@@ -719,7 +719,7 @@ export default function CreateListing() {
               {/* ========= */}
               {/* ------------- */}
                <div className="flex flex-row justify-between p-5 gap-5">
-              <div className="flex-1"><h1 className="text-2xl flex-1 pl-40 ">Key features: </h1></div>
+              <div className="flex-1"><h1 className="text-2xl flex-1 sm:pl-40 ">Key features: </h1></div>
               <div className="flex flex-row gap-5 flex-wrap flex-1">
               <input
                 type="text"
@@ -832,7 +832,7 @@ export default function CreateListing() {
             </div>
               </div>
               <div className="flex flex-row p-5 gap-5 items-center">
-                <h1 className="text-2xl pl-40 flex-1">Offer on property: </h1>
+                <h1 className="text-2xl sm:pl-40 flex-1">Offer on property: </h1>
                 <div className="flex gap-2 flex-1 m-auto">
                   <input
                     type="checkbox"

@@ -173,7 +173,7 @@ export default function Header() {
                <ul className="absolute left-0 mt-4 w-60  bg-blue-500 rounded-lg shadow-lg">
               <li  onClick={closeMenu}>
                 <Link
-                  to="/sell-your-home"
+                  to="/sell-home"
                   className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
                 >
                   Sell your home

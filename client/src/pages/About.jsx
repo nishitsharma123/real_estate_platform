@@ -29,17 +29,17 @@ export default function About() {
 </Helmet>
 
       <section className="w-full flex flex-col mt-24 ">
-        <img className="w-full rounded-3xl object-cover h-96 " src={freepik__adjust__89929}/>
+        <img className="sm:m-10 rounded-3xl object-cover h-96 " src={freepik__adjust__89929}/>
         <div className=" absolute w-full items-center flex flex-col">
           <Link to="/contact-us" className="ml-auto">
-          <button className={`bg-white rounded-2xl p-2  text-xs sm:text-base sm:p-2 ml-auto mr-5 mt-5 gap-2 flex flex-row items-center transition-all duration-[2000ms] ${
+          <button className={`bg-white rounded-2xl p-2  text-xs sm:text-base sm:p-2 ml-auto mr-5 mt-5 sm:mr-14 sm:mt-14 gap-2 flex flex-row items-center transition-all duration-[2000ms] ${
               animate
                 ? "translate-y-0 opacity-100"
                 : "translate-y-full opacity-0"
             }`}>Need help?  <span className="bg-blue-500 hover:bg-blue-400 p-1 sm:p-2 rounded-lg bg-blue text-white"> Contact us</span></button>
           </Link>
           </div>
-      <div className=" w-full sm:w-3/4 absolute p-10 flex flex-col gap-5 mt-28">
+      <div className=" sm:w-3/4 absolute p-5 sm:p-10 sm:ml-20 flex flex-col gap-5 mt-36">
       <h1 className={`text-3xl sm:text-6xl text-blue-700 font-bold transition-all duration-[2000ms] ${
               animate
                 ? "translate-x-0 opacity-100"
