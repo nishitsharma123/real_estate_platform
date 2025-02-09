@@ -72,7 +72,7 @@ export default function CreateListing() {
   });
   const [imageUploadError, setImageUploadError] = useState(false);
   const handleImageSubmit = (e) => {
-    if (files.length > 0 && files.length + formData.imageUrls.length < 15) {
+    if (files.length > 0 && files.length + formData.imageUrls.length <= 15) {
       setUploading(true);
       setImageUploadError(false);
       const promises = [];
@@ -243,7 +243,7 @@ export default function CreateListing() {
             <p className="font-semibold text-center p-4">
               Images:
               <span className="font-normal text-gray-600 ml-2">
-                The first image will be cover image (max 6 images allowed)
+                The first image will be cover image (max 15 images allowed)
               </span>
             </p>
 

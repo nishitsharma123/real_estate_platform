@@ -2394,6 +2394,7 @@ const types = {
 
 const PredictPrice = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     BHK: "",
@@ -2532,14 +2533,17 @@ const PredictPrice = () => {
 
     // --------------
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://ibuy-403u.onrender.com/api/evaluate-price",
         // "https://http://localhost:3000/api/evaluate-price",
         formData
       );
       setPredictedPrice(response.data.predictedPrice);
+      setLoading(false);
       setError(null);
     } catch (err) {
+      setLoading(false);
       setError("Error fetching predicted price. Please try again.");
       setPredictedPrice(null);
     }
@@ -2773,9 +2777,11 @@ const PredictPrice = () => {
           <div className="m-auto justify-center w-fit">
             <button
               type="submit"
+              disabled={loading}
               className="p-14  bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:translate-y-1"
             >
-              Predict Price
+              
+               {loading ? "Predicting..." : "Predict price"}
             </button>
           </div>
         </form>

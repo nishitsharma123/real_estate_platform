@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import stockvideo1 from "../data/stockvideo1.mp4";
 import stockvideo3 from "../data/stockvideo3.mp4";
+import homeSlide from "../data/homeSlide.png";
+import homeSlide1 from "../data/homeSlide1.png";
 import propimage from "../data/propimage.png";
 import { Helmet } from "react-helmet-async";
 import {
@@ -37,6 +39,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [animate, setAnimate] = useState(false);
   const [agents, setAgents] = useState([]);
+  const [activeTab, setActiveTab] = useState("traditional");
   const [error, setError] = useState(""); // To handle error message
   const dispatch = useDispatch();
 
@@ -106,7 +109,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="Home">
+    <div className="Home bg-blue-100 min-h-screen w-full">
       <Helmet>
   <title>ibuyr | AI-Powered Real Estate price analysis & deals</title>
   <meta name="description" content="ibuyr is an AI-driven real estate platform that predicts property prices with advanced AI models. Buy, sell, and invest smartly with data-driven insights." />
@@ -131,7 +134,7 @@ export default function Home() {
       ]
     })}
   </script>
-</Helmet>
+      </Helmet>
 
       {/* <CustomSlider>
             {images.map((image, index) => (
@@ -198,6 +201,20 @@ export default function Home() {
             </div>
           </div>
           </div>
+          <div className="mt-32 sm:flex items-center hidden">
+            <img src={homeSlide} className={`contrast-110 brightness-125 h-[500px] ml-20 opacity-90 transition-all duration-[2000ms] ${
+              animate
+                ? "-translate-y-0 opacity-100"
+                : "translate-y-full opacity-0"
+            }`}/>
+            <div className=" absolute w-[500px] h-[500px] items-center">
+            <img src={homeSlide1} className={`brightness-200 h-56 mx-52 mt-24 transition-all duration-[2000ms] ${
+              animate
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-60 opacity-0"
+            }`}/>
+            </div>
+          </div>
         </div>
 
         {/* Image Section
@@ -225,6 +242,87 @@ export default function Home() {
           ></video>
         </div> */}
       </div>
+      <div className="bg-blue-100 py-12 px-6 md:px-16 w-full pt-12 sm:pt-32">
+      <h2 className="text-xl sm:text-3xl font-bold text-center text-gray-800 mb-8">
+        Comparing Traditional Real Estate & ibuyr: Which One is Right for You?
+      </h2>
+      <div className="flex justify-center mb-6">
+        <button
+          className={`px-6 py-2 text-lg font-semibold w-56 opacity-80  hover:opacity-50 transition-all duration-300 ${
+            activeTab === "traditional" ? "bg-red-600 text-white" : "bg-white text-gray-800"
+          } rounded-l-2xl shadow-md`}
+          onClick={() => setActiveTab("traditional")}
+        >
+          Traditional
+        </button>
+        <button
+          className={`px-6 py-2 text-lg font-semibold w-56 opacity-80 hover:opacity-50 transition-all duration-300 ${
+            activeTab === "ibuyer" ? "bg-green-600 text-white" : "bg-white text-gray-800"
+          } rounded-r-2xl shadow-md`}
+          onClick={() => setActiveTab("ibuyer")}
+        >
+          ibuyr
+        </button>
+      </div>
+
+      <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+        <div
+          className={`transition-opacity duration-500 ease-in-out p-6 md:p-8 min-h-[300px] bg-white ${
+            activeTab === "traditional" ? "opacity-100 block" : "opacity-0 hidden"
+          }`}
+        >
+          <h3 className="text-xl text-center sm:text-left sm:text-3xl font-semibold text-red-600 mb-4">Traditional Real Estate</h3>
+          <ul className="space-y-6 text-gray-700 list-disc list-inside">
+            <li><strong>⏳ Selling Speed:</strong> Takes weeks or months to close a deal.</li>
+            <li><strong>📋 Process Simplicity:</strong> Requires listing, staging, and multiple showings.</li>
+            <li><strong>⚠️ Certainty & Control:</strong> Unpredictable timelines and possible deal fall-throughs.</li>
+            <li><strong>💰 Costs & Fees:</strong> Agent commissions, repair costs, and hidden fees.</li>
+            <li><strong>📑 Convenience:</strong> Complex paperwork and negotiations.</li>
+          </ul>
+        </div>
+
+        <div
+          className={`transition-opacity duration-500 ease-in-out p-6 md:p-8 min-h-[300px] bg-white ${
+            activeTab === "ibuyer" ? "opacity-100 block" : "opacity-0 hidden"
+          }`}
+        >
+          <h3 className="text-xl text-center sm:text-left sm:text-3xl font-semibold text-green-600 mb-4">ibuyr</h3>
+          <ul className="space-y-6 text-gray-700 list-disc list-inside">
+            <li><strong>⚡ Selling Speed:</strong> Instant offers with closings in days.</li>
+            <li><strong>✅ Process Simplicity:</strong> No listings, no showings, just a direct offer.</li>
+            <li><strong>🔒 Certainty & Control:</strong> Guaranteed offers with flexible closing dates.</li>
+            <li><strong>💵 Costs & Fees:</strong> Transparent fees, no repair or staging costs.</li>
+            <li><strong>🚀 Convenience:</strong> Streamlined, tech-driven, hassle-free selling.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div className=" bg-blue-100 bg-cover bg-center py-24 px-6 md:px-16 flex h-[550px]">
+      <video 
+      className="shadow-md w-full object-cover rounded-3xl"
+        src={stockvideo1}
+        autoPlay
+            loop
+            muted
+
+      
+      
+      ></video>
+      <div className="sm:w-[1391px] sm:h-[360px] rounded-3xl sm:bg-black sm:bg-opacity-30 absolute flex">
+      <div className=" p-10 rounded-2xl text-center max-w-3xl sm:mx-auto mt-10  sm:my-auto">
+        <h2 className="text-xl sm:text-4xl font-bold text-white mb-4">Find Your Dream Home</h2>
+        <p className="text-base sm:text-lg text-gray-200 mb-6">
+          Explore top listings, discover beautiful properties, and make your dream home a reality.
+        </p>
+        <a href="/property-dashboard">
+          <button className="px-6 py-3 text-base sm:text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all">
+            Buy a home
+          </button>
+        </a>
+      </div>
+      </div>
+    </div>
 
       <div className="flex flex-col w-full h-screen">
         <div className=" flex w-full h-screen bg-blue-200">
@@ -269,7 +367,7 @@ export default function Home() {
                 {/* </Link> */}
               </form>
               </div>
-              <div>
+              <div className="">
               <img
                 alt="house image"
                 className=""

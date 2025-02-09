@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 // import { marked } from 'marked';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
+import { Autoplay } from "swiper/modules";
 // import ShowMore from '../components/ShowMore'; // Import the ShowMore component
 import { Navigation } from "swiper/modules";
 import "swiper/css/bundle";
+import "swiper/css/autoplay";
 import '../styles.css';
 import { Helmet } from "react-helmet-async";
 import {
@@ -86,13 +88,15 @@ export default function Listing() {
         {listing && !loading && !error && (
           <div className=" flex flex-col sm:flex-row gap-5 sm:p-10 pt-0  ">
             <Swiper
+            modules={[Autoplay]}
               navigation
+              autoplay={true}
               className="sm:mt-10 sm:rounded-3xl w-full sm:w-5/6"
             >
               {listing.imageUrls.map((url) => (
                 <SwiperSlide key={url}>
                   <div
-                    className=" h-[300px] sm:h-[550px] "
+                    className=" h-[300px] sm:h-[550px] rounded-3xl"
                     style={{
                       background: `url(${url}) center no-repeat`,
                       backgroundSize: "cover",

@@ -49,7 +49,7 @@ export default function About() {
               animate
                 ? "translate-y-0 opacity-100"
                 : "-translate-y-full opacity-0"
-            }`}>Welcome to iBuyr, where real estate innovation meets human connection. We're more than just a real estate company—we're your trusted partner in navigating the exciting world of property buying, selling, and investing.</p>
+            }`}>Welcome to ibuyr, where real estate innovation meets human connection. We're more than just a real estate company—we're your trusted partner in navigating the exciting world of property buying, selling, and investing.</p>
       </div>
       </section>
 
@@ -61,7 +61,7 @@ export default function About() {
             }`}>ibuyr's Mission:</div>
         <div className='flex-auto sm:flex-1 sm:pr-20 '>
            
-           <p className='text-lg text-gray-500 ml-7'>At iBuyr, our mission is simple: to make real estate easy, efficient, and empowering.
+           <p className='text-lg text-gray-500 ml-7'>At ibuyr, our mission is simple: to make real estate easy, efficient, and empowering.
 We're dedicated to creating a platform where buyers and sellers feel confident and supported at every step. By harnessing the power of advanced technology, robust data analytics, and human expertise, we aim to transform the real estate experience into one that's not only seamless but also rewarding.</p>
            
            
@@ -104,7 +104,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
             </h3>
             <p className="text-gray-500">Founder & CEO</p>
             <p className="text-gray-500 mt-2 sm:m-10">
-              Saurabh Choudhary, the visionary behind iBuyr, is dedicated to revolutionizing real estate through innovation and technology. With a focus on transparency, efficiency, and accessibility, he aims to simplify property transactions and create lasting value for clients and communities.
+              Saurabh Choudhary, the visionary behind ibuyr, is dedicated to revolutionizing real estate through innovation and technology. With a focus on transparency, efficiency, and accessibility, he aims to simplify property transactions and create lasting value for clients and communities.
             </p>
           </div>
 
@@ -122,7 +122,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
             </h3>
             <p className="text-gray-500">Co-Founder & CTO</p>
             <p className="text-gray-500 mt-2 sm:m-10">
-             Nishit Sharma, the tech mastermind behind iBuyr, leads innovation as the Co-Founder and CTO. With a passion for cutting-edge technology and a drive for excellence, Nishit oversees the development of iBuyr's advanced platforms, ensuring seamless, secure, and efficient real estate solutions.             </p>
+             Nishit Sharma, the tech mastermind behind ibuyr, leads innovation as the Co-Founder and CTO. With a passion for cutting-edge technology and a drive for excellence, Nishit oversees the development of iBuyr's advanced platforms, ensuring seamless, secure, and efficient real estate solutions.             </p>
           </div>
 
           {/* Card 3 */}
@@ -148,7 +148,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
           What we are providing to our customer?
         </h1>
         <p className="text-gray-600 text-lg mb-6 text-center">
-          At iBuy, we are revolutionizing the real estate experience with fast,
+          At ibuyr, we are revolutionizing the real estate experience with fast,
           accurate, and reliable services designed to meet your needs.
         </p>
 

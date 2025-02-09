@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { FaMapMarkerAlt } from "react-icons/fa";
 export default function ShowListing() {
   const { currentUser } = useSelector((state) => state.user);
   const [ShowListingsError, setShowListingsError] = useState(false);
@@ -82,22 +83,23 @@ export default function ShowListing() {
           userListings.map((listing) => (
             <div
               key={listing._id}
-              className=" bg-blue-100 border-2 border-solid border-blue-200 p-5 rounded-3xl flex flex-col w-64 gap-1 sm:gap-10"
+              className=" bg-white border-2 border-solid border-blue-200 p-3 rounded-3xl flex flex-col w-64 gap-1 sm:gap-5"
             >
               <Link to={`/listing/${listing._id}`}>
                 <div>
                   <img
                     src={listing.imageUrls[0]}
                     alt="listing cover image"
-                    className="w-full sm:w-60 h-60 object-cover rounded-3xl"
+                    className="w-full sm:w-60 h-44 object-cover rounded-3xl"
                   />
                 </div>
               </Link>
               <div className=" flex flex-col justify-between">
                 <div className="">
-                  <h1 className="text-lg font-semibold mb-3 text-gray-800 truncate">
+                  <h1 className="text-lg font-semibold  text-gray-800 truncate">
                     {listing.title}
                   </h1>
+                  <p className="flex flex-row gap-3 mb-5 items-center"><FaMapMarkerAlt className="text-lg"/>{listing.address}</p>
                   {/* <p className="text-gray-600">{listing.description}</p> */}
                 </div>
                 <div className="flex flex-row justify-between">
