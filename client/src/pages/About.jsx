@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import freepik__adjust__89929 from "../data/freepik__adjust__89929.png";
+import saurabh_image from "../data/saurabh_image.jpg";
+import nishit_image from "../data/nishit_image.jpg";
 import { Helmet } from "react-helmet-async";
 import { FaEnvelope, FaFacebook, FaHandHolding, FaHandPointRight, FaHandshakeSlash, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitter } from "react-icons/fa";
 export default function About() {
@@ -94,7 +96,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
           <div className="bg-gray-100 rounded-3xl shadow-xl p-6 text-center">
             <div className="w-36 h-36 mx-auto mb-4  relative overflow-hidden rounded-full ">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQHuHGVqw5eQfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723689369673?e=1740614400&v=beta&t=QDgi4U7OEjmYKiGgEOThPPXRJt_jPPKnvamMQxcw9Lw"
+                src={saurabh_image}
                 alt="Team member"
                 className="w-full h-auto relative z-0 rounded-full transition-all duration-300 hover:scale-150"
               />
@@ -112,7 +114,7 @@ We're dedicated to creating a platform where buyers and sellers feel confident a
           <div className="bg-gray-100 rounded-3xl shadow-xl p-6 text-center">
             <div className="w-36 h-36 mx-auto mb-4  relative overflow-hidden rounded-full ">
               <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQE221Eal7Hg9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728107546810?e=1740614400&v=beta&t=DqPi1Zgz6ELc5i31zQ2FlWYP-HmdO2ITYhqynNqAc_0"
+                src={nishit_image}
                 alt="Team member"
                 className="w-full h-auto relative z-0 rounded-full transition-all duration-300 hover:scale-150"
               />
