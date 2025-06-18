@@ -66,7 +66,7 @@ export default function PropertyDashboard() {
   <title>Property Dashboard | ibuyr</title>
   <meta name="description" content="Track the properties, monitor AI-driven price predictions, and manage your real estate transactions on ibuyr." />
 </Helmet>
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_65%,rgba(0,0,0,0)_100%)]">
         {/* <img
           className="w-full object-cover h-96"
           src="https://img.pikbest.com/wp/202344/light-blue-gradient-wallpaper-smooth-blur-with-simple-plain-background-texture_9930252.jpg!sw800"
@@ -125,7 +125,7 @@ export default function PropertyDashboard() {
         
 
       </div>
-      <footer className="bg-black text-white p-8 flex flex-col items-center w-full justify-between">
+      <footer className="bg-black text-white p-8 flex flex-col items-center w-full justify-between ">
               {/* Top Section */}
               <div className="flex flex-col sm:flex-row flex-wrap justify-between w-full max-w-6xl mb-8">
                 {/* Logo and Description */}

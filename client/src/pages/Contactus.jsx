@@ -76,7 +76,8 @@ const ContactUs = () => {
         >
           Company helpline details
         </a>
-        <p className="text-blue-500 mt-2">info@snappy.io</p>
+        <br></br>
+        <span className="text-blue-500 mt-2 hover:text-red-600"><a href="mailto:customer.support@ibuyr.in">customer.support@ibuyr.in</a></span>
         <p className="text-blue-500 mb-4">321-221-231</p>
         {/* Additional Details */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -115,8 +116,8 @@ const ContactUs = () => {
           >
             <h2 className="font-semibold text-[#333] mb-2 text-lg">Media Inquiries</h2>
             <p className="text-base text-[#555]">
-              For media-related questions, please contact us at
-              media@snappyapp.com.
+              For media-related questions, please contact us at 
+              <span className="font-bold text-sm hover:text-blue-500"> <a href="mailto:customer.support@ibuyr.in">customer.support@ibuyr.in</a></span>.
             </p>
           </div>
         </div>

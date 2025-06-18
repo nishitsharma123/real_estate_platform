@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { FaHome } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
+import logoImage from "../data/logo.png";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -35,8 +36,6 @@ export default function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-
 
   const controlHeader = () => {
     if (typeof window !== "undefined") {
@@ -126,10 +125,7 @@ export default function Header() {
           >
             {/* <span className="text-red-600">i</span>
             <span className="text-white ">Buyr</span> */}
-            <img
-              src="https://media-hosting.imagekit.io//de8a3bbc13fe4d5f/download.png?Expires=1831983289&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=GC32uDZCalqMKDyt-y7tgsdltZ124DmVaDJLllY2HAsqJMY2EcwgoimoD5AAh2VGgoOy8pscdLr6okH4X50ksezFlyJ-MKnE229o9-wYdXL4wacyNd~8POirbEtYpEy-aqfxLfd7HInqTdfkPVGRcz2yw~XM16H1ZcBlEHx4ZCi4ZHSct36cEwct~pfJeQu7-29srrjt8w~R1oFd42ZGKHiJenSV7LyzX58sWK0Qsc5mgBWYK0OSxHPpI9zCZzWr7xOa0gf7XdAjObCw89RWJL8au653cpl79E4owrooeCcod4Z1M4cB7IHfMMXQImO4iZB5Hx4D1YSsXKZBD2Xc-g__"
-              className="h-10 sm:h-14 object-contain "
-            />
+            <img src={logoImage} className="h-10 sm:h-14 object-contain " />
           </h1>
         </Link>
         <div className="sm:hidden">
@@ -160,37 +156,36 @@ export default function Header() {
               : "hidden"
           } sm:flex sm:flex-row  `}
         >
-         
           {/* <Link to="/property-dashboard"> */}
-            <button
-              // onClick={closeMenu}
-              onClick={toggleDropdown}
-              className=" w-56 sm:w-fit relative text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-90 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out "
-            >
-              Properties
-             {isDropdownOpen && (
-<div ref={dropdownRef} className="dropdown">
-               <ul className="absolute left-0 mt-4 w-60  bg-blue-500 rounded-lg shadow-lg">
-              <li  onClick={closeMenu}>
-                <Link
-                  to="/sell-home"
-                  className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
-                >
-                  Sell your home
-                </Link>
-              </li>
-              <li  onClick={closeMenu}>
-                <Link
-                  to="/property-dashboard"
-                  className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
-                >
-                  Buy your dream home
-                </Link>
-              </li>
-            </ul>
-            </div>
-             )}
-                </button>
+          <button
+            // onClick={closeMenu}
+            onClick={toggleDropdown}
+            className=" w-56 sm:w-fit relative text-center rounded-xl md:rounded-3xl p-2 sm:inline bg-blue-500 bg-opacity-90 md:bg-transparent text-white md:text-white hover:bg-white hover:text-black  transition duration-300 ease-in-out "
+          >
+            Properties
+            {isDropdownOpen && (
+              <div ref={dropdownRef} className="dropdown">
+                <ul className="absolute left-0 mt-4 w-60  bg-blue-500 rounded-lg shadow-lg">
+                  <li onClick={closeMenu}>
+                    <Link
+                      to="/sell-home"
+                      className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
+                    >
+                      Sell your home
+                    </Link>
+                  </li>
+                  <li onClick={closeMenu}>
+                    <Link
+                      to="/property-dashboard"
+                      className="block px-4 py-2 hover:bg-blue-300 rounded-lg m-2"
+                    >
+                      Buy your dream home
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </button>
           {/* </Link> */}
           {currentUser && currentUser.role === "admin" && (
             <Link to="/create-listing">
@@ -247,21 +242,24 @@ export default function Header() {
 
           <Link to="/profile">
             {currentUser ? (
-              <div onClick={closeMenu} className=" w-56 md:w-auto text-center place-content-center flex flex-row md:text-green-600 text-white gap-2 items-center md:bg-white bg-blue-500 hover:text-black p-2 md:rounded-xl rounded-xl">
-              <img
+              <div
                 onClick={closeMenu}
-                className="rounded-full h-7 w-7 object-cover"
-                src={
-                  currentUser?.avatar ||
-                  "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                }
-                alt="Profile"
-                onError={(e) =>
-                  (e.target.src =
-                    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
-                }
-              />
-              <p>{currentUser.username}</p>
+                className=" w-56 md:w-auto text-center place-content-center flex flex-row md:text-green-600 text-white gap-2 items-center md:bg-white bg-blue-500 hover:text-black p-2 md:rounded-xl rounded-xl"
+              >
+                <img
+                  onClick={closeMenu}
+                  className="rounded-full h-7 w-7 object-cover"
+                  src={
+                    currentUser?.avatar ||
+                    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  }
+                  alt="Profile"
+                  onError={(e) =>
+                    (e.target.src =
+                      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
+                  }
+                />
+                <p>{currentUser.username}</p>
               </div>
             ) : (
               <li

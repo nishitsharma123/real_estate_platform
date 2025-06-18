@@ -1,7 +1,6 @@
-
 // routes/contact.js
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 import { Router } from "express";
